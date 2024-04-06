@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-06 14:42:32
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-06 14:49:18
+ * @LastEditTime: 2024-04-06 14:58:12
  * @FilePath: /Satellite/README.md
  * @Description: 
 -->
@@ -10,20 +10,20 @@
 
 ## Introduction
 
-The Satellite Project aims to enhance satellite data processing efficiency and accuracy. Utilizing modern C++ and third-party libraries for data analysis, numerical computations, and HTTP communications, it offers a robust solution for real-time satellite data monitoring and analysis.
+本项目为基于C++的卫星轨道姿态仿真系统，内含高精度动力学、执行器和敏感器的模型、数据可视化工具，以及基于RESTful API的接口。
 
 ## Features
 
-- **Data Analysis**: Powerful tools for satellite data analysis.
-- **Real-time Updates**: Implements real-time updates and monitoring of satellite data.
-- **Cross-platform**: Supports Linux, Windows, and macOS.
+- **姿轨动力学**
+- **单机模型**
+- **数据可视化**
 
 ## Development
 
-Currently focusing on:
-- Enhanced data visualization tools for better analysis.
-- Extending the RESTful API for more comprehensive data operations.
-- Performance optimization for faster and accurate data processing.
+目前待开发功能:
+- 代码重构，提升可扩展性
+- 完成高精度轨道动力学HPOP
+- 开发API
 
 ## Getting Started
 
