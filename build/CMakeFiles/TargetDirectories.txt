@@ -1,0 +1,3 @@
+/home/amadeus/Satellite/build/CMakeFiles/rebuild_cache.dir
+/home/amadeus/Satellite/build/CMakeFiles/edit_cache.dir
+/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir

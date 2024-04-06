@@ -1,0 +1,103 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "StarSensor API",
+      "description": "API for managing StarSensor data.",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080",
+        "description": "Development server"
+      }
+    ],
+    "paths": {
+      "/data": {
+        "get": {
+          "summary": "Get StarSensor Data",
+          "operationId": "getStarSensorData",
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "Data": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "description": "The quaternion data representing the orientation.",
+                        "example": [1.0, 0.0, 0.0, 0.0]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/sampleperiod": {
+        "post": {
+          "summary": "Set SamplePeriod",
+          "operationId": "setSamplePeriod",
+          "requestBody": {
+            "description": "Sample period to set",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "SamplePeriod": {
+                      "type": "number",
+                      "description": "New sample period value",
+                      "example": 0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "SamplePeriod updated successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "SamplePeriod updated"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request format",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "example": "Invalid request format."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
