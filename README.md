@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-06 14:42:32
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-06 14:45:53
+ * @LastEditTime: 2024-04-06 14:49:18
  * @FilePath: /Satellite/README.md
  * @Description: 
 -->
@@ -27,5 +27,8 @@ Currently focusing on:
 
 ## Getting Started
 
-1. **Clone the repository with submodules**:
-git clone --recurse-submodules https://github.com/yourusername/Satellite.git
+# Initialization
+
+```
+$ git submodule update --init --recursive                 
+```
