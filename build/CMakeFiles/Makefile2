@@ -54,18 +54,59 @@ CMAKE_BINARY_DIR = /home/amadeus/Satellite/build
 
 # The main recursive "all" target.
 all: CMakeFiles/Satellite.dir/all
+all: deps/nlohmann_json/all
+all: deps/cpp-httplib/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: deps/nlohmann_json/preinstall
+preinstall: deps/cpp-httplib/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Satellite.dir/clean
+clean: deps/nlohmann_json/clean
+clean: deps/cpp-httplib/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory deps/cpp-httplib
+
+# Recursive "all" directory target.
+deps/cpp-httplib/all:
+
+.PHONY : deps/cpp-httplib/all
+
+# Recursive "preinstall" directory target.
+deps/cpp-httplib/preinstall:
+
+.PHONY : deps/cpp-httplib/preinstall
+
+# Recursive "clean" directory target.
+deps/cpp-httplib/clean:
+
+.PHONY : deps/cpp-httplib/clean
+
+#=============================================================================
+# Directory level rules for directory deps/nlohmann_json
+
+# Recursive "all" directory target.
+deps/nlohmann_json/all:
+
+.PHONY : deps/nlohmann_json/all
+
+# Recursive "preinstall" directory target.
+deps/nlohmann_json/preinstall:
+
+.PHONY : deps/nlohmann_json/preinstall
+
+# Recursive "clean" directory target.
+deps/nlohmann_json/clean:
+
+.PHONY : deps/nlohmann_json/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Satellite.dir
@@ -74,12 +115,12 @@ clean: CMakeFiles/Satellite.dir/clean
 CMakeFiles/Satellite.dir/all:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/depend
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target Satellite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 "Built target Satellite"
 .PHONY : CMakeFiles/Satellite.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Satellite.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 24
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Satellite.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 0
 .PHONY : CMakeFiles/Satellite.dir/rule

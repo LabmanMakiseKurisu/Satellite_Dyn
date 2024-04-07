@@ -56,6 +56,52 @@ CMAKE_BINARY_DIR = /home/amadeus/Satellite/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -123,572 +169,626 @@ Satellite/fast:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/build
 .PHONY : Satellite/fast
 
-src/Astro/Attitude.o: src/Astro/Attitude.cpp.o
+src/Astro/Attitude.o: src/Astro/Attitude.cc.o
 
 .PHONY : src/Astro/Attitude.o
 
 # target to build an object file
-src/Astro/Attitude.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Attitude.cpp.o
-.PHONY : src/Astro/Attitude.cpp.o
+src/Astro/Attitude.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o
+.PHONY : src/Astro/Attitude.cc.o
 
-src/Astro/Attitude.i: src/Astro/Attitude.cpp.i
+src/Astro/Attitude.i: src/Astro/Attitude.cc.i
 
 .PHONY : src/Astro/Attitude.i
 
 # target to preprocess a source file
-src/Astro/Attitude.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Attitude.cpp.i
-.PHONY : src/Astro/Attitude.cpp.i
+src/Astro/Attitude.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.i
+.PHONY : src/Astro/Attitude.cc.i
 
-src/Astro/Attitude.s: src/Astro/Attitude.cpp.s
+src/Astro/Attitude.s: src/Astro/Attitude.cc.s
 
 .PHONY : src/Astro/Attitude.s
 
 # target to generate assembly for a file
-src/Astro/Attitude.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Attitude.cpp.s
-.PHONY : src/Astro/Attitude.cpp.s
+src/Astro/Attitude.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.s
+.PHONY : src/Astro/Attitude.cc.s
 
-src/Astro/AttitudeControl.o: src/Astro/AttitudeControl.cpp.o
+src/Astro/AttitudeControl.o: src/Astro/AttitudeControl.cc.o
 
 .PHONY : src/Astro/AttitudeControl.o
 
 # target to build an object file
-src/Astro/AttitudeControl.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cpp.o
-.PHONY : src/Astro/AttitudeControl.cpp.o
+src/Astro/AttitudeControl.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o
+.PHONY : src/Astro/AttitudeControl.cc.o
 
-src/Astro/AttitudeControl.i: src/Astro/AttitudeControl.cpp.i
+src/Astro/AttitudeControl.i: src/Astro/AttitudeControl.cc.i
 
 .PHONY : src/Astro/AttitudeControl.i
 
 # target to preprocess a source file
-src/Astro/AttitudeControl.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cpp.i
-.PHONY : src/Astro/AttitudeControl.cpp.i
+src/Astro/AttitudeControl.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.i
+.PHONY : src/Astro/AttitudeControl.cc.i
 
-src/Astro/AttitudeControl.s: src/Astro/AttitudeControl.cpp.s
+src/Astro/AttitudeControl.s: src/Astro/AttitudeControl.cc.s
 
 .PHONY : src/Astro/AttitudeControl.s
 
 # target to generate assembly for a file
-src/Astro/AttitudeControl.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cpp.s
-.PHONY : src/Astro/AttitudeControl.cpp.s
+src/Astro/AttitudeControl.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.s
+.PHONY : src/Astro/AttitudeControl.cc.s
 
-src/Astro/Environment.o: src/Astro/Environment.cpp.o
+src/Astro/Environment.o: src/Astro/Environment.cc.o
 
 .PHONY : src/Astro/Environment.o
 
 # target to build an object file
-src/Astro/Environment.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Environment.cpp.o
-.PHONY : src/Astro/Environment.cpp.o
+src/Astro/Environment.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o
+.PHONY : src/Astro/Environment.cc.o
 
-src/Astro/Environment.i: src/Astro/Environment.cpp.i
+src/Astro/Environment.i: src/Astro/Environment.cc.i
 
 .PHONY : src/Astro/Environment.i
 
 # target to preprocess a source file
-src/Astro/Environment.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Environment.cpp.i
-.PHONY : src/Astro/Environment.cpp.i
+src/Astro/Environment.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Environment.cc.i
+.PHONY : src/Astro/Environment.cc.i
 
-src/Astro/Environment.s: src/Astro/Environment.cpp.s
+src/Astro/Environment.s: src/Astro/Environment.cc.s
 
 .PHONY : src/Astro/Environment.s
 
 # target to generate assembly for a file
-src/Astro/Environment.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Environment.cpp.s
-.PHONY : src/Astro/Environment.cpp.s
+src/Astro/Environment.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Environment.cc.s
+.PHONY : src/Astro/Environment.cc.s
 
-src/Astro/Orbit.o: src/Astro/Orbit.cpp.o
+src/Astro/Orbit.o: src/Astro/Orbit.cc.o
 
 .PHONY : src/Astro/Orbit.o
 
 # target to build an object file
-src/Astro/Orbit.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cpp.o
-.PHONY : src/Astro/Orbit.cpp.o
+src/Astro/Orbit.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o
+.PHONY : src/Astro/Orbit.cc.o
 
-src/Astro/Orbit.i: src/Astro/Orbit.cpp.i
+src/Astro/Orbit.i: src/Astro/Orbit.cc.i
 
 .PHONY : src/Astro/Orbit.i
 
 # target to preprocess a source file
-src/Astro/Orbit.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cpp.i
-.PHONY : src/Astro/Orbit.cpp.i
+src/Astro/Orbit.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.i
+.PHONY : src/Astro/Orbit.cc.i
 
-src/Astro/Orbit.s: src/Astro/Orbit.cpp.s
+src/Astro/Orbit.s: src/Astro/Orbit.cc.s
 
 .PHONY : src/Astro/Orbit.s
 
 # target to generate assembly for a file
-src/Astro/Orbit.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cpp.s
-.PHONY : src/Astro/Orbit.cpp.s
+src/Astro/Orbit.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.s
+.PHONY : src/Astro/Orbit.cc.s
 
-src/Componet/Componet.o: src/Componet/Componet.cpp.o
+src/Componet/Componet.o: src/Componet/Componet.cc.o
 
 .PHONY : src/Componet/Componet.o
 
 # target to build an object file
-src/Componet/Componet.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cpp.o
-.PHONY : src/Componet/Componet.cpp.o
+src/Componet/Componet.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cc.o
+.PHONY : src/Componet/Componet.cc.o
 
-src/Componet/Componet.i: src/Componet/Componet.cpp.i
+src/Componet/Componet.i: src/Componet/Componet.cc.i
 
 .PHONY : src/Componet/Componet.i
 
 # target to preprocess a source file
-src/Componet/Componet.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cpp.i
-.PHONY : src/Componet/Componet.cpp.i
+src/Componet/Componet.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cc.i
+.PHONY : src/Componet/Componet.cc.i
 
-src/Componet/Componet.s: src/Componet/Componet.cpp.s
+src/Componet/Componet.s: src/Componet/Componet.cc.s
 
 .PHONY : src/Componet/Componet.s
 
 # target to generate assembly for a file
-src/Componet/Componet.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cpp.s
-.PHONY : src/Componet/Componet.cpp.s
+src/Componet/Componet.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cc.s
+.PHONY : src/Componet/Componet.cc.s
 
-src/Componet/Flywheel.o: src/Componet/Flywheel.cpp.o
+src/Componet/Flywheel.o: src/Componet/Flywheel.cc.o
 
 .PHONY : src/Componet/Flywheel.o
 
 # target to build an object file
-src/Componet/Flywheel.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cpp.o
-.PHONY : src/Componet/Flywheel.cpp.o
+src/Componet/Flywheel.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.o
+.PHONY : src/Componet/Flywheel.cc.o
 
-src/Componet/Flywheel.i: src/Componet/Flywheel.cpp.i
+src/Componet/Flywheel.i: src/Componet/Flywheel.cc.i
 
 .PHONY : src/Componet/Flywheel.i
 
 # target to preprocess a source file
-src/Componet/Flywheel.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cpp.i
-.PHONY : src/Componet/Flywheel.cpp.i
+src/Componet/Flywheel.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.i
+.PHONY : src/Componet/Flywheel.cc.i
 
-src/Componet/Flywheel.s: src/Componet/Flywheel.cpp.s
+src/Componet/Flywheel.s: src/Componet/Flywheel.cc.s
 
 .PHONY : src/Componet/Flywheel.s
 
 # target to generate assembly for a file
-src/Componet/Flywheel.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cpp.s
-.PHONY : src/Componet/Flywheel.cpp.s
+src/Componet/Flywheel.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.s
+.PHONY : src/Componet/Flywheel.cc.s
 
-src/Componet/GNSS.o: src/Componet/GNSS.cpp.o
+src/Componet/GNSS.o: src/Componet/GNSS.cc.o
 
 .PHONY : src/Componet/GNSS.o
 
 # target to build an object file
-src/Componet/GNSS.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cpp.o
-.PHONY : src/Componet/GNSS.cpp.o
+src/Componet/GNSS.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.o
+.PHONY : src/Componet/GNSS.cc.o
 
-src/Componet/GNSS.i: src/Componet/GNSS.cpp.i
+src/Componet/GNSS.i: src/Componet/GNSS.cc.i
 
 .PHONY : src/Componet/GNSS.i
 
 # target to preprocess a source file
-src/Componet/GNSS.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cpp.i
-.PHONY : src/Componet/GNSS.cpp.i
+src/Componet/GNSS.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.i
+.PHONY : src/Componet/GNSS.cc.i
 
-src/Componet/GNSS.s: src/Componet/GNSS.cpp.s
+src/Componet/GNSS.s: src/Componet/GNSS.cc.s
 
 .PHONY : src/Componet/GNSS.s
 
 # target to generate assembly for a file
-src/Componet/GNSS.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cpp.s
-.PHONY : src/Componet/GNSS.cpp.s
+src/Componet/GNSS.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.s
+.PHONY : src/Componet/GNSS.cc.s
 
-src/Componet/Gyro.o: src/Componet/Gyro.cpp.o
+src/Componet/Gyro.o: src/Componet/Gyro.cc.o
 
 .PHONY : src/Componet/Gyro.o
 
 # target to build an object file
-src/Componet/Gyro.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cpp.o
-.PHONY : src/Componet/Gyro.cpp.o
+src/Componet/Gyro.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.o
+.PHONY : src/Componet/Gyro.cc.o
 
-src/Componet/Gyro.i: src/Componet/Gyro.cpp.i
+src/Componet/Gyro.i: src/Componet/Gyro.cc.i
 
 .PHONY : src/Componet/Gyro.i
 
 # target to preprocess a source file
-src/Componet/Gyro.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cpp.i
-.PHONY : src/Componet/Gyro.cpp.i
+src/Componet/Gyro.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.i
+.PHONY : src/Componet/Gyro.cc.i
 
-src/Componet/Gyro.s: src/Componet/Gyro.cpp.s
+src/Componet/Gyro.s: src/Componet/Gyro.cc.s
 
 .PHONY : src/Componet/Gyro.s
 
 # target to generate assembly for a file
-src/Componet/Gyro.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cpp.s
-.PHONY : src/Componet/Gyro.cpp.s
+src/Componet/Gyro.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.s
+.PHONY : src/Componet/Gyro.cc.s
 
-src/Componet/MagSensor.o: src/Componet/MagSensor.cpp.o
+src/Componet/MagSensor.o: src/Componet/MagSensor.cc.o
 
 .PHONY : src/Componet/MagSensor.o
 
 # target to build an object file
-src/Componet/MagSensor.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cpp.o
-.PHONY : src/Componet/MagSensor.cpp.o
+src/Componet/MagSensor.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.o
+.PHONY : src/Componet/MagSensor.cc.o
 
-src/Componet/MagSensor.i: src/Componet/MagSensor.cpp.i
+src/Componet/MagSensor.i: src/Componet/MagSensor.cc.i
 
 .PHONY : src/Componet/MagSensor.i
 
 # target to preprocess a source file
-src/Componet/MagSensor.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cpp.i
-.PHONY : src/Componet/MagSensor.cpp.i
+src/Componet/MagSensor.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.i
+.PHONY : src/Componet/MagSensor.cc.i
 
-src/Componet/MagSensor.s: src/Componet/MagSensor.cpp.s
+src/Componet/MagSensor.s: src/Componet/MagSensor.cc.s
 
 .PHONY : src/Componet/MagSensor.s
 
 # target to generate assembly for a file
-src/Componet/MagSensor.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cpp.s
-.PHONY : src/Componet/MagSensor.cpp.s
+src/Componet/MagSensor.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.s
+.PHONY : src/Componet/MagSensor.cc.s
 
-src/Componet/StarSensor.o: src/Componet/StarSensor.cpp.o
+src/Componet/StarSensor.o: src/Componet/StarSensor.cc.o
 
 .PHONY : src/Componet/StarSensor.o
 
 # target to build an object file
-src/Componet/StarSensor.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cpp.o
-.PHONY : src/Componet/StarSensor.cpp.o
+src/Componet/StarSensor.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.o
+.PHONY : src/Componet/StarSensor.cc.o
 
-src/Componet/StarSensor.i: src/Componet/StarSensor.cpp.i
+src/Componet/StarSensor.i: src/Componet/StarSensor.cc.i
 
 .PHONY : src/Componet/StarSensor.i
 
 # target to preprocess a source file
-src/Componet/StarSensor.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cpp.i
-.PHONY : src/Componet/StarSensor.cpp.i
+src/Componet/StarSensor.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.i
+.PHONY : src/Componet/StarSensor.cc.i
 
-src/Componet/StarSensor.s: src/Componet/StarSensor.cpp.s
+src/Componet/StarSensor.s: src/Componet/StarSensor.cc.s
 
 .PHONY : src/Componet/StarSensor.s
 
 # target to generate assembly for a file
-src/Componet/StarSensor.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cpp.s
-.PHONY : src/Componet/StarSensor.cpp.s
+src/Componet/StarSensor.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.s
+.PHONY : src/Componet/StarSensor.cc.s
 
-src/Componet/SunSensor.o: src/Componet/SunSensor.cpp.o
+src/Componet/SunSensor.o: src/Componet/SunSensor.cc.o
 
 .PHONY : src/Componet/SunSensor.o
 
 # target to build an object file
-src/Componet/SunSensor.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cpp.o
-.PHONY : src/Componet/SunSensor.cpp.o
+src/Componet/SunSensor.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.o
+.PHONY : src/Componet/SunSensor.cc.o
 
-src/Componet/SunSensor.i: src/Componet/SunSensor.cpp.i
+src/Componet/SunSensor.i: src/Componet/SunSensor.cc.i
 
 .PHONY : src/Componet/SunSensor.i
 
 # target to preprocess a source file
-src/Componet/SunSensor.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cpp.i
-.PHONY : src/Componet/SunSensor.cpp.i
+src/Componet/SunSensor.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.i
+.PHONY : src/Componet/SunSensor.cc.i
 
-src/Componet/SunSensor.s: src/Componet/SunSensor.cpp.s
+src/Componet/SunSensor.s: src/Componet/SunSensor.cc.s
 
 .PHONY : src/Componet/SunSensor.s
 
 # target to generate assembly for a file
-src/Componet/SunSensor.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cpp.s
-.PHONY : src/Componet/SunSensor.cpp.s
+src/Componet/SunSensor.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.s
+.PHONY : src/Componet/SunSensor.cc.s
 
-src/General/CConfig.o: src/General/CConfig.cpp.o
+src/General/CConfig.o: src/General/CConfig.cc.o
 
 .PHONY : src/General/CConfig.o
 
 # target to build an object file
-src/General/CConfig.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cpp.o
-.PHONY : src/General/CConfig.cpp.o
+src/General/CConfig.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cc.o
+.PHONY : src/General/CConfig.cc.o
 
-src/General/CConfig.i: src/General/CConfig.cpp.i
+src/General/CConfig.i: src/General/CConfig.cc.i
 
 .PHONY : src/General/CConfig.i
 
 # target to preprocess a source file
-src/General/CConfig.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cpp.i
-.PHONY : src/General/CConfig.cpp.i
+src/General/CConfig.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cc.i
+.PHONY : src/General/CConfig.cc.i
 
-src/General/CConfig.s: src/General/CConfig.cpp.s
+src/General/CConfig.s: src/General/CConfig.cc.s
 
 .PHONY : src/General/CConfig.s
 
 # target to generate assembly for a file
-src/General/CConfig.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cpp.s
-.PHONY : src/General/CConfig.cpp.s
+src/General/CConfig.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cc.s
+.PHONY : src/General/CConfig.cc.s
 
-src/General/InfluxDB.o: src/General/InfluxDB.cpp.o
+src/General/DataBase.o: src/General/DataBase.cc.o
+
+.PHONY : src/General/DataBase.o
+
+# target to build an object file
+src/General/DataBase.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/DataBase.cc.o
+.PHONY : src/General/DataBase.cc.o
+
+src/General/DataBase.i: src/General/DataBase.cc.i
+
+.PHONY : src/General/DataBase.i
+
+# target to preprocess a source file
+src/General/DataBase.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/DataBase.cc.i
+.PHONY : src/General/DataBase.cc.i
+
+src/General/DataBase.s: src/General/DataBase.cc.s
+
+.PHONY : src/General/DataBase.s
+
+# target to generate assembly for a file
+src/General/DataBase.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/DataBase.cc.s
+.PHONY : src/General/DataBase.cc.s
+
+src/General/GlobalSetting.o: src/General/GlobalSetting.cc.o
+
+.PHONY : src/General/GlobalSetting.o
+
+# target to build an object file
+src/General/GlobalSetting.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o
+.PHONY : src/General/GlobalSetting.cc.o
+
+src/General/GlobalSetting.i: src/General/GlobalSetting.cc.i
+
+.PHONY : src/General/GlobalSetting.i
+
+# target to preprocess a source file
+src/General/GlobalSetting.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.i
+.PHONY : src/General/GlobalSetting.cc.i
+
+src/General/GlobalSetting.s: src/General/GlobalSetting.cc.s
+
+.PHONY : src/General/GlobalSetting.s
+
+# target to generate assembly for a file
+src/General/GlobalSetting.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.s
+.PHONY : src/General/GlobalSetting.cc.s
+
+src/General/InfluxDB.o: src/General/InfluxDB.cc.o
 
 .PHONY : src/General/InfluxDB.o
 
 # target to build an object file
-src/General/InfluxDB.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cpp.o
-.PHONY : src/General/InfluxDB.cpp.o
+src/General/InfluxDB.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o
+.PHONY : src/General/InfluxDB.cc.o
 
-src/General/InfluxDB.i: src/General/InfluxDB.cpp.i
+src/General/InfluxDB.i: src/General/InfluxDB.cc.i
 
 .PHONY : src/General/InfluxDB.i
 
 # target to preprocess a source file
-src/General/InfluxDB.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cpp.i
-.PHONY : src/General/InfluxDB.cpp.i
+src/General/InfluxDB.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.i
+.PHONY : src/General/InfluxDB.cc.i
 
-src/General/InfluxDB.s: src/General/InfluxDB.cpp.s
+src/General/InfluxDB.s: src/General/InfluxDB.cc.s
 
 .PHONY : src/General/InfluxDB.s
 
 # target to generate assembly for a file
-src/General/InfluxDB.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cpp.s
-.PHONY : src/General/InfluxDB.cpp.s
+src/General/InfluxDB.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.s
+.PHONY : src/General/InfluxDB.cc.s
 
-src/General/IniConfig.o: src/General/IniConfig.cpp.o
+src/General/IniConfig.o: src/General/IniConfig.cc.o
 
 .PHONY : src/General/IniConfig.o
 
 # target to build an object file
-src/General/IniConfig.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.o
-.PHONY : src/General/IniConfig.cpp.o
+src/General/IniConfig.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cc.o
+.PHONY : src/General/IniConfig.cc.o
 
-src/General/IniConfig.i: src/General/IniConfig.cpp.i
+src/General/IniConfig.i: src/General/IniConfig.cc.i
 
 .PHONY : src/General/IniConfig.i
 
 # target to preprocess a source file
-src/General/IniConfig.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.i
-.PHONY : src/General/IniConfig.cpp.i
+src/General/IniConfig.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cc.i
+.PHONY : src/General/IniConfig.cc.i
 
-src/General/IniConfig.s: src/General/IniConfig.cpp.s
+src/General/IniConfig.s: src/General/IniConfig.cc.s
 
 .PHONY : src/General/IniConfig.s
 
 # target to generate assembly for a file
-src/General/IniConfig.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.s
-.PHONY : src/General/IniConfig.cpp.s
+src/General/IniConfig.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cc.s
+.PHONY : src/General/IniConfig.cc.s
 
-src/General/SimTime.o: src/General/SimTime.cpp.o
+src/General/SimTime.o: src/General/SimTime.cc.o
 
 .PHONY : src/General/SimTime.o
 
 # target to build an object file
-src/General/SimTime.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/SimTime.cpp.o
-.PHONY : src/General/SimTime.cpp.o
+src/General/SimTime.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/SimTime.cc.o
+.PHONY : src/General/SimTime.cc.o
 
-src/General/SimTime.i: src/General/SimTime.cpp.i
+src/General/SimTime.i: src/General/SimTime.cc.i
 
 .PHONY : src/General/SimTime.i
 
 # target to preprocess a source file
-src/General/SimTime.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/SimTime.cpp.i
-.PHONY : src/General/SimTime.cpp.i
+src/General/SimTime.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/SimTime.cc.i
+.PHONY : src/General/SimTime.cc.i
 
-src/General/SimTime.s: src/General/SimTime.cpp.s
+src/General/SimTime.s: src/General/SimTime.cc.s
 
 .PHONY : src/General/SimTime.s
 
 # target to generate assembly for a file
-src/General/SimTime.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/SimTime.cpp.s
-.PHONY : src/General/SimTime.cpp.s
+src/General/SimTime.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/SimTime.cc.s
+.PHONY : src/General/SimTime.cc.s
 
-src/Satellite/Satellite.o: src/Satellite/Satellite.cpp.o
+src/Satellite/Satellite.o: src/Satellite/Satellite.cc.o
 
 .PHONY : src/Satellite/Satellite.o
 
 # target to build an object file
-src/Satellite/Satellite.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.o
-.PHONY : src/Satellite/Satellite.cpp.o
+src/Satellite/Satellite.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o
+.PHONY : src/Satellite/Satellite.cc.o
 
-src/Satellite/Satellite.i: src/Satellite/Satellite.cpp.i
+src/Satellite/Satellite.i: src/Satellite/Satellite.cc.i
 
 .PHONY : src/Satellite/Satellite.i
 
 # target to preprocess a source file
-src/Satellite/Satellite.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.i
-.PHONY : src/Satellite/Satellite.cpp.i
+src/Satellite/Satellite.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.i
+.PHONY : src/Satellite/Satellite.cc.i
 
-src/Satellite/Satellite.s: src/Satellite/Satellite.cpp.s
+src/Satellite/Satellite.s: src/Satellite/Satellite.cc.s
 
 .PHONY : src/Satellite/Satellite.s
 
 # target to generate assembly for a file
-src/Satellite/Satellite.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.s
-.PHONY : src/Satellite/Satellite.cpp.s
+src/Satellite/Satellite.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.s
+.PHONY : src/Satellite/Satellite.cc.s
 
-src/Satellite/main.o: src/Satellite/main.cpp.o
+src/Satellite/main.o: src/Satellite/main.cc.o
 
 .PHONY : src/Satellite/main.o
 
 # target to build an object file
-src/Satellite/main.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o
-.PHONY : src/Satellite/main.cpp.o
+src/Satellite/main.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cc.o
+.PHONY : src/Satellite/main.cc.o
 
-src/Satellite/main.i: src/Satellite/main.cpp.i
+src/Satellite/main.i: src/Satellite/main.cc.i
 
 .PHONY : src/Satellite/main.i
 
 # target to preprocess a source file
-src/Satellite/main.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cpp.i
-.PHONY : src/Satellite/main.cpp.i
+src/Satellite/main.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cc.i
+.PHONY : src/Satellite/main.cc.i
 
-src/Satellite/main.s: src/Satellite/main.cpp.s
+src/Satellite/main.s: src/Satellite/main.cc.s
 
 .PHONY : src/Satellite/main.s
 
 # target to generate assembly for a file
-src/Satellite/main.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cpp.s
-.PHONY : src/Satellite/main.cpp.s
+src/Satellite/main.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cc.s
+.PHONY : src/Satellite/main.cc.s
 
-src/SatelliteMath/BaseMath.o: src/SatelliteMath/BaseMath.cpp.o
+src/SatelliteMath/BaseMath.o: src/SatelliteMath/BaseMath.cc.o
 
 .PHONY : src/SatelliteMath/BaseMath.o
 
 # target to build an object file
-src/SatelliteMath/BaseMath.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o
-.PHONY : src/SatelliteMath/BaseMath.cpp.o
+src/SatelliteMath/BaseMath.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o
+.PHONY : src/SatelliteMath/BaseMath.cc.o
 
-src/SatelliteMath/BaseMath.i: src/SatelliteMath/BaseMath.cpp.i
+src/SatelliteMath/BaseMath.i: src/SatelliteMath/BaseMath.cc.i
 
 .PHONY : src/SatelliteMath/BaseMath.i
 
 # target to preprocess a source file
-src/SatelliteMath/BaseMath.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.i
-.PHONY : src/SatelliteMath/BaseMath.cpp.i
+src/SatelliteMath/BaseMath.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.i
+.PHONY : src/SatelliteMath/BaseMath.cc.i
 
-src/SatelliteMath/BaseMath.s: src/SatelliteMath/BaseMath.cpp.s
+src/SatelliteMath/BaseMath.s: src/SatelliteMath/BaseMath.cc.s
 
 .PHONY : src/SatelliteMath/BaseMath.s
 
 # target to generate assembly for a file
-src/SatelliteMath/BaseMath.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.s
-.PHONY : src/SatelliteMath/BaseMath.cpp.s
+src/SatelliteMath/BaseMath.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.s
+.PHONY : src/SatelliteMath/BaseMath.cc.s
 
-src/SatelliteMath/Dcm.o: src/SatelliteMath/Dcm.cpp.o
+src/SatelliteMath/Dcm.o: src/SatelliteMath/Dcm.cc.o
 
 .PHONY : src/SatelliteMath/Dcm.o
 
 # target to build an object file
-src/SatelliteMath/Dcm.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o
-.PHONY : src/SatelliteMath/Dcm.cpp.o
+src/SatelliteMath/Dcm.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o
+.PHONY : src/SatelliteMath/Dcm.cc.o
 
-src/SatelliteMath/Dcm.i: src/SatelliteMath/Dcm.cpp.i
+src/SatelliteMath/Dcm.i: src/SatelliteMath/Dcm.cc.i
 
 .PHONY : src/SatelliteMath/Dcm.i
 
 # target to preprocess a source file
-src/SatelliteMath/Dcm.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.i
-.PHONY : src/SatelliteMath/Dcm.cpp.i
+src/SatelliteMath/Dcm.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.i
+.PHONY : src/SatelliteMath/Dcm.cc.i
 
-src/SatelliteMath/Dcm.s: src/SatelliteMath/Dcm.cpp.s
+src/SatelliteMath/Dcm.s: src/SatelliteMath/Dcm.cc.s
 
 .PHONY : src/SatelliteMath/Dcm.s
 
 # target to generate assembly for a file
-src/SatelliteMath/Dcm.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.s
-.PHONY : src/SatelliteMath/Dcm.cpp.s
+src/SatelliteMath/Dcm.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.s
+.PHONY : src/SatelliteMath/Dcm.cc.s
 
-src/SatelliteMath/EulerAgl.o: src/SatelliteMath/EulerAgl.cpp.o
+src/SatelliteMath/EulerAgl.o: src/SatelliteMath/EulerAgl.cc.o
 
 .PHONY : src/SatelliteMath/EulerAgl.o
 
 # target to build an object file
-src/SatelliteMath/EulerAgl.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o
-.PHONY : src/SatelliteMath/EulerAgl.cpp.o
+src/SatelliteMath/EulerAgl.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o
+.PHONY : src/SatelliteMath/EulerAgl.cc.o
 
-src/SatelliteMath/EulerAgl.i: src/SatelliteMath/EulerAgl.cpp.i
+src/SatelliteMath/EulerAgl.i: src/SatelliteMath/EulerAgl.cc.i
 
 .PHONY : src/SatelliteMath/EulerAgl.i
 
 # target to preprocess a source file
-src/SatelliteMath/EulerAgl.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.i
-.PHONY : src/SatelliteMath/EulerAgl.cpp.i
+src/SatelliteMath/EulerAgl.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.i
+.PHONY : src/SatelliteMath/EulerAgl.cc.i
 
-src/SatelliteMath/EulerAgl.s: src/SatelliteMath/EulerAgl.cpp.s
+src/SatelliteMath/EulerAgl.s: src/SatelliteMath/EulerAgl.cc.s
 
 .PHONY : src/SatelliteMath/EulerAgl.s
 
 # target to generate assembly for a file
-src/SatelliteMath/EulerAgl.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.s
-.PHONY : src/SatelliteMath/EulerAgl.cpp.s
+src/SatelliteMath/EulerAgl.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.s
+.PHONY : src/SatelliteMath/EulerAgl.cc.s
 
-src/SatelliteMath/Quaternions.o: src/SatelliteMath/Quaternions.cpp.o
+src/SatelliteMath/Quaternions.o: src/SatelliteMath/Quaternions.cc.o
 
 .PHONY : src/SatelliteMath/Quaternions.o
 
 # target to build an object file
-src/SatelliteMath/Quaternions.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o
-.PHONY : src/SatelliteMath/Quaternions.cpp.o
+src/SatelliteMath/Quaternions.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o
+.PHONY : src/SatelliteMath/Quaternions.cc.o
 
-src/SatelliteMath/Quaternions.i: src/SatelliteMath/Quaternions.cpp.i
+src/SatelliteMath/Quaternions.i: src/SatelliteMath/Quaternions.cc.i
 
 .PHONY : src/SatelliteMath/Quaternions.i
 
 # target to preprocess a source file
-src/SatelliteMath/Quaternions.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.i
-.PHONY : src/SatelliteMath/Quaternions.cpp.i
+src/SatelliteMath/Quaternions.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.i
+.PHONY : src/SatelliteMath/Quaternions.cc.i
 
-src/SatelliteMath/Quaternions.s: src/SatelliteMath/Quaternions.cpp.s
+src/SatelliteMath/Quaternions.s: src/SatelliteMath/Quaternions.cc.s
 
 .PHONY : src/SatelliteMath/Quaternions.s
 
 # target to generate assembly for a file
-src/SatelliteMath/Quaternions.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.s
-.PHONY : src/SatelliteMath/Quaternions.cpp.s
+src/SatelliteMath/Quaternions.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.s
+.PHONY : src/SatelliteMath/Quaternions.cc.s
 
 # Help Target
 help:
@@ -696,6 +796,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Satellite"
@@ -735,6 +839,12 @@ help:
 	@echo "... src/General/CConfig.o"
 	@echo "... src/General/CConfig.i"
 	@echo "... src/General/CConfig.s"
+	@echo "... src/General/DataBase.o"
+	@echo "... src/General/DataBase.i"
+	@echo "... src/General/DataBase.s"
+	@echo "... src/General/GlobalSetting.o"
+	@echo "... src/General/GlobalSetting.i"
+	@echo "... src/General/GlobalSetting.s"
 	@echo "... src/General/InfluxDB.o"
 	@echo "... src/General/InfluxDB.i"
 	@echo "... src/General/InfluxDB.s"

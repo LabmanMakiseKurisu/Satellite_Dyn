@@ -1,107 +1,117 @@
 [
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/Attitude.cpp.o -c /home/amadeus/Satellite/src/Astro/Attitude.cpp",
-  "file": "/home/amadeus/Satellite/src/Astro/Attitude.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o -c /home/amadeus/Satellite/src/Astro/Attitude.cc",
+  "file": "/home/amadeus/Satellite/src/Astro/Attitude.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cpp.o -c /home/amadeus/Satellite/src/Astro/AttitudeControl.cpp",
-  "file": "/home/amadeus/Satellite/src/Astro/AttitudeControl.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o -c /home/amadeus/Satellite/src/Astro/AttitudeControl.cc",
+  "file": "/home/amadeus/Satellite/src/Astro/AttitudeControl.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/Environment.cpp.o -c /home/amadeus/Satellite/src/Astro/Environment.cpp",
-  "file": "/home/amadeus/Satellite/src/Astro/Environment.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o -c /home/amadeus/Satellite/src/Astro/Environment.cc",
+  "file": "/home/amadeus/Satellite/src/Astro/Environment.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/Orbit.cpp.o -c /home/amadeus/Satellite/src/Astro/Orbit.cpp",
-  "file": "/home/amadeus/Satellite/src/Astro/Orbit.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o -c /home/amadeus/Satellite/src/Astro/Orbit.cc",
+  "file": "/home/amadeus/Satellite/src/Astro/Orbit.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/Componet.cpp.o -c /home/amadeus/Satellite/src/Componet/Componet.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/Componet.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/Componet.cc.o -c /home/amadeus/Satellite/src/Componet/Componet.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/Componet.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/Flywheel.cpp.o -c /home/amadeus/Satellite/src/Componet/Flywheel.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/Flywheel.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.o -c /home/amadeus/Satellite/src/Componet/Flywheel.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/Flywheel.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/GNSS.cpp.o -c /home/amadeus/Satellite/src/Componet/GNSS.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/GNSS.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.o -c /home/amadeus/Satellite/src/Componet/GNSS.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/GNSS.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/Gyro.cpp.o -c /home/amadeus/Satellite/src/Componet/Gyro.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/Gyro.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.o -c /home/amadeus/Satellite/src/Componet/Gyro.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/Gyro.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/MagSensor.cpp.o -c /home/amadeus/Satellite/src/Componet/MagSensor.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/MagSensor.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.o -c /home/amadeus/Satellite/src/Componet/MagSensor.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/MagSensor.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/StarSensor.cpp.o -c /home/amadeus/Satellite/src/Componet/StarSensor.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/StarSensor.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.o -c /home/amadeus/Satellite/src/Componet/StarSensor.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/StarSensor.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/SunSensor.cpp.o -c /home/amadeus/Satellite/src/Componet/SunSensor.cpp",
-  "file": "/home/amadeus/Satellite/src/Componet/SunSensor.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.o -c /home/amadeus/Satellite/src/Componet/SunSensor.cc",
+  "file": "/home/amadeus/Satellite/src/Componet/SunSensor.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/CConfig.cpp.o -c /home/amadeus/Satellite/src/General/CConfig.cpp",
-  "file": "/home/amadeus/Satellite/src/General/CConfig.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/CConfig.cc.o -c /home/amadeus/Satellite/src/General/CConfig.cc",
+  "file": "/home/amadeus/Satellite/src/General/CConfig.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/InfluxDB.cpp.o -c /home/amadeus/Satellite/src/General/InfluxDB.cpp",
-  "file": "/home/amadeus/Satellite/src/General/InfluxDB.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/DataBase.cc.o -c /home/amadeus/Satellite/src/General/DataBase.cc",
+  "file": "/home/amadeus/Satellite/src/General/DataBase.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.o -c /home/amadeus/Satellite/src/General/IniConfig.cpp",
-  "file": "/home/amadeus/Satellite/src/General/IniConfig.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o -c /home/amadeus/Satellite/src/General/GlobalSetting.cc",
+  "file": "/home/amadeus/Satellite/src/General/GlobalSetting.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/SimTime.cpp.o -c /home/amadeus/Satellite/src/General/SimTime.cpp",
-  "file": "/home/amadeus/Satellite/src/General/SimTime.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o -c /home/amadeus/Satellite/src/General/InfluxDB.cc",
+  "file": "/home/amadeus/Satellite/src/General/InfluxDB.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.o -c /home/amadeus/Satellite/src/Satellite/Satellite.cpp",
-  "file": "/home/amadeus/Satellite/src/Satellite/Satellite.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/IniConfig.cc.o -c /home/amadeus/Satellite/src/General/IniConfig.cc",
+  "file": "/home/amadeus/Satellite/src/General/IniConfig.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o -c /home/amadeus/Satellite/src/Satellite/main.cpp",
-  "file": "/home/amadeus/Satellite/src/Satellite/main.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/General/SimTime.cc.o -c /home/amadeus/Satellite/src/General/SimTime.cc",
+  "file": "/home/amadeus/Satellite/src/General/SimTime.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cpp",
-  "file": "/home/amadeus/Satellite/src/SatelliteMath/BaseMath.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o -c /home/amadeus/Satellite/src/Satellite/Satellite.cc",
+  "file": "/home/amadeus/Satellite/src/Satellite/Satellite.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/Dcm.cpp",
-  "file": "/home/amadeus/Satellite/src/SatelliteMath/Dcm.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/Satellite/main.cc.o -c /home/amadeus/Satellite/src/Satellite/main.cc",
+  "file": "/home/amadeus/Satellite/src/Satellite/main.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cpp",
-  "file": "/home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc",
+  "file": "/home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc"
 },
 {
   "directory": "/home/amadeus/Satellite/build",
-  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cpp",
-  "file": "/home/amadeus/Satellite/src/SatelliteMath/Quaternions.cpp"
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc",
+  "file": "/home/amadeus/Satellite/src/SatelliteMath/Dcm.cc"
+},
+{
+  "directory": "/home/amadeus/Satellite/build",
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc",
+  "file": "/home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc"
+},
+{
+  "directory": "/home/amadeus/Satellite/build",
+  "command": "/usr/bin/g++   -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3  -g   -std=gnu++17 -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc",
+  "file": "/home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc"
 }
 ]
