@@ -20,11 +20,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/amadeus/Satellite/src/General/IniConfig.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.o"
   "/home/amadeus/Satellite/src/General/SimTime.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/SimTime.cpp.o"
   "/home/amadeus/Satellite/src/Satellite/Satellite.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.o"
+  "/home/amadeus/Satellite/src/Satellite/main.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o"
   "/home/amadeus/Satellite/src/SatelliteMath/BaseMath.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o"
   "/home/amadeus/Satellite/src/SatelliteMath/Dcm.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o"
   "/home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o"
   "/home/amadeus/Satellite/src/SatelliteMath/Quaternions.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o"
-  "/home/amadeus/Satellite/src/main.cpp" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -32,12 +32,12 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../deps"
   "../deps/MySofa"
-  "../include"
-  "../include/Astro"
-  "../include/Componet"
-  "../include/General"
-  "../include/Satellite"
-  "../include/SatelliteMath"
+  "../src"
+  "../src/Astro"
+  "../src/Componet"
+  "../src/General"
+  "../src/Satellite"
+  "../src/SatelliteMath"
   "/usr/local/include/eigen3"
   )
 

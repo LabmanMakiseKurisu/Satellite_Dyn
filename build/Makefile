@@ -555,6 +555,33 @@ src/Satellite/Satellite.cpp.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.s
 .PHONY : src/Satellite/Satellite.cpp.s
 
+src/Satellite/main.o: src/Satellite/main.cpp.o
+
+.PHONY : src/Satellite/main.o
+
+# target to build an object file
+src/Satellite/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o
+.PHONY : src/Satellite/main.cpp.o
+
+src/Satellite/main.i: src/Satellite/main.cpp.i
+
+.PHONY : src/Satellite/main.i
+
+# target to preprocess a source file
+src/Satellite/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cpp.i
+.PHONY : src/Satellite/main.cpp.i
+
+src/Satellite/main.s: src/Satellite/main.cpp.s
+
+.PHONY : src/Satellite/main.s
+
+# target to generate assembly for a file
+src/Satellite/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Satellite/main.cpp.s
+.PHONY : src/Satellite/main.cpp.s
+
 src/SatelliteMath/BaseMath.o: src/SatelliteMath/BaseMath.cpp.o
 
 .PHONY : src/SatelliteMath/BaseMath.o
@@ -663,33 +690,6 @@ src/SatelliteMath/Quaternions.cpp.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.s
 .PHONY : src/SatelliteMath/Quaternions.cpp.s
 
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -747,6 +747,9 @@ help:
 	@echo "... src/Satellite/Satellite.o"
 	@echo "... src/Satellite/Satellite.i"
 	@echo "... src/Satellite/Satellite.s"
+	@echo "... src/Satellite/main.o"
+	@echo "... src/Satellite/main.i"
+	@echo "... src/Satellite/main.s"
 	@echo "... src/SatelliteMath/BaseMath.o"
 	@echo "... src/SatelliteMath/BaseMath.i"
 	@echo "... src/SatelliteMath/BaseMath.s"
@@ -759,9 +762,6 @@ help:
 	@echo "... src/SatelliteMath/Quaternions.o"
 	@echo "... src/SatelliteMath/Quaternions.i"
 	@echo "... src/SatelliteMath/Quaternions.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 .PHONY : help
 
 

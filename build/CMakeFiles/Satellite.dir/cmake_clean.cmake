@@ -15,11 +15,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.o"
   "CMakeFiles/Satellite.dir/src/General/SimTime.cpp.o"
   "CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.o"
+  "CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o"
   "CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o"
   "CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o"
   "CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o"
   "CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o"
-  "CMakeFiles/Satellite.dir/src/main.cpp.o"
   "Satellite"
   "Satellite.pdb"
 )

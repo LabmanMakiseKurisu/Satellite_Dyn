@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-02-26 10:15:26
+ * @LastEditTime: 2024-04-07 12:22:20
  * @FilePath: /Satellite/src/General/SimTime.cpp
  * @Description: 
  */
@@ -21,31 +21,20 @@ int64_t GetTimeStampMs()
 void SleepMs(int64_t milliseconds) {
 	std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
-#ifdef _WIN32
-unsigned __stdcall SimCountManage(void* arg) {
-#else
-void* CSimTime::SimCountManage(void* arg) {
-#endif
+
+void CSimTime::Core() {
 	CSimTime* instance = CSimTime::GetInstance();
 	int64_t NexTime = GetTimeStampMs();
 	int64_t WaitTime = 0;
-	while (1)
+	while (!m_stop)
 	{
 		int64_t NowTime = GetTimeStampMs();
 		WaitTime = NexTime - NowTime;
 		if (WaitTime > 0)
 			SleepMs(static_cast<uint32_t>(WaitTime));
-		instance->WaitForSimCountMute();
-		instance->SimCount += instance->SpeedTimes;
-		instance->ReleaseSimCountMute();
-		NexTime += static_cast<int64_t>(instance->SampleTime * 1e3);
+		instance->m_SimCount.fetch_add(instance->m_Rate);
+		NexTime += static_cast<int64_t>(instance->m_Delta * 1e3);
 	}
-
-#ifdef _WIN32
-    return 0;
-#else
-    return nullptr;
-#endif
 }
 
 CSimTime* CSimTime::GetInstance()
@@ -55,61 +44,32 @@ CSimTime* CSimTime::GetInstance()
 		return m_instance;	
 }
 
-int CSimTime::WaitForSimCountMute()
-{
-#ifdef _WIN32
-    return WaitForSingleObject(hSimCountMute, INFINITE);
-#else
-    return pthread_mutex_lock(&hSimCountMute);
-#endif
-}
 
-int CSimTime::ReleaseSimCountMute()
-{
-#ifdef _WIN32
-    return ReleaseMutex(hSimCountMute);
-#else
-    return pthread_mutex_unlock(&hSimCountMute);
-#endif
-}
 
-void CSimTime::InitSimSpeedManage(double SampleTime, int SpeedTimes)
+void CSimTime::Init(double Delta, int Rate)
 {
 	CSimTime* instance = CSimTime::GetInstance();
-	instance->SampleTime = SampleTime;
-	instance->SpeedTimes = SpeedTimes;
-	#ifdef _WIN32
-    _beginthreadex(NULL, 0, SimCountManage, NULL, 0, NULL);
-#else
-    pthread_t thread;
-    pthread_create(&thread, nullptr, SimCountManage, this);
-    pthread_detach(thread); // Ensure thread is detached
-#endif
+	instance->m_Delta = Delta;
+	instance->m_Rate = Rate;
+	m_thread = std::thread(&CSimTime::Core,this);
 }
 
-bool CSimTime::SimCountJudge()
+//不会有其他线程减，所以只要check>0就行
+bool CSimTime::check()
 {
-	if (SimCount > 0)
+	int times = m_SimCount.load();
+	if (times > 0)
 	{
-		SimCount--;
+		m_SimCount--;
 		return true;
 	}
 	else
 		return false;
 }
 
-CSimTime::CSimTime():SimCount(0), SampleTime(0.5), SpeedTimes(1)
+CSimTime::CSimTime():m_Delta(0.5), m_Rate(1),m_stop(false)
 {
-	#ifdef _WIN32
-    hSimCountMute = CreateMutex(NULL, FALSE, NULL);
-	if (hSimCountMute == NULL)
-	{
-		std::cout << "����������ʧ�ܣ������˳�\n";
-		exit(0);
-	}
-#else
-    pthread_mutex_init(&hSimCountMute, nullptr);
-#endif
+	m_SimCount.store(0);
 }
 
 void CSimTime::ReleaseInstance()
@@ -122,9 +82,6 @@ void CSimTime::ReleaseInstance()
 
 CSimTime::~CSimTime()
 {
-	#ifdef _WIN32
-    CloseHandle(hSimCountMute);
-#else
-    pthread_mutex_destroy(&hSimCountMute);
-#endif
+	m_stop = true;
+	m_thread.join();
 }

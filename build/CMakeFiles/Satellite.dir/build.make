@@ -265,9 +265,22 @@ CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Satellite/Satellite.cpp -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.s
 
+CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o: CMakeFiles/Satellite.dir/flags.make
+CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o: ../src/Satellite/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o -c /home/amadeus/Satellite/src/Satellite/main.cpp
+
+CMakeFiles/Satellite.dir/src/Satellite/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Satellite/main.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Satellite/main.cpp > CMakeFiles/Satellite.dir/src/Satellite/main.cpp.i
+
+CMakeFiles/Satellite.dir/src/Satellite/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Satellite/main.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Satellite/main.cpp -o CMakeFiles/Satellite.dir/src/Satellite/main.cpp.s
+
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o: ../src/SatelliteMath/BaseMath.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cpp
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.s: cmake_force
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o: ../src/SatelliteMath/Dcm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/Dcm.cpp
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.i: cmake_force
@@ -293,7 +306,7 @@ CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.s: cmake_force
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o: ../src/SatelliteMath/EulerAgl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cpp
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.i: cmake_force
@@ -306,7 +319,7 @@ CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.s: cmake_force
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o: ../src/SatelliteMath/Quaternions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o -c /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cpp
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.i: cmake_force
@@ -316,19 +329,6 @@ CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.i: cmake_force
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cpp -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.s
-
-CMakeFiles/Satellite.dir/src/main.cpp.o: CMakeFiles/Satellite.dir/flags.make
-CMakeFiles/Satellite.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Satellite.dir/src/main.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/main.cpp.o -c /home/amadeus/Satellite/src/main.cpp
-
-CMakeFiles/Satellite.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/main.cpp > CMakeFiles/Satellite.dir/src/main.cpp.i
-
-CMakeFiles/Satellite.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/main.cpp -o CMakeFiles/Satellite.dir/src/main.cpp.s
 
 # Object files for target Satellite
 Satellite_OBJECTS = \
@@ -348,11 +348,11 @@ Satellite_OBJECTS = \
 "CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.o" \
 "CMakeFiles/Satellite.dir/src/General/SimTime.cpp.o" \
 "CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.o" \
+"CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o" \
 "CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o" \
 "CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o" \
 "CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o" \
-"CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o" \
-"CMakeFiles/Satellite.dir/src/main.cpp.o"
+"CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o"
 
 # External object files for target Satellite
 Satellite_EXTERNAL_OBJECTS =
@@ -373,11 +373,11 @@ Satellite: CMakeFiles/Satellite.dir/src/General/InfluxDB.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/General/IniConfig.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/General/SimTime.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/Satellite/Satellite.cpp.o
+Satellite: CMakeFiles/Satellite.dir/src/Satellite/main.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cpp.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cpp.o
-Satellite: CMakeFiles/Satellite.dir/src/main.cpp.o
 Satellite: CMakeFiles/Satellite.dir/build.make
 Satellite: ../deps/MySofa/libsofaDLL.so
 Satellite: CMakeFiles/Satellite.dir/link.txt

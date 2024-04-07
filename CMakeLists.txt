@@ -21,12 +21,12 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE 
     ${CMAKE_SOURCE_DIR}/deps # 项目的外部依赖目录
     ${CMAKE_SOURCE_DIR}/deps/MySofa # 项目的外部依赖目录
-    ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/include/Astro
-    ${CMAKE_SOURCE_DIR}/include/Componet
-    ${CMAKE_SOURCE_DIR}/include/General
-    ${CMAKE_SOURCE_DIR}/include/Satellite
-    ${CMAKE_SOURCE_DIR}/include/SatelliteMath
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/Astro
+    ${CMAKE_SOURCE_DIR}/src/Componet
+    ${CMAKE_SOURCE_DIR}/src/General
+    ${CMAKE_SOURCE_DIR}/src/Satellite
+    ${CMAKE_SOURCE_DIR}/src/SatelliteMath
 )
 
 # 如果找到了Eigen3库，则链接到项目
