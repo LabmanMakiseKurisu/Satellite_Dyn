@@ -1,680 +1,722 @@
 [
   {
     "name": "积分时长",
-    "tag": "SIM0001",
+    "field": "SIM0001",
     "unit": "sec",
     "type": "number",
     "default": 0.1
   },
   {
     "name": "加速倍率",
-    "tag": "SIM0002",
+    "field": "SIM0002",
     "unit": null,
     "type": "number",
     "default": 1
   },
   {
     "name": "星历utc时间戳",
-    "tag": "SIM0003",
+    "field": "SIM0003",
     "unit": "ms",
     "type": "number",
     "default": 1640995200
   },
   {
     "name": "惯性系位置X轴",
-    "tag": "SIM0101",
+    "field": "SIM0101",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系位置Y轴",
-    "tag": "SIM0102",
+    "field": "SIM0102",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系位置Z轴",
-    "tag": "SIM0103",
+    "field": "SIM0103",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系速度X轴",
-    "tag": "SIM0104",
+    "field": "SIM0104",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系速度Y轴",
-    "tag": "SIM0105",
+    "field": "SIM0105",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系速度Z轴",
-    "tag": "SIM0106",
+    "field": "SIM0106",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "地固系位置X轴",
-    "tag": "SIM0107",
+    "field": "SIM0107",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "地固系位置Y轴",
-    "tag": "SIM0108",
+    "field": "SIM0108",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "地固系位置Z轴",
-    "tag": "SIM0109",
+    "field": "SIM0109",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "地固系速度X轴",
-    "tag": "SIM0110",
+    "field": "SIM0110",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "地固系速度Y轴",
-    "tag": "SIM0111",
+    "field": "SIM0111",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "地固系速度Z轴",
-    "tag": "SIM0112",
+    "field": "SIM0112",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "地理经度",
-    "tag": "SIM0113",
+    "field": "SIM0113",
     "unit": "deg",
     "type": "number",
     "default": 0
   },
   {
     "name": "地理纬度",
-    "tag": "SIM0114",
+    "field": "SIM0114",
     "unit": "deg",
     "type": "number",
     "default": 0
   },
   {
     "name": "地理高度",
-    "tag": "SIM0115",
+    "field": "SIM0115",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系到本体系四元数W",
-    "tag": "SIM0201",
+    "field": "SIM0201",
     "unit": null,
     "type": "number",
     "default": 1.0
   },
   {
     "name": "惯性系到本体系四元数X",
-    "tag": "SIM0202",
+    "field": "SIM0202",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系到本体系四元数Y",
-    "tag": "SIM0203",
+    "field": "SIM0203",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系到本体系四元数Z",
-    "tag": "SIM0204",
+    "field": "SIM0204",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "轨道系到本体系四元数W",
-    "tag": "SIM0205",
+    "field": "SIM0205",
     "unit": null,
     "type": "number",
     "default": 1.0
   },
   {
     "name": "轨道系到本体系四元数X",
-    "tag": "SIM0206",
+    "field": "SIM0206",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "轨道系到本体系四元数Y",
-    "tag": "SIM0207",
+    "field": "SIM0207",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "轨道系到本体系四元数Z",
-    "tag": "SIM0208",
+    "field": "SIM0208",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系角速度X轴",
-    "tag": "SIM0209",
+    "field": "SIM0209",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系角速度Y轴",
-    "tag": "SIM0210",
+    "field": "SIM0210",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系角速度Z轴",
-    "tag": "SIM0211",
+    "field": "SIM0211",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系单位太阳矢量X轴",
-    "tag": "SIM0301",
+    "field": "SIM0301",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系单位太阳矢量Y轴",
-    "tag": "SIM0302",
+    "field": "SIM0302",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "惯性系单位太阳矢量Z轴",
-    "tag": "SIM0303",
+    "field": "SIM0303",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系单位太阳矢量X轴",
-    "tag": "SIM0304",
+    "field": "SIM0304",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系单位太阳矢量Y轴",
-    "tag": "SIM0305",
+    "field": "SIM0305",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系单位太阳矢量Z轴",
-    "tag": "SIM0306",
+    "field": "SIM0306",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "北东地系地磁场强度X轴",
-    "tag": "SIM0307",
+    "field": "SIM0307",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "北东地系地磁场强度Y轴",
-    "tag": "SIM0308",
+    "field": "SIM0308",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "北东地系地磁场强度Z轴",
-    "tag": "SIM0309",
+    "field": "SIM0309",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系地磁场强度X轴",
-    "tag": "SIM0310",
+    "field": "SIM0310",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系地磁场强度Y轴",
-    "tag": "SIM0311",
+    "field": "SIM0311",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "本体系地磁场强度Z轴",
-    "tag": "SIM0312",
+    "field": "SIM0312",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "陀螺数量",
-    "tag": "SIM0400",
+    "field": "SIM0400",
     "unit": null,
     "type": "number",
     "default": 2
   },
   {
     "name": "陀螺1X轴表头数值",
-    "tag": "SIM0401",
+    "field": "SIM0401",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "陀螺1Y轴表头数值",
-    "tag": "SIM0402",
+    "field": "SIM0402",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "陀螺1Z轴表头数值",
-    "tag": "SIM0403",
+    "field": "SIM0403",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "陀螺2X轴表头数值",
-    "tag": "SIM0404",
+    "field": "SIM0404",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "陀螺2Y轴表头数值",
-    "tag": "SIM0405",
+    "field": "SIM0405",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "陀螺2Z轴表头数值",
-    "tag": "SIM0406",
+    "field": "SIM0406",
     "unit": "deg/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏数量",
-    "tag": "SIM0500",
+    "field": "SIM0500",
     "unit": null,
     "type": "number",
     "default": 2
   },
   {
     "name": "星敏1四元数W",
-    "tag": "SIM0501",
+    "field": "SIM0501",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏1四元数X",
-    "tag": "SIM0502",
+    "field": "SIM0502",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏1四元数Y",
-    "tag": "SIM0503",
+    "field": "SIM0503",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏1四元数Z",
-    "tag": "SIM0504",
+    "field": "SIM0504",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏2四元数W",
-    "tag": "SIM0505",
+    "field": "SIM0505",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏2四元数X",
-    "tag": "SIM0506",
+    "field": "SIM0506",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏2四元数Y",
-    "tag": "SIM0507",
+    "field": "SIM0507",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "星敏2四元数Z",
-    "tag": "SIM0508",
+    "field": "SIM0508",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "太敏数量",
-    "tag": "SIM0600",
+    "field": "SIM0600",
     "unit": null,
     "type": "number",
     "default": 2
   },
   {
     "name": "太敏1单位太阳矢量X轴",
-    "tag": "SIM0601",
+    "field": "SIM0601",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "太敏1单位太阳矢量Y轴",
-    "tag": "SIM0602",
+    "field": "SIM0602",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "太敏1单位太阳矢量Z轴",
-    "tag": "SIM0603",
+    "field": "SIM0603",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "太敏2单位太阳矢量X轴",
-    "tag": "SIM0604",
+    "field": "SIM0604",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "太敏2单位太阳矢量Y轴",
-    "tag": "SIM0605",
+    "field": "SIM0605",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "太敏2单位太阳矢量Z轴",
-    "tag": "SIM0606",
+    "field": "SIM0606",
     "unit": null,
     "type": "number",
     "default": 0
   },
   {
     "name": "磁强计数量",
-    "tag": "SIM0700",
+    "field": "SIM0700",
     "unit": null,
     "type": "number",
     "default": 2
   },
   {
     "name": "磁强计1X轴",
-    "tag": "SIM0701",
+    "field": "SIM0701",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "磁强计1Y轴",
-    "tag": "SIM0702",
+    "field": "SIM0702",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "磁强计1Z轴",
-    "tag": "SIM0703",
+    "field": "SIM0703",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "磁强计2X轴",
-    "tag": "SIM0704",
+    "field": "SIM0704",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "磁强计2Y轴",
-    "tag": "SIM0705",
+    "field": "SIM0705",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "磁强计2Z轴",
-    "tag": "SIM0706",
+    "field": "SIM0706",
     "unit": "Gauss",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS数量",
-    "tag": "SIM0800",
+    "field": "SIM0800",
     "unit": null,
     "type": "number",
     "default": 2
   },
   {
     "name": "GNSS1位置X轴",
-    "tag": "SIM0801",
+    "field": "SIM0801",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS1位置Y轴",
-    "tag": "SIM0802",
+    "field": "SIM0802",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS1位置Z轴",
-    "tag": "SIM0803",
+    "field": "SIM0803",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS1速度X轴",
-    "tag": "SIM0804",
+    "field": "SIM0804",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS1速度Y轴",
-    "tag": "SIM0805",
+    "field": "SIM0805",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS1速度Z轴",
-    "tag": "SIM0806",
+    "field": "SIM0806",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS2位置X轴",
-    "tag": "SIM0807",
+    "field": "SIM0807",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS2位置Y轴",
-    "tag": "SIM0808",
+    "field": "SIM0808",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS2位置Z轴",
-    "tag": "SIM0809",
+    "field": "SIM0809",
     "unit": "m",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS2速度X轴",
-    "tag": "SIM0810",
+    "field": "SIM0810",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS2速度Y轴",
-    "tag": "SIM0811",
+    "field": "SIM0811",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "GNSS2速度Z轴",
-    "tag": "SIM0812",
+    "field": "SIM0812",
     "unit": "m/s",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮数量",
-    "tag": "SIM0900",
+    "field": "SIM0900",
     "unit": null,
     "type": "number",
     "default": 4
   },
   {
     "name": "飞轮1转速",
-    "tag": "SIM0901",
+    "field": "SIM0901",
     "unit": "RPM",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮1力矩",
-    "tag": "SIM0902",
+    "field": "SIM0902",
     "unit": "Nm",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮2转速",
-    "tag": "SIM0903",
+    "field": "SIM0903",
     "unit": "RPM",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮2力矩",
-    "tag": "SIM0904",
+    "field": "SIM0904",
     "unit": "Nm",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮3转速",
-    "tag": "SIM0905",
+    "field": "SIM0905",
     "unit": "RPM",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮3力矩",
-    "tag": "SIM0906",
+    "field": "SIM0906",
     "unit": "Nm",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮4转速",
-    "tag": "SIM0907",
+    "field": "SIM0907",
     "unit": "RPM",
     "type": "number",
     "default": 0
   },
   {
     "name": "飞轮4力矩",
-    "tag": "SIM0908",
+    "field": "SIM0908",
     "unit": "Nm",
     "type": "number",
     "default": 0
   },
   {
     "name": "姿态控制模式",
-    "tag": "SIM1001",
+    "field": "SIM1001",
     "unit": null,
     "type": "string",
     "default": "earth-point"
   },
   {
     "name": "控制力矩X轴",
-    "tag": "SIM1002",
+    "field": "SIM1002",
     "unit": "Nm",
     "type": "number",
     "default": 0
   },
   {
     "name": "控制力矩Y轴",
-    "tag": "SIM1003",
+    "field": "SIM1003",
     "unit": "Nm",
     "type": "number",
     "default": 0
   },
   {
     "name": "控制力矩Z轴",
-    "tag": "SIM1004",
+    "field": "SIM1004",
     "unit": "Nm",
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kp系数X轴",
+    "field": "SIM1005",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kp系数Y轴",
+    "field": "SIM1006",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kp系数Z轴",
+    "field": "SIM1007",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kd系数X轴",
+    "field": "SIM1008",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kd系数Y轴",
+    "field": "SIM1009",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kd系数Z轴",
+    "field": "SIM1010",
+    "unit": null,
     "type": "number",
     "default": 0
   }

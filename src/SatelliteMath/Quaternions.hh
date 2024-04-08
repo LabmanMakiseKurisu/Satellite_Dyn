@@ -2,13 +2,14 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:42
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 19:49:35
+ * @LastEditTime: 2024-04-08 17:52:32
  * @FilePath: /Satellite/src/SatelliteMath/Quaternions.hh
  * @Description: 
  */
 #pragma once
 #include"BaseMath.hh"
-#include"AllHead.hh"
+class CEulerAgl;
+class CDcm;
 
 class Quat
 {

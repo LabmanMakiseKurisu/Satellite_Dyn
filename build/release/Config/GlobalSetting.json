@@ -5,7 +5,8 @@
         "User": "root",
         "Password": "root",
         "DBName": "satellite",
-        "Measurement": "Amadeus"
+        "Measurement": "Amadeus",
+        "Interval":1
     },
     "Satellite": {
         "SatelliteTime": 1640966400000,
@@ -82,6 +83,12 @@
         "Nums": 3,
         "InstallVector1": "1,0,0",
         "InstallVector2": "0,1,0",
-        "InstallVector3": "0,0,1"
+        "InstallVector3": "0,0,1",
+        "Inertia": 0.064,
+        "TimeCof": 1,
+        "MaxSpeed": 628,
+        "MaxTref": 0.5,
+        "Kp": 1.0,
+        "Ki": 1.0
     }
 }

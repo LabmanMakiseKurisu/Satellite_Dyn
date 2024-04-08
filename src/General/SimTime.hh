@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:53:10
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 12:19:52
+ * @LastEditTime: 2024-04-08 15:57:45
  * @FilePath: /Satellite/src/General/SimTime.hh
  * @Description: 
  */
@@ -14,14 +14,12 @@ class CSimTime
 {
 public:
 	static CSimTime* GetInstance();
-	void Init(double Delta, int Rate);
+	void Init(double* Delta, int* Rate);
 	bool check();
-	void SetRate(int Rate) { m_Rate = Rate; }
-	void SetDelta(double Delta) { m_Delta = Delta; }
 
 private:
-	double m_Delta;//积分时长
-	int m_Rate;//加速倍率
+	double* m_Delta;//积分时长
+	int* m_Rate;//加速倍率
 	std::atomic<int> m_SimCount;
 	std::thread m_thread;
 	bool m_stop;

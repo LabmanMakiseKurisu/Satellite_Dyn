@@ -1,9 +1,13 @@
 #include"Attitude.hh"
 #include"InfluxDB.hh"
 #include"GlobalSetting.hh"
-
-
-
+#include"Com_Schedule.hh"
+#include"Quaternions.hh"
+#include"Dcm.hh"
+#include"EulerAgl.hh"
+#include"Quaternions.hh"
+#include "Orbit.hh"
+#include "Flywheel.hh"
 Eigen::Vector3d AttDynamics(Eigen::Vector3d Omega_b, Eigen::Matrix3d& SatInaMat, Eigen::Vector3d& Hw, Eigen::Vector3d& Tau_s)
 {
     Eigen::Vector3d tmp = Omega_b.cross(SatInaMat * Omega_b + Hw);
@@ -12,7 +16,7 @@ Eigen::Vector3d AttDynamics(Eigen::Vector3d Omega_b, Eigen::Matrix3d& SatInaMat,
 }
 
 
-//���ٶȺ�ʱ�����������Ԫ��
+//
 Quat PlstToDeltaQuat(const Eigen::Vector3d Omega_b, double OfstSec)
 {
     double PlstVal = Omega_b.norm();
@@ -57,7 +61,7 @@ void CAttitude::RenewAio(COrbit& Orbit)
     Aio = CAttitude::GetAio(Orbit.J2000Inertial);
 }
 
-void CAttitude::StateRenew(double Ts, COrbit& Orbit, CComponet* pComponet)
+void CAttitude::StateRenew(double Ts, COrbit& Orbit, Com_Schedule* pComponet)
 {
 
     AttitudeKinematics(Ts);
@@ -66,10 +70,10 @@ void CAttitude::StateRenew(double Ts, COrbit& Orbit, CComponet* pComponet)
     TotalTorque << 0, 0, 0;
     for (size_t i = 0; i < pComponet->FlywheelNums; i++)
     {
-        //������ֱ���ϵ�µĶ���
-        WheelMomentum_b += pComponet->Wheels[i].InstallVet * pComponet->Wheels[i].Momentum;
-        //������ֱ���ϵ�µ�����
-        TotalTorque -= pComponet->Wheels[i].InstallVet * pComponet->Wheels[i].Torque;
+        //
+        WheelMomentum_b += pComponet->Wheels[i]->GetInsVet()*pComponet->Wheels[i]->GetMomentum();
+        //
+        TotalTorque -= pComponet->Wheels[i]->GetInsVet()*pComponet->Wheels[i]->GetTorque();
     }
     AttitudeDynamicsRk4(Ts);
 
@@ -96,35 +100,40 @@ void CAttitude::Init(COrbit &Obt)
 
     RenewAio(Obt);
     Qob = Aio.ToQuat().QuatInv() * Qib;
+    m_DM = DataManager::GetInstance(); 
+    m_DM->Subscribe(this);
 }
 
-void CAttitude::record(CInfluxDB& DB) {
-    // ����ϵ������ϵ��Ԫ��
-    DB.addKeyValue("SIM029", Qib.QuatData[0]);
-    DB.addKeyValue("SIM030", Qib.QuatData[1]);
-    DB.addKeyValue("SIM031", Qib.QuatData[2]);
-    DB.addKeyValue("SIM032", Qib.QuatData[3]);
-    // ���ϵ������ϵ��Ԫ��
-    DB.addKeyValue("SIM033", Qob.QuatData[0]);
-    DB.addKeyValue("SIM034", Qob.QuatData[1]);
-    DB.addKeyValue("SIM035", Qob.QuatData[2]);
-    DB.addKeyValue("SIM036", Qob.QuatData[3]);
-    // ����ϵ���ٶ�
-    DB.addKeyValue("SIM037", Omega_b.x() * RAD2DEG);
-    DB.addKeyValue("SIM038", Omega_b.y() * RAD2DEG);
-    DB.addKeyValue("SIM039", Omega_b.z() * RAD2DEG);
-
-
+void CAttitude::Submit()
+{
+    if (!m_DM)
+        return;
+    int index = 1;
+    for (int i = 0; i < 4; i++)
+    {
+        m_DM->add<double>(GetCode("SIM02",index), Qib.QuatData[i]);
+        index++;
+    }
+    for (int i = 0; i < 4; i++)
+    {
+        m_DM->add<double>(GetCode("SIM02",index), Qob.QuatData[i]);
+        index++;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        m_DM->add<double>(GetCode("SIM02",index), Omega_b[i]);
+        index++;
+    }
 }
 
 CDcm CAttitude::GetAio(const RV& InlRv)
 {
-    Eigen::Vector3d Pos = InlRv.Pos;//���ǵ�λ��ʸ��
-    Eigen::Vector3d Vel = InlRv.Vel;//���ǵ��ٶ�ʸ��
-    Eigen::Vector3d zo = Eigen::Vector3d::Zero() - Pos / Pos.norm();//ƫ���ᵥλʸ��
+    Eigen::Vector3d Pos = InlRv.Pos;//
+    Eigen::Vector3d Vel = InlRv.Vel;//
+    Eigen::Vector3d zo = Eigen::Vector3d::Zero() - Pos / Pos.norm();//
     Eigen::Vector3d y_tmp = Vel.cross(Pos);
-    Eigen::Vector3d yo = y_tmp / y_tmp.norm(); // �����ᵥλʸ��
-    Eigen::Vector3d xo = yo.cross(zo);//�����ᵥλʸ��
+    Eigen::Vector3d yo = y_tmp / y_tmp.norm(); // 
+    Eigen::Vector3d xo = yo.cross(zo);//
 
 
     CDcm Aio;

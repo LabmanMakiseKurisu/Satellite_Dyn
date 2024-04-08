@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 18:37:23
+ * @LastEditTime: 2024-04-08 18:59:11
  * @FilePath: /Satellite/src/Satellite/Satellite.cc
  * @Description: 
  */
@@ -13,74 +13,66 @@
 Satellite::Satellite() :Orbit(), Attitude(), AttController()
 {
 	GlobalSettings *pCfg = GlobalSettings::GetInstance();
-	SampleTime = pCfg->Get<double>("/Satellite/Delta");
-	SpeedTimes = pCfg->Get<int>("/Satellite/Rate");
+	m_Delta = pCfg->Get<double>("/Satellite/Delta");
+	m_Rate = pCfg->Get<int>("/Satellite/Rate");
 
 	SatelliteTime = pCfg->Get<int64_t>("/Satellite/SatelliteTime");
 
+}
+
+void Satellite::Init() {
 	Orbit.Init(SatelliteTime);
 
 	Attitude.Init(Orbit);
 
+	Env.Init();
+
 	Env.StateRenew(Attitude, Orbit, SatelliteTime);
+
+	AttController.Init();
 
 	AttController.workmode = CAttitudeController::EARTHPOINT;
 
-	pComponet = CComponet::GetInstance();
+	pComponet = Com_Schedule::GetInstance();
 	pComponet->Init(Attitude, Orbit, Env, AttController,SatelliteTime);
-}
 
-Satellite::Satellite(double Ts, int m_SpeedTimes):Satellite()
-{
-	SampleTime = Ts;
-	SpeedTimes = m_SpeedTimes;
+	m_DM = DataManager::GetInstance();
+	m_DM->Subscribe(this);
 }
-
 
 void Satellite::StateRenew()
 {
-	//????????
-	SatelliteTime += (int64_t)(SampleTime * 1e3);
+	//
+	SatelliteTime += (int64_t)(m_Delta * 1e3);
 
-	//??????????
+	//
 	AttController.TorqueRefRenew(pComponet);
 
-	//?????????????
-	Orbit.StateRenew(SampleTime, SatelliteTime);
+	//
+	Orbit.StateRenew(m_Delta, SatelliteTime);
 
-	//?????????????
-	Attitude.StateRenew(SampleTime, Orbit, pComponet);
+	//
+	Attitude.StateRenew(m_Delta, Orbit, pComponet);
 
-	//???????????
+	//
 	Env.StateRenew(Attitude, Orbit, SatelliteTime);
 
-	//???????????
-	pComponet->StateRenew(Attitude, Orbit, Env, AttController, SatelliteTime, SampleTime);
+	//
+	pComponet->StateRenew(SatelliteTime, AttController);
 
 }
-
-void Satellite::data2DB(CInfluxDB& DB, double Period)
+void Satellite::Submit()
 {
-	// -->Period???????????
-	if (DB.IsSend(Period)) {
-		DB.ResetStr2();
-		this->record(DB);
-		Orbit.record(DB);
-		Attitude.record(DB);
-		Env.record(DB);
-		pComponet->record(DB);
-		AttController.record(DB);
-		DB.sendUdp();
-	}
+	if (!m_DM)
+		return;
+	int index = 1;
+	m_DM->add<double>(GetCode("SIM00",index), m_Delta);
+	index++;
+	m_DM->add<int>(GetCode("SIM00",index), m_Rate);
+	index++;
+	m_DM->add<int64_t>(GetCode("SIM00",index), SatelliteTime);
+	index++;
 }
-
-void Satellite::record(CInfluxDB& DB)
-{
-	DB.addKeyValue("SIM001", SampleTime);
-	DB.addKeyValue("SIM002", SpeedTimes);
-	DB.addKeyValue("SIM003", SatelliteTime);
-}
-
 
 std::ostream& operator<<(std::ostream& _cout, const Satellite& Sat)
 {

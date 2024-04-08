@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 18:01:03
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 19:03:55
+ * @LastEditTime: 2024-04-08 19:24:20
  * @FilePath: /Satellite/src/General/InfluxDB.cc
  * @Description: 
  */
@@ -58,6 +58,7 @@ void DataManager::write()
 
 void DataManager::SendToInfluxDB()
 {
+    std::cout << "json:" << std::endl;
     // 创建一个客户端实例，连接到 InfluxDB
     httplib::Client cli(m_host.c_str(), m_port);
 
@@ -88,4 +89,12 @@ void DataManager::SendToInfluxDB()
             std::cerr << "Status code: " << res->status << std::endl;
         }
     }
+}
+
+std::string GetCode(std::string StartCode, int index) {
+    std::string Code = StartCode;
+    if (index < 10)
+        Code.append("0");
+    Code.append(std::to_string(index));
+    return Code;
 }

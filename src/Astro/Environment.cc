@@ -12,6 +12,12 @@ Environment::Environment()
 	SunVecBody << 0, 0, 0;
 }
 
+void Environment::Init()
+{
+	m_DM = DataManager::GetInstance();
+	m_DM->Subscribe(this);
+}
+
 Eigen::Matrix3d Environment::ECI2ECEF(const int64_t timestamp, const double deltaUT1, const double xp, const double yp)
 {
 	double tmpres[3][3];
@@ -156,30 +162,38 @@ void Environment::StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t t
 	GetNEDMag(Orbit, timestamp);
 	Eigen::Matrix3d Ane = Orbit.NED2ECEF();
 	Eigen::Vector3d ECEFMag = Ane * NEDMag;
-	//�ع�ϵ������ϵ
+	//
 	Eigen::Matrix3d  Aif = Environment::ECI2ECEF(timestamp);
-	Eigen::Vector3d ECIMag = Aif.inverse() * ECEFMag;\
-	//����ϵ������ϵ
+	Eigen::Vector3d ECIMag = Aif.inverse() * ECEFMag;
+	//
 	BodyMag = Attitude.Qib.ToDcm() * ECIMag;
 	SunPos(timestamp);
 	SunVecBody = Attitude.Qib.ToDcm() * SunVecInl;
 }
 
-void Environment::record(CInfluxDB& DB) {
-	// ����ϵ̫��ʸ��
-	DB.addKeyValue("SIM045", SunVecInl.x());
-	DB.addKeyValue("SIM046", SunVecInl.y());
-	DB.addKeyValue("SIM047", SunVecInl.z());
-	// ����ϵ̫��ʸ��
-	DB.addKeyValue("SIM048", SunVecBody.x());
-	DB.addKeyValue("SIM049", SunVecBody.y());
-	DB.addKeyValue("SIM050", SunVecBody.z());
-	// ������ϵ�شų�ǿ��
-	DB.addKeyValue("SIM051", T2GAUSS(NEDMag.x()));
-	DB.addKeyValue("SIM052", T2GAUSS(NEDMag.y()));
-	DB.addKeyValue("SIM053", T2GAUSS(NEDMag.z()));
-	// ����ϵ�شų�ǿ��
-	DB.addKeyValue("SIM054", T2GAUSS(BodyMag.x()));
-	DB.addKeyValue("SIM055", T2GAUSS(BodyMag.y()));
-	DB.addKeyValue("SIM056", T2GAUSS(BodyMag.z()));
+void Environment::Submit()
+{
+    if (!m_DM)
+        return;
+    int index = 1;
+	for (int i = 0; i < 3; i++)
+    {
+        m_DM->add<double>(GetCode("SIM03",index), SunVecInl[i]);
+        index++;
+    }
+	for (int i = 0; i < 3; i++)
+    {
+        m_DM->add<double>(GetCode("SIM03",index), SunVecBody[i]);
+        index++;
+    }
+	for (int i = 0; i < 3; i++)
+    {
+        m_DM->add<double>(GetCode("SIM03",index), T2GAUSS(NEDMag[i]));
+        index++;
+    }
+	for (int i = 0; i < 3; i++)
+    {
+        m_DM->add<double>(GetCode("SIM03",index), T2GAUSS(BodyMag[i]));
+        index++;
+    }
 }

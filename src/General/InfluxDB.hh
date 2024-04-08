@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 17:53:45
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 19:36:21
+ * @LastEditTime: 2024-04-08 18:56:08
  * @FilePath: /Satellite/src/General/InfluxDB.hh
  * @Description: 
  */
@@ -41,7 +41,7 @@ private:
     DataManager &operator=(const DataManager &) = delete;
     DataManager(DataManager &&) = delete;
     DataManager &operator=(DataManager &&) = delete;
-    void DataManager::SendToInfluxDB();
+    void SendToInfluxDB();
     static void ReleaseInstance();
     class DeleteHelper
     {
@@ -54,3 +54,5 @@ private:
     };
     static DeleteHelper helper;
 };
+
+std::string GetCode(std::string StartCode, int index);

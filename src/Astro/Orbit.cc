@@ -8,7 +8,7 @@ int COrbit::TwoBodRK4(double Ts)
 {
 	if (IsRV(J2000Inertial) == false)
 	{
-		printf("���RV���Ϸ���R:%f(m) V:%f(m/s)\n", J2000Inertial.Pos.norm(), J2000Inertial.Vel.norm());
+		printf("R:%f(m) V:%f(m/s)\n", J2000Inertial.Pos.norm(), J2000Inertial.Vel.norm());
 		return -1;
 	}
 	Eigen::VectorXd RVState(6, 1);
@@ -30,10 +30,7 @@ int COrbit::TwoBodRK4(double Ts)
 
 void COrbit::Inl2Fix(const int64_t timestamp)
 {
-	//@brief: ����ϵλ���ٶ�ת�ع�ϵλ���ٶ�
-	//@para : timestamp: utcʱ���(ms) deltaUT1:UTC-UT1(s) xp,yp:����(rad)  rc2t:ת�ƾ�����
-	//@return : none
-	//@remark : �Ѳ���
+
 	Eigen::Matrix3d Aif;
 	Aif = Environment::ECI2ECEF(timestamp);
 	ECEFFix.Pos = Aif * J2000Inertial.Pos;
@@ -44,10 +41,7 @@ void COrbit::Inl2Fix(const int64_t timestamp)
 
 void COrbit::FixPos2LLA()
 {
-	//@brief: �ع�ϵ�������LLA
-	//@para : none
-	//@return : none
-	//@remark : �Ѳ���
+
 	double sqrt_x2y2 = SQRT(ECEFFix.Pos(0) * ECEFFix.Pos(0) + ECEFFix.Pos(1) * ECEFFix.Pos(1));
 	double e2 = 1.0 - (EARTH_POLAR_RADIUS * EARTH_POLAR_RADIUS) / (EARTH_EQUATORIAL_RADIUS * EARTH_EQUATORIAL_RADIUS);
 	double e_2 = (EARTH_EQUATORIAL_RADIUS * EARTH_EQUATORIAL_RADIUS) / (EARTH_POLAR_RADIUS * EARTH_POLAR_RADIUS) - 1.0;
@@ -69,10 +63,7 @@ void COrbit::FixPos2LLA()
 
 void COrbit::FixPos2LLR()
 {
-	//@brief: �ع�ϵ�������LLR
-	//@para : none
-	//@return : none
-	//@remark : �Ѳ���
+
 	LLR.Lng = ATAN2(ECEFFix.Pos(1), ECEFFix.Pos(0));
 	LLR.Lat = ATAN2(ECEFFix.Pos(2), SQRT(ECEFFix.Pos(0) * ECEFFix.Pos(0) + ECEFFix.Pos(1) * ECEFFix.Pos(1)));
 	LLR.Rds = ECEFFix.Pos.norm();
@@ -80,10 +71,7 @@ void COrbit::FixPos2LLR()
 
 Eigen::Matrix3d COrbit::NED2ECEF()
 {
-	//@brief: ���㱱����ϵ���ع�ϵ��ת�ƾ���
-	//@para : timestamp: utcʱ���(ms) deltaUT1:UTC-UT1(s) xp,yp:����(rad)  rc2t:ת�ƾ�����
-	//@return : none
-	/*��λ*/
+
 	Eigen::Matrix3d res;
 	Eigen::Matrix3d temres;
 	double sin_lng = sin(LLR.Lng);
@@ -119,6 +107,8 @@ void COrbit::Init(int64_t Timestamp)
 	Inl2Fix(Timestamp);
 	FixPos2LLR();
 	FixPos2LLA();
+	m_DM = DataManager::GetInstance();
+	m_DM->Subscribe(this);
 }
 
 std::ostream& operator<<(std::ostream& _cout, const RV& j2000)
@@ -128,26 +118,6 @@ std::ostream& operator<<(std::ostream& _cout, const RV& j2000)
 	return _cout;
 }
 
-void COrbit::record(CInfluxDB& DB) {
-	// ����ϵRV
-	DB.addKeyValue("SIM009", J2000Inertial.Pos.x());
-	DB.addKeyValue("SIM010", J2000Inertial.Pos.y());
-	DB.addKeyValue("SIM011", J2000Inertial.Pos.z());
-	DB.addKeyValue("SIM012", J2000Inertial.Vel.x());
-	DB.addKeyValue("SIM013", J2000Inertial.Vel.y());
-	DB.addKeyValue("SIM014", J2000Inertial.Vel.z());
-	// �ع�ϵRV
-	DB.addKeyValue("SIM015", ECEFFix.Pos.x());
-	DB.addKeyValue("SIM016", ECEFFix.Pos.y());
-	DB.addKeyValue("SIM017", ECEFFix.Pos.z());
-	DB.addKeyValue("SIM018", ECEFFix.Vel.x());
-	DB.addKeyValue("SIM019", ECEFFix.Vel.y());
-	DB.addKeyValue("SIM020", ECEFFix.Vel.z());
-	// ��������
-	DB.addKeyValue("SIM021", RAD_PI(LLA.Lng) * RAD2DEG);
-	DB.addKeyValue("SIM022", RAD_PI(LLA.Lat) * RAD2DEG);
-	DB.addKeyValue("SIM023", LLA.Alt);
-}
 
 Eigen::VectorXd COrbit::TwoBodAcc(const Eigen::VectorXd& RVState)
 {
@@ -171,3 +141,24 @@ Eigen::VectorXd COrbit::TwoBodAcc(const Eigen::VectorXd& RVState)
 	return RVStateAcc;
 }
 
+void COrbit::Submit()
+{
+    if (!m_DM)
+        return;
+    int index = 1;
+    for (int i = 0; i < 6; i++)
+    {
+        m_DM->add<double>(GetCode("SIM01",index), J2000Inertial[i]);
+        index++;
+    }
+    for (int i = 0; i < 6; i++)
+    {
+        m_DM->add<double>(GetCode("SIM01",index), ECEFFix[i]);
+        index++;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        m_DM->add<double>(GetCode("SIM01",index), LLA[i]);
+        index++;
+    }
+}

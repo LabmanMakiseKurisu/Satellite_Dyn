@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3 
+CXX_INCLUDES = -I/home/amadeus/Satellite/deps -I/home/amadeus/Satellite/deps/MySofa -I/home/amadeus/Satellite/deps/cpp-httplib -I/home/amadeus/Satellite/deps/nlohmann_json/single_include -I/home/amadeus/Satellite/src -I/home/amadeus/Satellite/src/Astro -I/home/amadeus/Satellite/src/Componet -I/home/amadeus/Satellite/src/Componet/Sensors -I/home/amadeus/Satellite/src/Componet/Actuators -I/home/amadeus/Satellite/src/General -I/home/amadeus/Satellite/src/Satellite -I/home/amadeus/Satellite/src/SatelliteMath -I/home/amadeus/Satellite/deps/nlohmann_json/include -isystem /usr/local/include/eigen3 
 

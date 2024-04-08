@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 16:30:07
+ * @LastEditTime: 2024-04-08 15:58:05
  * @FilePath: /Satellite/src/General/SimTime.cc
  * @Description: 
  */
@@ -32,8 +32,8 @@ void CSimTime::Core() {
 		WaitTime = NexTime - NowTime;
 		if (WaitTime > 0)
 			SleepMs(static_cast<uint32_t>(WaitTime));
-		instance->m_SimCount.fetch_add(instance->m_Rate);
-		NexTime += static_cast<int64_t>(instance->m_Delta * 1e3);
+		instance->m_SimCount.fetch_add(*instance->m_Rate);
+		NexTime += static_cast<int64_t>(*instance->m_Delta * 1e3);
 	}
 }
 
@@ -46,7 +46,7 @@ CSimTime* CSimTime::GetInstance()
 
 
 
-void CSimTime::Init(double Delta, int Rate)
+void CSimTime::Init(double* Delta, int* Rate)
 {
 	CSimTime* instance = CSimTime::GetInstance();
 	instance->m_Delta = Delta;
@@ -67,7 +67,7 @@ bool CSimTime::check()
 		return false;
 }
 
-CSimTime::CSimTime():m_Delta(0.5), m_Rate(1),m_stop(false)
+CSimTime::CSimTime():m_Delta(nullptr), m_Rate(nullptr),m_stop(false)
 {
 	m_SimCount.store(0);
 }

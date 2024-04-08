@@ -1,57 +1,39 @@
+/*
+ * @Author: Amadeus
+ * @Date: 2024-04-08 11:19:26
+ * @LastEditors: Amadeus
+ * @LastEditTime: 2024-04-08 18:49:46
+ * @FilePath: /Satellite/src/Componet/Componet.hh
+ * @Description: 
+ */
 #pragma once
-#include "Gyro.hh"
-#include"Flywheel.hh"
-#include"MagSensor.hh"
-#include"StarSensor.hh"
-#include"SunSensor.hh"
-#include "GNSS.hh"
-#include"AllHead.hh"
-// 2023-12-22 14:47:10
+#include<iostream>
+#include"Subscriber.hh"
+#include"InfluxDB.hh"
 
-class CComponet
+template <typename T1 ,typename T2>
+class Componet : public ::ISubscriber
 {
-public:
-	static CComponet* GetInstance();
-	void Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitudeController& ACtrl, int64_t timestamp);
-	void StateRenew(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitudeController& ACtrl, int64_t timestamp, double Ts);
-	void record(CInfluxDB& DB);
-public:
-	size_t GyroNums;
-	size_t FlywheelNums;
-	size_t MagSensorNums;
-	size_t StarSensorNums;
-	size_t SunSensorNums;
-	size_t GnssNums;
-	std::vector<GyroScope> Gyros;
-	std::vector<Flywheel> Wheels;
-	std::vector<SunSensor> SunSensors;
-	std::vector<StarSensor> StarSensors;
-	std::vector<MagSensor> MagSensors;
-	std::vector<GNSS> GNSSs;
-private:
-	static inline CComponet* m_instance{ NULL };
+protected:
+    T1 *source;//数据源
+    T2 Data; // ֵ数据
+    int64_t LastRenewTime;//上次更新时间
+    int id;//设备ID
+    int Fields;//字段数
+    std::string StartCode;//起始码
 
-	CComponet();
-	~CComponet();
-	CComponet(const CComponet& _CComponet) = delete;
-	CComponet& operator=(const CComponet& _CComponet) = delete;
-	Eigen::VectorXd WheelsTrefCal(Eigen::Vector3d& TrefBody);
-
-	static void ReleaseInstance();
-	class DeleteHelper
-	{
-	public:
-		DeleteHelper() = default;
-		~DeleteHelper()
-		{
-			ReleaseInstance();
-		}
-	};
-	static DeleteHelper helper;
+public:
+    Componet(T1 *_s, int64_t timestamp, int _id, int _size, std::string _StartCode)
+    {
+        source = _s;
+        LastRenewTime = timestamp;
+        id = _id;
+        Fields = _size;
+        StartCode = _StartCode;
+        m_DM = DataManager::GetInstance();
+    }
+    virtual ~Componet() {}
+    virtual void Init(int64_t timestamp) = 0;
+    virtual void StateRenew(int64_t NowTime) = 0;
+    const T2 &GetData() const { return Data; }
 };
-
-//��Componet��Ĺ��캯��������ɸ����������Ͳ����ĳ�ʼ��
-//��Componet���Init��������ɸ������������ĳ�ʼ��
-//��Componet���StateRenew��������ɸ����������ݸ���
-
-

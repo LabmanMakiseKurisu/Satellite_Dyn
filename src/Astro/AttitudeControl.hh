@@ -1,9 +1,23 @@
+/*
+ * @Author: Amadeus
+ * @Date: 2024-04-07 11:20:01
+ * @LastEditors: Amadeus
+ * @LastEditTime: 2024-04-08 18:17:34
+ * @FilePath: /Satellite/src/Astro/AttitudeControl.hh
+ * @Description: 
+ */
 #pragma once
 #include"BaseMath.hh"
-#include"AllHead.hh"
+#include"Subscriber.hh"
+class GyroScope;
+class SunSensor;
+class StarSensor;
+class MagSensor;
+class GNSS;
+class Flywheel;
+class Com_Schedule;
 
-
-class CAttitudeController
+class CAttitudeController: public ::ISubscriber
 {
 public:
 	enum Mode
@@ -12,26 +26,28 @@ public:
 		SUNPOINT,
 		EARTHPOINT
 	};
-	Mode workmode;//��̬����ģʽ
-	Eigen::Vector3d TorqueRef;//�ο�����Nm
-	Eigen::Matrix3d Kp;//������ϵ��
-	Eigen::Matrix3d Kd;//������ϵ��
-	double MaxTorque;//�������
+	Mode workmode;//
+	Eigen::Vector3d TorqueRef;//Nm
+	Eigen::Matrix3d Kp;//
+	Eigen::Matrix3d Kd;//
+	double MaxTorque;//
 public:
 	CAttitudeController();
 
+	void Init();
 
-	void record(CInfluxDB& DB);
-	Eigen::Vector3d TorqueRefRenew(CComponet* pCom);
+	Eigen::Vector3d TorqueRefRenew(Com_Schedule* pCom);
+
+	virtual void Submit() override;
 private:
 
-	//@brief: �������������
+	//@brief: 
 	void RateDamping(const GyroScope& _Gyro);
 
-	//@brief: ������̬������
+	//@brief: 
 	void ToSunControl(const GyroScope& _Gyro, const SunSensor& _Sun);
 
-	//@brief: �Եز����붨������ʿ�����
+	//@brief: 
 	void ToEarthControl(const GyroScope& _Gyro, const StarSensor& _Star, const GNSS& _gnss);
 
 };

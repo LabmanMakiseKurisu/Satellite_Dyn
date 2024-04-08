@@ -36,6 +36,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/Astro
     ${CMAKE_SOURCE_DIR}/src/Componet
+    ${CMAKE_SOURCE_DIR}/src/Componet/Sensors
+    ${CMAKE_SOURCE_DIR}/src/Componet/Actuators
     ${CMAKE_SOURCE_DIR}/src/General
     ${CMAKE_SOURCE_DIR}/src/Satellite
     ${CMAKE_SOURCE_DIR}/src/SatelliteMath

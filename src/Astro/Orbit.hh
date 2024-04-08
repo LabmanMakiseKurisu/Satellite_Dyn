@@ -1,7 +1,8 @@
 #pragma once
 #include"BaseMath.hh"
-#include"AllHead.hh"
-// 2023-12-22 11:19:45
+#include"Subscriber.hh"
+
+
 struct RV
 {
     Eigen::Vector3d Pos;//m
@@ -36,13 +37,41 @@ struct LLA_t
     double Lat;//
     double Alt;//m
     LLA_t() : Lng(0), Lat(1.3963), Alt(0) {}
+    double operator[](size_t index)
+    {
+        switch (index)
+        {
+        case 0:
+            return Lng;
+        case 1:
+            return Lat;
+        case 2:
+            return Alt;
+        default:
+            return 0;
+        }
+    }
 };
 struct LLR_t
 {
-    double Lng;//���ľ��ȣ���λ����
-    double Lat;//����γ�ȣ���λ����
-    double Rds;//���İ뾶����λm
+    double Lng;//
+    double Lat;//
+    double Rds;//m
     LLR_t() : Lng(0), Lat(1.3951), Rds(6357400) {}
+    double operator[](size_t index)
+    {
+        switch (index)
+        {
+        case 0:
+            return Lng;
+        case 1:
+            return Lat;
+        case 2:
+            return Rds;
+        default:
+            return 0;
+        }
+    }
 };
 
 struct OrbitElement
@@ -78,7 +107,7 @@ struct OrbitElement
     }
 };
 
-class COrbit
+class COrbit: public ::ISubscriber
 {
 private:
     bool IsRV(RV& rv)
@@ -92,55 +121,41 @@ private:
     }
 
 public:
-    RV J2000Inertial;//����ϵRV
-    RV ECEFFix;//�ع�ϵRV
-    OrbitElement OrbitElements;//�������
-    LLA_t LLA;//��γ��
-    LLR_t LLR;//����γ�ȺͰ뾶
+    RV J2000Inertial;//
+    RV ECEFFix;//
+    OrbitElement OrbitElements;//
+    LLA_t LLA;//
+    LLR_t LLR;//
 
 
 public:
     COrbit(): J2000Inertial(), OrbitElements(), ECEFFix(), LLA(), LLR()
-    {
-        //��дһ���Թ���ϵ��ʼ���ķ�ʽ��
-
-    }
+    { }
 
     //
-    // brief  : ʹ�ù���ϵRV�Ͷ�����ƹ��
+    // brief  : 
     //
     int TwoBodRK4(double Ts);
 
-    //@brief: ����ϵλ���ٶ�ת�ع�ϵλ���ٶ�
-    //@para : timestamp: utcʱ���(ms) deltaUT1:UTC-UT1(s) xp,yp:����(rad)  rc2t:ת�ƾ�����
+    //@brief: 
+    //@para : timestamp: utc(ms) deltaUT1:UTC-UT1(s) xp,yp:(rad)  rc2t:
     //@return : none
-    //@remark : �Ѳ���
     void Inl2Fix(const int64_t timestamp);
 
-    //@brief: �ع�ϵ�������LLA
-    //@para : none
-    //@return : none
-    //@remark : �Ѳ���
+
     void FixPos2LLA();
 
-    //@brief: �ع�ϵ�������LLR
-    //@para : none
-    //@return : none
-    //@remark : �Ѳ���
+
     void FixPos2LLR();
 
-    //@brief: ���㱱����ϵ���ع�ϵ��ת�ƾ���
-    //@para : timestamp: utcʱ���(ms) deltaUT1:UTC-UT1(s) xp,yp:����(rad)  rc2t:ת�ƾ�����
-    //@return : none
-    //@remark : ��̬��Ա����ֻ�ܷ��ʾ�̬��Ա����
+    //@para : timestamp: utcʱ(ms) deltaUT1:UTC-UT1(s) xp,yp:(rad)  rc2t:
     Eigen::Matrix3d NED2ECEF();
 
     void StateRenew(double Ts, const int64_t timestamp);
 
     void Init(int64_t Timestamp);
 
-    // д�����ݿ�
-    void record(CInfluxDB& DB);
+    virtual  void Submit() override;
 private:
     Eigen::VectorXd TwoBodAcc(const Eigen::VectorXd& RVState);
 };

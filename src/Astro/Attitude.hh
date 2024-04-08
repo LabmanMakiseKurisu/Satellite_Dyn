@@ -2,57 +2,53 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:01
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 14:18:20
+ * @LastEditTime: 2024-04-08 18:48:40
  * @FilePath: /Satellite/src/Astro/Attitude.hh
  * @Description: 
  */
 #pragma once
 #include"BaseMath.hh"
-#include"AllHead.hh"
-#include"Quaternions.hh"
+#include"Subscriber.hh"
 #include"Dcm.hh"
 #include"EulerAgl.hh"
-#include "Orbit.hh"
+#include"Quaternions.hh"
+class Com_Schedule;
+class COrbit;
+struct RV;
 
-class CAttitude
+class CAttitude : public ::ISubscriber
 {
 public:
-
-	Eigen::Vector3d Omega_b;//����ϵ���ٶȣ���λrad/s
-	CDcm Aio;//����ϵת���ϵת�ƾ���
-	Quat Qib;//����ϵ������ϵ��Ԫ��
-	Quat Qob;//���ϵ������ϵ��Ԫ��
+	Eigen::Vector3d Omega_b;//rad/s
+	CDcm Aio;//
+	Quat Qib;//
+	Quat Qob;//
 private:
-	Eigen::Matrix3d SatInaMat;//����ϵ�������󣬵�λkgm2
-	Eigen::Vector3d WheelMomentum_b;//�������ڱ���ϵ�µĽǶ�������λNms
-	Eigen::Vector3d TotalTorque;//Tf���������أ�TB �����أ�Tw�����ֱ���ϵ���� TotalTorque=TB+Tf-Tw
+	Eigen::Matrix3d SatInaMat;//kgm2
+	Eigen::Vector3d WheelMomentum_b;//Nms
+	Eigen::Vector3d TotalTorque;//TotalTorque=TB+Tf-Tw
 public:
 	//
-	// brief  : Ĭ����̬�๹�캯��
+	// brief  : 
 	//
 	CAttitude();
-
 	//
-	// brief  : ��̬����ѧ���ƽ��ٶ�
+	// brief  : 
 	//
 	int AttitudeDynamicsRk4(double Ts);
-
 	//
-	// brief  : ��̬�˶�������Ԫ��
+	// brief  : 
 	//
 	int AttitudeKinematics(double Ts);
 
-	void StateRenew(double Ts, COrbit& Orbit, CComponet* pComponet);
+	void StateRenew(double Ts, COrbit& Orbit, Com_Schedule* pComponet);
 
 	void Init(COrbit& Obt);
 
-	// д�����ݿ�
-	void record(CInfluxDB& DB);
+	virtual void Submit() override;
 
 	static CDcm GetAio(const RV& InlRv);
 private:
-	Eigen::Vector3d LastOmega_b;//��һ�ĵı���ϵ���ٶȣ���λrad/s
+	Eigen::Vector3d LastOmega_b;//rad/s
 	void RenewAio(COrbit& Orbit);
 };
-
-

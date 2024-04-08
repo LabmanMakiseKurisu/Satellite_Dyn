@@ -677,5 +677,47 @@
     "unit": "Nm",
     "type": "number",
     "default": 0
+  },
+  {
+    "name": "姿态控制Kp系数X轴",
+    "field": "SIM1005",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kp系数Y轴",
+    "field": "SIM1006",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kp系数Z轴",
+    "field": "SIM1007",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kd系数X轴",
+    "field": "SIM1008",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kd系数Y轴",
+    "field": "SIM1009",
+    "unit": null,
+    "type": "number",
+    "default": 0
+  },
+  {
+    "name": "姿态控制Kd系数Z轴",
+    "field": "SIM1010",
+    "unit": null,
+    "type": "number",
+    "default": 0
   }
 ]

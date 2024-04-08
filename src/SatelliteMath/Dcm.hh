@@ -2,14 +2,15 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:42
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 19:52:39
+ * @LastEditTime: 2024-04-08 17:57:16
  * @FilePath: /Satellite/src/SatelliteMath/Dcm.hh
  * @Description: 
  */
 #pragma once
 #include"BaseMath.hh"
-#include"AllHead.hh"
 
+class CEulerAgl;
+class Quat;
 class CDcm
 {
 public:

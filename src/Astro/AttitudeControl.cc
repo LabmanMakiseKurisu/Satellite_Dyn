@@ -1,12 +1,17 @@
 #include "AttitudeControl.hh"
 #include"Dcm.hh"
 #include"Quaternions.hh"
-//#include"Orbit.hh"
 #include"Attitude.hh"
-#include"Componet.hh"
 #include "Environment.hh"
 #include"InfluxDB.hh"
-
+#include "Com_Schedule.hh"
+#include "Gyro.hh"
+#include "SunSensor.hh"
+#include "StarSensor.hh"
+#include "MagSensor.hh"
+#include "GNSS.hh"
+#include "Flywheel.hh"
+using AttCtrl = CAttitudeController;
 CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
 {
 	TorqueRef << 0, 0, 0;
@@ -15,24 +20,29 @@ CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
 	MaxTorque = 0.08;
 }
 
-Eigen::Vector3d CAttitudeController::TorqueRefRenew(CComponet* pCom)
+void CAttitudeController::Init() {
+	m_DM = DataManager::GetInstance();
+	m_DM->Subscribe(this);
+}
+
+Eigen::Vector3d CAttitudeController::TorqueRefRenew(Com_Schedule* pCom)
 {
 	switch (workmode)
 	{
 	case RATEDAMP:
 	{
-		RateDamping(pCom->Gyros[0]);
+		RateDamping(*pCom->Gyros[0]);
 	}
 	break;
 	case SUNPOINT:
 	{
-		ToSunControl(pCom->Gyros[0], pCom->SunSensors[0]);
+		ToSunControl(*pCom->Gyros[0], *pCom->SunSensors[0]);
 	}
 	break;
 	case EARTHPOINT:
 	{
 
-		ToEarthControl(pCom->Gyros[0], pCom->StarSensors[0], pCom->GNSSs[0]);
+		ToEarthControl(*(pCom->Gyros[0]), *(pCom->StarSensors[0]), *pCom->GNSSs[0]);
 	}
 	break;
 	default:
@@ -45,7 +55,7 @@ Eigen::Vector3d CAttitudeController::TorqueRefRenew(CComponet* pCom)
 void CAttitudeController::RateDamping(const GyroScope& _Gyro)
 {
 
-	Eigen::Vector3d Tcontrol = -Kp * _Gyro.InstallMatrix.inverse() * DEG2RAD * _Gyro.Data;
+	Eigen::Vector3d Tcontrol = -Kp * _Gyro.GetInstallMatrix().inverse() * DEG2RAD * _Gyro.GetData();
 	for (int i = 0; i < 3; i++)
 	{
 		Tcontrol[i] = LIMIT(Tcontrol[i], -MaxTorque, MaxTorque);
@@ -53,18 +63,18 @@ void CAttitudeController::RateDamping(const GyroScope& _Gyro)
 	TorqueRef = Tcontrol;
 }
 
-//���ղ����붨����������
+
 void CAttitudeController::ToSunControl(const GyroScope& _Gyro, const SunSensor& _Sun)
 {
-	Eigen::Vector3d Wbi = _Gyro.InstallMatrix.inverse() * DEG2RAD * _Gyro.Data;
+	Eigen::Vector3d Wbi = _Gyro.GetInstallMatrix().inverse() * DEG2RAD * _Gyro.GetData();
 
-	//�ο���
+
 	Eigen::Vector3d Wref(0, 0, 0.1 * DEG2RAD);
 	Eigen::Vector3d Rb(0, 0, 1);
-	Eigen::Vector3d _SunPos = _Sun.InstallMatrix.inverse() * _Sun.Data;
-	//�������ؼ���
+	Eigen::Vector3d _SunPos = _Sun.GetInstallMatrix().inverse() * _Sun.GetData();
+	//
 	Eigen::Vector3d Tcontrol = -Kp * _SunPos.cross(Rb) + Kd * (Eigen::Vector3d::Zero() - Wbi);
-	//�޷�����
+	//
 	for (int i = 0; i < 3; i++)
 	{
 		Tcontrol[i] = LIMIT(Tcontrol[i], -MaxTorque, MaxTorque);
@@ -72,36 +82,39 @@ void CAttitudeController::ToSunControl(const GyroScope& _Gyro, const SunSensor& 
 	TorqueRef = Tcontrol;
 }
 
-//�Եز����붨����������
+//
 void CAttitudeController::ToEarthControl(const GyroScope& _Gyro, const StarSensor& _Star, const GNSS& _gnss)
 {
-	Eigen::Vector3d Wbi = _Gyro.InstallMatrix.inverse() * DEG2RAD * _Gyro.Data;
-	Quat Qib = _Star.Data * _Star.InstallMatrix.ToQuat();
+	Eigen::Vector3d Wbi = _Gyro.GetInstallMatrix().inverse() * DEG2RAD * _Gyro.GetData();
+	Quat Qib = _Star.GetData() * _Star.InstallMatrix.ToQuat();
 
-	//����Aio
-	CDcm Aio = CAttitude::GetAio(_gnss.Data);
+	//Aio
+	CDcm Aio = CAttitude::GetAio(_gnss.GetData());
 
 	Quat Qoi = Aio.ToQuat().QuatInv();
 	Quat Qob = Qoi * Qib;
 	Eigen::Vector3d ImQob;
 	ImQob << Qob.QuatData[1], Qob.QuatData[2], Qob.QuatData[3];
 
-	//�������ؼ���
+	//
 	Eigen::Vector3d Tcontrol = -Kp * ImQob - Kd * Wbi;
-	//�޷�����
+	//
 	for (int i = 0; i < 3; i++)
 	{
 		Tcontrol[i] = LIMIT(Tcontrol[i], -MaxTorque, MaxTorque);
 	}
 	TorqueRef = Tcontrol;
 }
+void CAttitudeController::Submit()
+{
+    if (!m_DM)
+        return;
+    int index = 1;
+	m_DM->add<int>(GetCode("SIM10",index), workmode);
+	index++;
 
-void CAttitudeController::record(CInfluxDB& DB)
-{	
-	// ����ģʽ��InfluxDB��tag��ǩ���洢�ַ������ݣ�field�ֶΣ��洢��ֵ����
-	DB.addKeyValue("SIM093", workmode);
-	// ��������
-	DB.addKeyValue("SIM094", TorqueRef.x());
-	DB.addKeyValue("SIM095", TorqueRef.y());
-	DB.addKeyValue("SIM096", TorqueRef.z());
+	for(int i = 0; i < 3; i++) {
+		m_DM->add<double>(GetCode("SIM10",index), TorqueRef[i]);
+		index++;
+	}
 }

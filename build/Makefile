@@ -277,248 +277,194 @@ src/Astro/Orbit.cc.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.s
 .PHONY : src/Astro/Orbit.cc.s
 
-src/Componet/Componet.o: src/Componet/Componet.cc.o
+src/Componet/Actuators/Flywheel.o: src/Componet/Actuators/Flywheel.cc.o
 
-.PHONY : src/Componet/Componet.o
-
-# target to build an object file
-src/Componet/Componet.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cc.o
-.PHONY : src/Componet/Componet.cc.o
-
-src/Componet/Componet.i: src/Componet/Componet.cc.i
-
-.PHONY : src/Componet/Componet.i
-
-# target to preprocess a source file
-src/Componet/Componet.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cc.i
-.PHONY : src/Componet/Componet.cc.i
-
-src/Componet/Componet.s: src/Componet/Componet.cc.s
-
-.PHONY : src/Componet/Componet.s
-
-# target to generate assembly for a file
-src/Componet/Componet.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Componet.cc.s
-.PHONY : src/Componet/Componet.cc.s
-
-src/Componet/Flywheel.o: src/Componet/Flywheel.cc.o
-
-.PHONY : src/Componet/Flywheel.o
+.PHONY : src/Componet/Actuators/Flywheel.o
 
 # target to build an object file
-src/Componet/Flywheel.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.o
-.PHONY : src/Componet/Flywheel.cc.o
+src/Componet/Actuators/Flywheel.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o
+.PHONY : src/Componet/Actuators/Flywheel.cc.o
 
-src/Componet/Flywheel.i: src/Componet/Flywheel.cc.i
+src/Componet/Actuators/Flywheel.i: src/Componet/Actuators/Flywheel.cc.i
 
-.PHONY : src/Componet/Flywheel.i
+.PHONY : src/Componet/Actuators/Flywheel.i
 
 # target to preprocess a source file
-src/Componet/Flywheel.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.i
-.PHONY : src/Componet/Flywheel.cc.i
+src/Componet/Actuators/Flywheel.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.i
+.PHONY : src/Componet/Actuators/Flywheel.cc.i
 
-src/Componet/Flywheel.s: src/Componet/Flywheel.cc.s
+src/Componet/Actuators/Flywheel.s: src/Componet/Actuators/Flywheel.cc.s
 
-.PHONY : src/Componet/Flywheel.s
+.PHONY : src/Componet/Actuators/Flywheel.s
 
 # target to generate assembly for a file
-src/Componet/Flywheel.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Flywheel.cc.s
-.PHONY : src/Componet/Flywheel.cc.s
+src/Componet/Actuators/Flywheel.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.s
+.PHONY : src/Componet/Actuators/Flywheel.cc.s
 
-src/Componet/GNSS.o: src/Componet/GNSS.cc.o
+src/Componet/Com_Schedule.o: src/Componet/Com_Schedule.cc.o
 
-.PHONY : src/Componet/GNSS.o
+.PHONY : src/Componet/Com_Schedule.o
 
 # target to build an object file
-src/Componet/GNSS.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.o
-.PHONY : src/Componet/GNSS.cc.o
+src/Componet/Com_Schedule.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o
+.PHONY : src/Componet/Com_Schedule.cc.o
 
-src/Componet/GNSS.i: src/Componet/GNSS.cc.i
+src/Componet/Com_Schedule.i: src/Componet/Com_Schedule.cc.i
 
-.PHONY : src/Componet/GNSS.i
+.PHONY : src/Componet/Com_Schedule.i
 
 # target to preprocess a source file
-src/Componet/GNSS.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.i
-.PHONY : src/Componet/GNSS.cc.i
+src/Componet/Com_Schedule.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.i
+.PHONY : src/Componet/Com_Schedule.cc.i
 
-src/Componet/GNSS.s: src/Componet/GNSS.cc.s
+src/Componet/Com_Schedule.s: src/Componet/Com_Schedule.cc.s
 
-.PHONY : src/Componet/GNSS.s
+.PHONY : src/Componet/Com_Schedule.s
 
 # target to generate assembly for a file
-src/Componet/GNSS.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/GNSS.cc.s
-.PHONY : src/Componet/GNSS.cc.s
+src/Componet/Com_Schedule.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.s
+.PHONY : src/Componet/Com_Schedule.cc.s
 
-src/Componet/Gyro.o: src/Componet/Gyro.cc.o
+src/Componet/Sensors/GNSS.o: src/Componet/Sensors/GNSS.cc.o
 
-.PHONY : src/Componet/Gyro.o
+.PHONY : src/Componet/Sensors/GNSS.o
 
 # target to build an object file
-src/Componet/Gyro.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.o
-.PHONY : src/Componet/Gyro.cc.o
+src/Componet/Sensors/GNSS.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o
+.PHONY : src/Componet/Sensors/GNSS.cc.o
 
-src/Componet/Gyro.i: src/Componet/Gyro.cc.i
+src/Componet/Sensors/GNSS.i: src/Componet/Sensors/GNSS.cc.i
 
-.PHONY : src/Componet/Gyro.i
+.PHONY : src/Componet/Sensors/GNSS.i
 
 # target to preprocess a source file
-src/Componet/Gyro.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.i
-.PHONY : src/Componet/Gyro.cc.i
+src/Componet/Sensors/GNSS.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.i
+.PHONY : src/Componet/Sensors/GNSS.cc.i
 
-src/Componet/Gyro.s: src/Componet/Gyro.cc.s
+src/Componet/Sensors/GNSS.s: src/Componet/Sensors/GNSS.cc.s
 
-.PHONY : src/Componet/Gyro.s
+.PHONY : src/Componet/Sensors/GNSS.s
 
 # target to generate assembly for a file
-src/Componet/Gyro.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Gyro.cc.s
-.PHONY : src/Componet/Gyro.cc.s
+src/Componet/Sensors/GNSS.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.s
+.PHONY : src/Componet/Sensors/GNSS.cc.s
 
-src/Componet/MagSensor.o: src/Componet/MagSensor.cc.o
+src/Componet/Sensors/Gyro.o: src/Componet/Sensors/Gyro.cc.o
 
-.PHONY : src/Componet/MagSensor.o
+.PHONY : src/Componet/Sensors/Gyro.o
 
 # target to build an object file
-src/Componet/MagSensor.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.o
-.PHONY : src/Componet/MagSensor.cc.o
+src/Componet/Sensors/Gyro.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o
+.PHONY : src/Componet/Sensors/Gyro.cc.o
 
-src/Componet/MagSensor.i: src/Componet/MagSensor.cc.i
+src/Componet/Sensors/Gyro.i: src/Componet/Sensors/Gyro.cc.i
 
-.PHONY : src/Componet/MagSensor.i
+.PHONY : src/Componet/Sensors/Gyro.i
 
 # target to preprocess a source file
-src/Componet/MagSensor.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.i
-.PHONY : src/Componet/MagSensor.cc.i
+src/Componet/Sensors/Gyro.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.i
+.PHONY : src/Componet/Sensors/Gyro.cc.i
 
-src/Componet/MagSensor.s: src/Componet/MagSensor.cc.s
+src/Componet/Sensors/Gyro.s: src/Componet/Sensors/Gyro.cc.s
 
-.PHONY : src/Componet/MagSensor.s
+.PHONY : src/Componet/Sensors/Gyro.s
 
 # target to generate assembly for a file
-src/Componet/MagSensor.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/MagSensor.cc.s
-.PHONY : src/Componet/MagSensor.cc.s
+src/Componet/Sensors/Gyro.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.s
+.PHONY : src/Componet/Sensors/Gyro.cc.s
 
-src/Componet/StarSensor.o: src/Componet/StarSensor.cc.o
+src/Componet/Sensors/MagSensor.o: src/Componet/Sensors/MagSensor.cc.o
 
-.PHONY : src/Componet/StarSensor.o
+.PHONY : src/Componet/Sensors/MagSensor.o
 
 # target to build an object file
-src/Componet/StarSensor.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.o
-.PHONY : src/Componet/StarSensor.cc.o
+src/Componet/Sensors/MagSensor.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o
+.PHONY : src/Componet/Sensors/MagSensor.cc.o
 
-src/Componet/StarSensor.i: src/Componet/StarSensor.cc.i
+src/Componet/Sensors/MagSensor.i: src/Componet/Sensors/MagSensor.cc.i
 
-.PHONY : src/Componet/StarSensor.i
+.PHONY : src/Componet/Sensors/MagSensor.i
 
 # target to preprocess a source file
-src/Componet/StarSensor.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.i
-.PHONY : src/Componet/StarSensor.cc.i
+src/Componet/Sensors/MagSensor.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.i
+.PHONY : src/Componet/Sensors/MagSensor.cc.i
 
-src/Componet/StarSensor.s: src/Componet/StarSensor.cc.s
+src/Componet/Sensors/MagSensor.s: src/Componet/Sensors/MagSensor.cc.s
 
-.PHONY : src/Componet/StarSensor.s
+.PHONY : src/Componet/Sensors/MagSensor.s
 
 # target to generate assembly for a file
-src/Componet/StarSensor.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/StarSensor.cc.s
-.PHONY : src/Componet/StarSensor.cc.s
+src/Componet/Sensors/MagSensor.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.s
+.PHONY : src/Componet/Sensors/MagSensor.cc.s
 
-src/Componet/SunSensor.o: src/Componet/SunSensor.cc.o
+src/Componet/Sensors/StarSensor.o: src/Componet/Sensors/StarSensor.cc.o
 
-.PHONY : src/Componet/SunSensor.o
+.PHONY : src/Componet/Sensors/StarSensor.o
 
 # target to build an object file
-src/Componet/SunSensor.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.o
-.PHONY : src/Componet/SunSensor.cc.o
+src/Componet/Sensors/StarSensor.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o
+.PHONY : src/Componet/Sensors/StarSensor.cc.o
 
-src/Componet/SunSensor.i: src/Componet/SunSensor.cc.i
+src/Componet/Sensors/StarSensor.i: src/Componet/Sensors/StarSensor.cc.i
 
-.PHONY : src/Componet/SunSensor.i
+.PHONY : src/Componet/Sensors/StarSensor.i
 
 # target to preprocess a source file
-src/Componet/SunSensor.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.i
-.PHONY : src/Componet/SunSensor.cc.i
+src/Componet/Sensors/StarSensor.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.i
+.PHONY : src/Componet/Sensors/StarSensor.cc.i
 
-src/Componet/SunSensor.s: src/Componet/SunSensor.cc.s
+src/Componet/Sensors/StarSensor.s: src/Componet/Sensors/StarSensor.cc.s
 
-.PHONY : src/Componet/SunSensor.s
+.PHONY : src/Componet/Sensors/StarSensor.s
 
 # target to generate assembly for a file
-src/Componet/SunSensor.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/SunSensor.cc.s
-.PHONY : src/Componet/SunSensor.cc.s
+src/Componet/Sensors/StarSensor.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.s
+.PHONY : src/Componet/Sensors/StarSensor.cc.s
 
-src/General/CConfig.o: src/General/CConfig.cc.o
+src/Componet/Sensors/SunSensor.o: src/Componet/Sensors/SunSensor.cc.o
 
-.PHONY : src/General/CConfig.o
+.PHONY : src/Componet/Sensors/SunSensor.o
 
 # target to build an object file
-src/General/CConfig.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cc.o
-.PHONY : src/General/CConfig.cc.o
+src/Componet/Sensors/SunSensor.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o
+.PHONY : src/Componet/Sensors/SunSensor.cc.o
 
-src/General/CConfig.i: src/General/CConfig.cc.i
+src/Componet/Sensors/SunSensor.i: src/Componet/Sensors/SunSensor.cc.i
 
-.PHONY : src/General/CConfig.i
-
-# target to preprocess a source file
-src/General/CConfig.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cc.i
-.PHONY : src/General/CConfig.cc.i
-
-src/General/CConfig.s: src/General/CConfig.cc.s
-
-.PHONY : src/General/CConfig.s
-
-# target to generate assembly for a file
-src/General/CConfig.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/CConfig.cc.s
-.PHONY : src/General/CConfig.cc.s
-
-src/General/DataBase.o: src/General/DataBase.cc.o
-
-.PHONY : src/General/DataBase.o
-
-# target to build an object file
-src/General/DataBase.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/DataBase.cc.o
-.PHONY : src/General/DataBase.cc.o
-
-src/General/DataBase.i: src/General/DataBase.cc.i
-
-.PHONY : src/General/DataBase.i
+.PHONY : src/Componet/Sensors/SunSensor.i
 
 # target to preprocess a source file
-src/General/DataBase.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/DataBase.cc.i
-.PHONY : src/General/DataBase.cc.i
+src/Componet/Sensors/SunSensor.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.i
+.PHONY : src/Componet/Sensors/SunSensor.cc.i
 
-src/General/DataBase.s: src/General/DataBase.cc.s
+src/Componet/Sensors/SunSensor.s: src/Componet/Sensors/SunSensor.cc.s
 
-.PHONY : src/General/DataBase.s
+.PHONY : src/Componet/Sensors/SunSensor.s
 
 # target to generate assembly for a file
-src/General/DataBase.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/DataBase.cc.s
-.PHONY : src/General/DataBase.cc.s
+src/Componet/Sensors/SunSensor.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s
+.PHONY : src/Componet/Sensors/SunSensor.cc.s
 
 src/General/GlobalSetting.o: src/General/GlobalSetting.cc.o
 
@@ -573,33 +519,6 @@ src/General/InfluxDB.s: src/General/InfluxDB.cc.s
 src/General/InfluxDB.cc.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.s
 .PHONY : src/General/InfluxDB.cc.s
-
-src/General/IniConfig.o: src/General/IniConfig.cc.o
-
-.PHONY : src/General/IniConfig.o
-
-# target to build an object file
-src/General/IniConfig.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cc.o
-.PHONY : src/General/IniConfig.cc.o
-
-src/General/IniConfig.i: src/General/IniConfig.cc.i
-
-.PHONY : src/General/IniConfig.i
-
-# target to preprocess a source file
-src/General/IniConfig.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cc.i
-.PHONY : src/General/IniConfig.cc.i
-
-src/General/IniConfig.s: src/General/IniConfig.cc.s
-
-.PHONY : src/General/IniConfig.s
-
-# target to generate assembly for a file
-src/General/IniConfig.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/IniConfig.cc.s
-.PHONY : src/General/IniConfig.cc.s
 
 src/General/SimTime.o: src/General/SimTime.cc.o
 
@@ -815,42 +734,33 @@ help:
 	@echo "... src/Astro/Orbit.o"
 	@echo "... src/Astro/Orbit.i"
 	@echo "... src/Astro/Orbit.s"
-	@echo "... src/Componet/Componet.o"
-	@echo "... src/Componet/Componet.i"
-	@echo "... src/Componet/Componet.s"
-	@echo "... src/Componet/Flywheel.o"
-	@echo "... src/Componet/Flywheel.i"
-	@echo "... src/Componet/Flywheel.s"
-	@echo "... src/Componet/GNSS.o"
-	@echo "... src/Componet/GNSS.i"
-	@echo "... src/Componet/GNSS.s"
-	@echo "... src/Componet/Gyro.o"
-	@echo "... src/Componet/Gyro.i"
-	@echo "... src/Componet/Gyro.s"
-	@echo "... src/Componet/MagSensor.o"
-	@echo "... src/Componet/MagSensor.i"
-	@echo "... src/Componet/MagSensor.s"
-	@echo "... src/Componet/StarSensor.o"
-	@echo "... src/Componet/StarSensor.i"
-	@echo "... src/Componet/StarSensor.s"
-	@echo "... src/Componet/SunSensor.o"
-	@echo "... src/Componet/SunSensor.i"
-	@echo "... src/Componet/SunSensor.s"
-	@echo "... src/General/CConfig.o"
-	@echo "... src/General/CConfig.i"
-	@echo "... src/General/CConfig.s"
-	@echo "... src/General/DataBase.o"
-	@echo "... src/General/DataBase.i"
-	@echo "... src/General/DataBase.s"
+	@echo "... src/Componet/Actuators/Flywheel.o"
+	@echo "... src/Componet/Actuators/Flywheel.i"
+	@echo "... src/Componet/Actuators/Flywheel.s"
+	@echo "... src/Componet/Com_Schedule.o"
+	@echo "... src/Componet/Com_Schedule.i"
+	@echo "... src/Componet/Com_Schedule.s"
+	@echo "... src/Componet/Sensors/GNSS.o"
+	@echo "... src/Componet/Sensors/GNSS.i"
+	@echo "... src/Componet/Sensors/GNSS.s"
+	@echo "... src/Componet/Sensors/Gyro.o"
+	@echo "... src/Componet/Sensors/Gyro.i"
+	@echo "... src/Componet/Sensors/Gyro.s"
+	@echo "... src/Componet/Sensors/MagSensor.o"
+	@echo "... src/Componet/Sensors/MagSensor.i"
+	@echo "... src/Componet/Sensors/MagSensor.s"
+	@echo "... src/Componet/Sensors/StarSensor.o"
+	@echo "... src/Componet/Sensors/StarSensor.i"
+	@echo "... src/Componet/Sensors/StarSensor.s"
+	@echo "... src/Componet/Sensors/SunSensor.o"
+	@echo "... src/Componet/Sensors/SunSensor.i"
+	@echo "... src/Componet/Sensors/SunSensor.s"
 	@echo "... src/General/GlobalSetting.o"
 	@echo "... src/General/GlobalSetting.i"
 	@echo "... src/General/GlobalSetting.s"
 	@echo "... src/General/InfluxDB.o"
 	@echo "... src/General/InfluxDB.i"
 	@echo "... src/General/InfluxDB.s"
-	@echo "... src/General/IniConfig.o"
-	@echo "... src/General/IniConfig.i"
-	@echo "... src/General/IniConfig.s"
 	@echo "... src/General/SimTime.o"
 	@echo "... src/General/SimTime.i"
 	@echo "... src/General/SimTime.s"

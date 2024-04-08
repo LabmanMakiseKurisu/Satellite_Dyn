@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:23
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 16:55:07
+ * @LastEditTime: 2024-04-08 18:38:33
  * @FilePath: /Satellite/src/Satellite/Satellite.hh
  * @Description: 
  */
@@ -11,29 +11,27 @@
 #include"Orbit.hh"
 #include "Environment.hh"
 #include "AttitudeControl.hh"
-#include"Componet.hh"
+#include"Com_Schedule.hh"
+#include"Subscriber.hh"
 
-
-class Satellite
+class Satellite: public ::ISubscriber
 {
 public:
 	int64_t SatelliteTime;//ms
 	COrbit Orbit;//
 	CAttitude Attitude;//
 	Environment Env;//
-	CComponet* pComponet;//
+	Com_Schedule* pComponet;//
 	CAttitudeController AttController;//
 public:
-	double SampleTime;//
-	int SpeedTimes;//
+	double m_Delta;//
+	int m_Rate;//
 public:
 	Satellite();
-	Satellite(double Ts, int m_SpeedTimes);
+	void Init();
 	~Satellite()=default;
 	void StateRenew();
-	// 2023-12-22 11:28:55
-	void data2DB(CInfluxDB& DB, double Period);
-	void record(CInfluxDB& DB);
+	virtual void Submit() override;
 };
 
 std::ostream& operator<<(std::ostream& _cout, const Satellite& Sat);
