@@ -15,20 +15,25 @@
 ## Features
 
 - **姿轨动力学**
-- **单机模型**
-- **数据可视化**
+- **太阳矢量、地磁场等飞行环境**
+- **常用敏感器、执行器单机模型**
+- **基于InfluxDB和Grafana的数据监视**
+  
 
 ## Development
 
 目前待开发功能:
-- 代码重构，提升可扩展性
-- 完成高精度轨道动力学HPOP
-- 开发API
+- 代码重构，提升可扩展性[done]
+- RESTful风格的HTTP API
+- 高精度轨道动力学HPOP
+- 敏感器噪声
+- 磁力矩器单机模型
+- 太阳敏感器单机模型
 
 ## Getting Started
-
-# Initialization
-
+TODO
+# Submodule
+  
 ```
 $ git submodule update --init --recursive                 
 ```
