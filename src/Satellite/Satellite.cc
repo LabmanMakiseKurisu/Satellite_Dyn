@@ -36,7 +36,7 @@ void Satellite::Init() {
 	pComponet = Com_Schedule::GetInstance();
 	pComponet->Init(Attitude, Orbit, Env, AttController,SatelliteTime);
 
-	m_DM = DataManager::GetInstance();
+	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 }
 

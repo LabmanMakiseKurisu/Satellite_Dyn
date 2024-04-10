@@ -14,7 +14,7 @@ Environment::Environment()
 
 void Environment::Init()
 {
-	m_DM = DataManager::GetInstance();
+	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 }
 

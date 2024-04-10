@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:03:37
+ * @LastEditTime: 2024-04-10 17:24:48
  * @FilePath: /Satellite/src/Componet/Sensors/MagSensor.cc
  * @Description: 
  */
@@ -46,10 +46,7 @@ void MagSensor::Submit() {
 		return;
 	for(int i=1;i<=Fields;i++) {
 		int diff = i + (id-1)*Fields;
-		std::string Code = StartCode;
-		if(diff<10)
-			Code.append("0");
-		Code.append(std::to_string(diff));
+		std::string Code = GetCode(StartCode, diff);
 		m_DM->add<double>(Code,Data[i-1]);
 	}
 }

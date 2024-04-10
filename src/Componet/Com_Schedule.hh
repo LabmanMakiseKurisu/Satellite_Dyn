@@ -2,16 +2,17 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:11
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 15:06:14
+ * @LastEditTime: 2024-04-10 18:00:05
  * @FilePath: /Satellite/src/Componet/Com_Schedule.hh
  * @Description: 
  */
 #pragma once
 
 #include<iostream>
+#include <variant>
 #include<vector>
 #include"BaseMath.hh"
-
+#include"Subscriber.hh"
 class CAttitude;
 class COrbit;
 class Environment;
@@ -23,14 +24,21 @@ class MagSensor;
 class GNSS;
 class Flywheel;
 
+using ComsVariant = std::variant<
+	std::vector<GyroScope *> *,
+	std::vector<SunSensor *> *,
+	std::vector<StarSensor *> *,
+	std::vector<MagSensor *> *,
+	std::vector<GNSS *> *,
+	std::vector<Flywheel *> *>;
 
-class Com_Schedule
+class Com_Schedule : public ::ISubscriber
 {
 public:
 	static Com_Schedule* GetInstance();
 	void Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitudeController& ACtrl, int64_t timestamp);
 	void StateRenew(int64_t timestamp, CAttitudeController &ACtrl);
-
+	virtual void Submit() override;
 public:
 	size_t GyroNums;
 	size_t FlywheelNums;
@@ -44,8 +52,8 @@ public:
 	std::vector<MagSensor*> MagSensors;
 	std::vector<GNSS*> GNSSs;
 	std::vector<Flywheel*> Wheels;
+	std::vector<ComsVariant> Coms;
 	std::vector<double> WheelsTref;
-
 private:
 	static inline Com_Schedule* m_instance{ NULL };
 

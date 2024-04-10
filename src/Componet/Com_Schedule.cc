@@ -34,7 +34,6 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		Eigen::Matrix3d IM = pCfg->GetMat(GytoStr);
 		Gyros[i - 1] = new GyroScope(&Att.Omega_b, IM, timestamp, pCfg->Get<double>("/Gyro/SamplePeriod"), i);
 		Gyros[i - 1]->Init(timestamp);
-		//Gyros[i - 1]->m_DM->Subscribe(Gyros[i - 1]);
 	}
 
 	for (size_t i{ 1 }; i <= SunSensorNums; i++)
@@ -43,7 +42,6 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		Eigen::Matrix3d IM = pCfg->GetMat(SunSensorStr);
 		SunSensors[i - 1] = new SunSensor(&Env.SunVecBody, IM, timestamp, pCfg->Get<double>("/SunSensor/SamplePeriod"), i);
 		SunSensors[i - 1]->Init(timestamp);
-		//SunSensors[i-1]->m_DM->Subscribe(SunSensors[i-1]);
 	}
 
 	for (size_t i{ 1 }; i <= StarSensorNums; i++)
@@ -52,7 +50,6 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		Eigen::Matrix3d IM = pCfg->GetMat(StarSensorStr);
 		StarSensors[i - 1] = new StarSensor(&Att.Qib, IM, timestamp, pCfg->Get<double>("/StarSensor/SamplePeriod"), i);
 		StarSensors[i - 1]->Init(timestamp);
-		//StarSensors[i-1]->m_DM->Subscribe(StarSensors[i-1]);
 	}
 
 	for (size_t i{ 1 }; i <= MagSensorNums; i++)
@@ -61,7 +58,6 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		Eigen::Matrix3d IM = pCfg->GetMat(MagSensorStr);
 		MagSensors[i - 1] = new MagSensor(&Env.BodyMag, IM, timestamp, pCfg->Get<double>("/MagSensor/SamplePeriod"), i);
 		MagSensors[i - 1]->Init(timestamp);
-		//MagSensors[i - 1]->m_DM->Subscribe(MagSensors[i - 1]);
 	}
 
 	for (size_t i{ 1 }; i <= GnssNums; i++)
@@ -69,7 +65,6 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		Eigen::Matrix3d IM = Eigen::Matrix3d::Identity();
 		GNSSs[i - 1] = new GNSS(&Obt.ECEFFix, IM, timestamp, pCfg->Get<double>("/Gnss/SamplePeriod"), i);
 		GNSSs[i - 1]->Init(timestamp);
-		//GNSSs[i - 1]->m_DM->Subscribe(GNSSs[i - 1]);
 	}
 
 	for (size_t i{ 1 }; i <= FlywheelNums; i++)
@@ -82,37 +77,24 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		pCfg->Get<double>("/Flywheel/Kp"), pCfg->Get<double>("/Flywheel/Ki"),
 		timestamp, i, pCfg->Get<double>("/Satellite/Delta"));
 		Wheels[i-1]->Init(timestamp);
-		//Wheels[i-1]->m_DM->Subscribe(GNSSs[i - 1]);
 	}
+
+	m_DM = Publisher::GetInstance(); 
+	m_DM->Subscribe(this);
 }
 
 void Com_Schedule::StateRenew(int64_t timestamp, CAttitudeController &ACtrl)
 {
-	for (size_t i = 0; i < GyroNums; i++)
-	{
-		Gyros[i]->StateRenew(timestamp);
-	}
-	for (size_t i = 0; i < SunSensorNums; i++)
-	{
-		SunSensors[i]->StateRenew(timestamp);
-	}
-	for (size_t i = 0; i < StarSensorNums; i++)
-	{
-		StarSensors[i]->StateRenew(timestamp);
-	}
-	for (size_t i = 0; i < MagSensorNums; i++)
-	{
-		MagSensors[i]->StateRenew(timestamp);
-	}
-	for (size_t i = 0; i < GnssNums; i++)
-	{
-		GNSSs[i]->StateRenew(timestamp);
-	}
+    auto RenewSensors = [timestamp](auto&& sensorVectorPtr) {
+        for (auto& sensor : *sensorVectorPtr) {
+            sensor->StateRenew(timestamp);
+        }
+    };
+    // 遍历Coms向量，对每个存储的向量指针应用RenewSensors操作
 	WheelsTrefCal(ACtrl.TorqueRef);
-	for (size_t i = 0; i < FlywheelNums; i++)
-	{
-		Wheels[i]->StateRenew();
-	}
+    for (auto& sensorVariant : Coms) {
+        std::visit(RenewSensors, sensorVariant);
+    }
 }
 
 Com_Schedule::Com_Schedule()
@@ -132,34 +114,29 @@ Com_Schedule::Com_Schedule()
 	GNSSs.resize(GnssNums);
 	Wheels.resize(FlywheelNums);
 	WheelsTref.resize(FlywheelNums);
+
+	Coms.push_back(&Gyros);
+	Coms.push_back(&StarSensors);
+	Coms.push_back(&SunSensors);
+	Coms.push_back(&MagSensors);
+	Coms.push_back(&GNSSs);
+	Coms.push_back(&Wheels);
 }
 
 Com_Schedule::~Com_Schedule()
 {
-	for (size_t i = 0; i < GyroNums; i++)
-	{
-		delete Gyros[i];
-	}
-	for (size_t i = 0; i < SunSensorNums; i++)
-	{
-		delete SunSensors[i];
-	}
-	for (size_t i = 0; i < StarSensorNums; i++)
-	{
-		delete StarSensors[i];
-	}
-	for (size_t i = 0; i < MagSensorNums; i++)
-	{
-		delete MagSensors[i];
-	}
-	for (size_t i = 0; i < FlywheelNums; i++)
-	{
-		delete Wheels[i];
-	}
-	for (size_t i = 0; i < GnssNums; i++)
-	{
-		delete GNSSs[i];
-	}
+	// Lambda表达式，负责删除传感器向量中的所有对象
+    auto deleteSensors = [](auto&& sensorVectorPtr) {
+        for (auto& sensor : *sensorVectorPtr) {
+            delete sensor;
+        }
+        sensorVectorPtr->clear(); // 清除向量中的指针，这一步是可选的，但是可以保持清洁
+    };
+
+    // 遍历Coms向量，对每个存储的向量指针应用deleteSensors操作
+    for (auto& sensorVariant : Coms) {
+        std::visit(deleteSensors, sensorVariant);
+    }
 }
 
 void Com_Schedule::WheelsTrefCal(Eigen::Vector3d &TrefBody)
@@ -190,3 +167,19 @@ void Com_Schedule::ReleaseInstance()
 	delete tmp;
 }
 
+void Com_Schedule::Submit() {
+	//SIM0400~SIM0900
+	std::string Code = "SIM0400";
+	// Lambda表达式，负责删除传感器向量中的所有对象
+	auto AddSensors = [&Code,this](auto &&sensorVectorPtr)
+	{
+		m_DM->add<int>(Code, (*sensorVectorPtr).size());
+	};
+
+	// 遍历Coms向量，对每个存储的向量指针应用deleteSensors操作
+    for (auto& sensorVariant : Coms) {
+        std::visit(AddSensors, sensorVariant);
+		Code[4]++;
+	}
+
+}

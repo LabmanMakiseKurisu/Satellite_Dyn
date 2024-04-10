@@ -10,26 +10,26 @@
 #include"GlobalSetting.hh"
 #include "httplib.h"
 #include"SimTime.hh"
-static DataManager* m = DataManager::GetInstance();
-DataManager::DeleteHelper DataManager::helper;
+static Publisher* m = Publisher::GetInstance();
+Publisher::DeleteHelper Publisher::helper;
 
-DataManager *DataManager::GetInstance()
+Publisher *Publisher::GetInstance()
 {
     if (m_instance == NULL)
-        m_instance = new DataManager;
+        m_instance = new Publisher;
     return m_instance;
 }
 
-void DataManager::ReleaseInstance()
+void Publisher::ReleaseInstance()
 {
-    if (DataManager::m_instance != nullptr)
+    if (Publisher::m_instance != nullptr)
     {
-        delete DataManager::m_instance;
-        DataManager::m_instance = nullptr;
+        delete Publisher::m_instance;
+        Publisher::m_instance = nullptr;
     }
 }
 
-DataManager::DataManager() {
+Publisher::Publisher() {
     GlobalSettings* pCfg = GlobalSettings::GetInstance();
     m_host = pCfg->Get<std::string>("/InfluxDB/Host");
     m_port = pCfg->Get<int>("/InfluxDB/Port");
@@ -39,12 +39,12 @@ DataManager::DataManager() {
     m_LastSendTime = GetTimeStampMs();
 }
 
-void DataManager::Subscribe(ISubscriber *subscriber)
+void Publisher::Subscribe(ISubscriber *subscriber)
 {
     subscribers.push_back(subscriber);
 }
 
-void DataManager::write()
+void Publisher::write()
 {
     if(GetTimeStampMs() - m_LastSendTime < m_interval*1000)
         return;
@@ -56,7 +56,7 @@ void DataManager::write()
     SendToInfluxDB();
 }
 
-void DataManager::SendToInfluxDB()
+void Publisher::SendToInfluxDB()
 {
     std::cout << "json:" << std::endl;
     // 创建一个客户端实例，连接到 InfluxDB

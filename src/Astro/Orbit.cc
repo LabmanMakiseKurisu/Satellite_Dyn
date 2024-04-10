@@ -107,7 +107,7 @@ void COrbit::Init(int64_t Timestamp)
 	Inl2Fix(Timestamp);
 	FixPos2LLR();
 	FixPos2LLA();
-	m_DM = DataManager::GetInstance();
+	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 }
 

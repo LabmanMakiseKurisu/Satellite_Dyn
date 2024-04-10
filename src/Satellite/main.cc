@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 			Amadeus.StateRenew();
 			//std::cout << Amadeus;
 		}
-		DataManager::GetInstance()->write();
+		Publisher::GetInstance()->write();
 		SleepMs(1);
 	}	
 	return 0;

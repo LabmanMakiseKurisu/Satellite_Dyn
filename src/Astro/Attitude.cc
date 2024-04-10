@@ -100,7 +100,7 @@ void CAttitude::Init(COrbit &Obt)
 
     RenewAio(Obt);
     Qob = Aio.ToQuat().QuatInv() * Qib;
-    m_DM = DataManager::GetInstance(); 
+    m_DM = Publisher::GetInstance(); 
     m_DM->Subscribe(this);
 }
 

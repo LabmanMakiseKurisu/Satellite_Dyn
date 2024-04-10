@@ -11,7 +11,7 @@
 #include <nlohmann/json.hpp>
 #include<iostream>
 #include<vector>
-class DataManager;
+class Publisher;
 class ISubscriber
 {
 public:
@@ -19,5 +19,5 @@ public:
     virtual void Submit() = 0;
 
 public:
-    DataManager *m_DM;
+    Publisher *m_DM;
 };

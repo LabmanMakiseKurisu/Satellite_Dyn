@@ -5,7 +5,7 @@
         "User": "root",
         "Password": "root",
         "DBName": "satellite",
-        "Measurement": "Amadeus",
+        "Measurement": "SIM",
         "Interval":1
     },
     "Satellite": {

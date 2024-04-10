@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 16:16:33
+ * @LastEditTime: 2024-04-10 17:24:43
  * @FilePath: /Satellite/src/Componet/Sensors/StarSensor.cc
  * @Description: 
  */
@@ -53,10 +53,7 @@ void StarSensor::Submit() {
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;
-		std::string Code = StartCode;
-		if (diff < 10)
-			Code.append("0");
-		Code.append(std::to_string(diff));
+		std::string Code = GetCode( StartCode, diff);
 		m_DM->add<double>(Code, Data.QuatData[i - 1]);
 	}
 }

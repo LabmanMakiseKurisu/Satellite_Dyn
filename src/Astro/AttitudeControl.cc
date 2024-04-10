@@ -21,7 +21,7 @@ CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
 }
 
 void CAttitudeController::Init() {
-	m_DM = DataManager::GetInstance();
+	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 }
 

@@ -12,10 +12,10 @@
 #include<vector>
 #include"Subscriber.hh"
 
-class DataManager
+class Publisher
 {
 public:
-    static DataManager *GetInstance();
+    static Publisher *GetInstance();
 
     void Subscribe(ISubscriber *subscriber);
 
@@ -26,7 +26,7 @@ public:
         data[key] = value;
     }
 private:
-    static inline DataManager *m_instance{NULL};
+    static inline Publisher *m_instance{NULL};
     std::vector<ISubscriber *> subscribers;
     nlohmann::json data;
     std::string m_host;
@@ -36,11 +36,11 @@ private:
     int64_t m_LastSendTime;
     int m_interval;
 private:
-    DataManager();
-    DataManager(const DataManager &) = delete;
-    DataManager &operator=(const DataManager &) = delete;
-    DataManager(DataManager &&) = delete;
-    DataManager &operator=(DataManager &&) = delete;
+    Publisher();
+    Publisher(const Publisher &) = delete;
+    Publisher &operator=(const Publisher &) = delete;
+    Publisher(Publisher &&) = delete;
+    Publisher &operator=(Publisher &&) = delete;
     void SendToInfluxDB();
     static void ReleaseInstance();
     class DeleteHelper

@@ -30,7 +30,7 @@ public:
         id = _id;
         Fields = _size;
         StartCode = _StartCode;
-        m_DM = DataManager::GetInstance();
+        m_DM = Publisher::GetInstance();
     }
     virtual ~Componet() {}
     virtual void Init(int64_t timestamp) = 0;
