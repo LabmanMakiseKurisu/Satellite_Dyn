@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:01
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:14:00
+ * @LastEditTime: 2024-04-11 19:06:07
  * @FilePath: /Satellite/src/Astro/Environment.hh
  * @Description: 
  */
@@ -16,10 +16,10 @@ class CAttitude;
 class Environment: public ::ISubscriber
 {
 public:
-	Eigen::Vector3d BodyMag;//T
-	Eigen::Vector3d NEDMag;//T
 	Eigen::Vector3d SunVecInl;//
 	Eigen::Vector3d SunVecBody;//
+	Eigen::Vector3d NEDMag;//T
+	Eigen::Vector3d BodyMag;//T
 
 	Environment();
 	void Init();
@@ -32,4 +32,8 @@ public:
 	void StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t timestamp);
 
 	virtual void Submit() override;
+private:
+    std::string StartCode;
+    int fileds;
+	double* Addr(int index);
 };

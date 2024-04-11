@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o"
   "CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o"
   "CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o"
+  "CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o"
   "CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o"
   "CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o"
   "CMakeFiles/Satellite.dir/src/General/SimTime.cc.o"

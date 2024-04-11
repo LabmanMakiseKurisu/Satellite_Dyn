@@ -4,6 +4,7 @@
 #include"Attitude.hh"
 #include"InfluxDB.hh"
 #include"GlobalSetting.hh"
+#include"APIHandler.hh"
 Environment::Environment()
 {
 	BodyMag << 0, 0, 0;
@@ -12,10 +13,34 @@ Environment::Environment()
 	SunVecBody << 0, 0, 0;
 }
 
+double *Environment::Addr(int index)
+{
+	if (index >= 0 && index < 3)
+		return &SunVecInl[index];
+	else if (index >= 3 && index < 6)
+		return &SunVecBody[index - 3];
+	else if (index >= 6 && index < 9)
+		return &NEDMag[index - 6];
+	else if (index >= 9 && index < 12)
+		return &BodyMag[index - 9];
+	else
+		return nullptr;
+}
+
 void Environment::Init()
 {
+	GlobalSettings *pCfg = GlobalSettings::GetInstance();
+	StartCode = pCfg->Get<std::string>("/Env/StartCode");
+	fileds = pCfg->Get<int>("/Env/fields");
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
+
+	auto hd = Handler::GetInstance();
+	for (int i = 0; i < fileds; i++)
+	{
+		std::string Code = GetCode(StartCode, i + 1);
+		hd->add(Code, Addr(i));
+	}
 }
 
 Eigen::Matrix3d Environment::ECI2ECEF(const int64_t timestamp, const double deltaUT1, const double xp, const double yp)
@@ -52,7 +77,7 @@ void Environment::GetNEDMag(const COrbit& Orbit, const int64_t timestamp)
 {
 
 	GlobalSettings *pCfg = GlobalSettings::GetInstance();
-	size_t Order = pCfg->Get<int>("/Mag/MagOrder");
+	size_t Order = pCfg->Get<int>("/Env/Mag/MagOrder");
 
 	YMD m_ymd = UTCTimeStamp2YMD(timestamp);
 	double epoch = DecYear(2020,1,1);
@@ -173,27 +198,27 @@ void Environment::StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t t
 
 void Environment::Submit()
 {
-    if (!m_DM)
-        return;
-    int index = 1;
+	if (!m_DM)
+		return;
+	int index = 1;
 	for (int i = 0; i < 3; i++)
-    {
-        m_DM->add<double>(GetCode("SIM03",index), SunVecInl[i]);
-        index++;
-    }
+	{
+		m_DM->add<double>(GetCode(StartCode, index), SunVecInl[i]);
+		index++;
+	}
 	for (int i = 0; i < 3; i++)
-    {
-        m_DM->add<double>(GetCode("SIM03",index), SunVecBody[i]);
-        index++;
-    }
+	{
+		m_DM->add<double>(GetCode(StartCode, index), SunVecBody[i]);
+		index++;
+	}
 	for (int i = 0; i < 3; i++)
-    {
-        m_DM->add<double>(GetCode("SIM03",index), T2GAUSS(NEDMag[i]));
-        index++;
-    }
+	{
+		m_DM->add<double>(GetCode(StartCode, index), T2GAUSS(NEDMag[i]));
+		index++;
+	}
 	for (int i = 0; i < 3; i++)
-    {
-        m_DM->add<double>(GetCode("SIM03",index), T2GAUSS(BodyMag[i]));
-        index++;
-    }
+	{
+		m_DM->add<double>(GetCode(StartCode, index), T2GAUSS(BodyMag[i]));
+		index++;
+	}
 }

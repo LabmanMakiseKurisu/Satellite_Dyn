@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 15:53:05
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-07 17:28:08
+ * @LastEditTime: 2024-04-11 19:02:35
  * @FilePath: /Satellite/src/General/GlobalSetting.cc
  * @Description:
  */
@@ -37,8 +37,9 @@ GlobalSettings::GlobalSettings(const std::string &configFilePath)
     else
     {
         std::cerr << "Unable to open config file: " << configFilePath << std::endl;
+        exit(0);
     }
-    int MagOrder = this->Get<int>("/Mag/MagOrder");
+    int MagOrder = this->Get<int>("/Env/Mag/MagOrder");
     if ((MagOrder < 1) || (MagOrder > 12))
     {
         MagOrder = 2;
@@ -73,7 +74,7 @@ GlobalSettings::GlobalSettings(const std::string &configFilePath)
     }
     else
     {
-        std::cerr << "Unable to open file" << std::endl;
+        std::cerr << "Unable to open file wmm_2020_data" << std::endl;
         exit(0);
     }
 }

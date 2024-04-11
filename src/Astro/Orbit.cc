@@ -4,6 +4,10 @@
 #include"Quaternions.hh"
 #include"InfluxDB.hh"
 #include"GlobalSetting.hh"
+#include"APIHandler.hh"
+COrbit::COrbit() : StartCode("SIM01"), fileds(15)
+{
+}
 int COrbit::TwoBodRK4(double Ts)
 {
 	if (IsRV(J2000Inertial) == false)
@@ -96,19 +100,40 @@ void COrbit::StateRenew(double Ts, const int64_t timestamp)
 void COrbit::Init(int64_t Timestamp)
 {
 	GlobalSettings *pCfg = GlobalSettings::GetInstance();
-	J2000Inertial.Pos << pCfg->Get<double>("/J2000Inertial/Rx"),
-		pCfg->Get<double>("/J2000Inertial/Ry"),
-		pCfg->Get<double>("/J2000Inertial/Rz");
+	StartCode = pCfg->Get<std::string>("/Orbit/StartCode");
+	fileds = pCfg->Get<int>("/Orbit/fields");
+	J2000Inertial.Pos << pCfg->Get<double>("/Orbit/J2000Inertial/Rx"),
+		pCfg->Get<double>("/Orbit/J2000Inertial/Ry"),
+		pCfg->Get<double>("/Orbit/J2000Inertial/Rz");
 
-	J2000Inertial.Vel << pCfg->Get<double>("/J2000Inertial/Vx"),
-		pCfg->Get<double>("/J2000Inertial/Vy"),
-		pCfg->Get<double>("/J2000Inertial/Vz");
+	J2000Inertial.Vel << pCfg->Get<double>("/Orbit/J2000Inertial/Vx"),
+		pCfg->Get<double>("/Orbit/J2000Inertial/Vy"),
+		pCfg->Get<double>("/Orbit/J2000Inertial/Vz");
 
 	Inl2Fix(Timestamp);
 	FixPos2LLR();
 	FixPos2LLA();
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
+
+	auto hd = Handler::GetInstance();
+	for (int i = 0; i < fileds; i++)
+	{
+		std::string Code = GetCode(StartCode, i + 1);
+		hd->add(Code, Addr(i));
+	}
+}
+
+double *COrbit::Addr(int index)
+{
+	if (index >= 0 && index < 6)
+		return J2000Inertial.Addr(index);
+	else if (index >= 6 && index < 12)
+		return ECEFFix.Addr(index - 6);
+	else if (index >= 12 && index < 15)
+		return LLA.Addr(index - 12);
+	else
+		return nullptr;
 }
 
 std::ostream& operator<<(std::ostream& _cout, const RV& j2000)
@@ -143,22 +168,22 @@ Eigen::VectorXd COrbit::TwoBodAcc(const Eigen::VectorXd& RVState)
 
 void COrbit::Submit()
 {
-    if (!m_DM)
-        return;
-    int index = 1;
-    for (int i = 0; i < 6; i++)
-    {
-        m_DM->add<double>(GetCode("SIM01",index), J2000Inertial[i]);
-        index++;
-    }
-    for (int i = 0; i < 6; i++)
-    {
-        m_DM->add<double>(GetCode("SIM01",index), ECEFFix[i]);
-        index++;
-    }
-    for (int i = 0; i < 3; i++)
-    {
-        m_DM->add<double>(GetCode("SIM01",index), LLA[i]);
-        index++;
-    }
+	if (!m_DM)
+		return;
+	int index = 1;
+	for (int i = 0; i < 6; i++)
+	{
+		m_DM->add<double>(GetCode(StartCode, index), J2000Inertial[i]);
+		index++;
+	}
+	for (int i = 0; i < 6; i++)
+	{
+		m_DM->add<double>(GetCode(StartCode, index), ECEFFix[i]);
+		index++;
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		m_DM->add<double>(GetCode(StartCode, index), LLA[i]);
+		index++;
+	}
 }

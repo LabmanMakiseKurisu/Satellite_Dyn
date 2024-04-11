@@ -2,15 +2,15 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 17:53:45
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:56:08
+ * @LastEditTime: 2024-04-11 18:30:48
  * @FilePath: /Satellite/src/General/InfluxDB.hh
  * @Description: 
  */
 #pragma once
 #include <nlohmann/json.hpp>
-#include<iostream>
-#include<vector>
-#include"Subscriber.hh"
+#include <iostream>
+#include <vector>
+#include "Subscriber.hh"
 
 class Publisher
 {

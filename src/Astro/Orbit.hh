@@ -30,46 +30,93 @@ struct RV
             return 0;
         }
     }
+    double* Addr(size_t index) {
+        switch (index)
+        {
+        case 0:
+            return &Pos[0];
+        case 1:
+            return &Pos[1];
+        case 2:
+            return &Pos[2];
+        case 3:
+            return &Vel[0];
+        case 4:
+            return &Vel[1];
+        case 5:
+            return &Vel[2];
+        default:
+            return nullptr;
+        }
+    }
 };
 struct LLA_t
 {
-    double Lng;//
-    double Lat;//
-    double Alt;//m
+    double Lng; // rad
+    double Lat; // rad
+    double Alt; // m
     LLA_t() : Lng(0), Lat(1.3963), Alt(0) {}
     double operator[](size_t index)
     {
         switch (index)
         {
         case 0:
-            return Lng;
+            return RAD2DEG * Lng;
         case 1:
-            return Lat;
+            return RAD2DEG * Lat;
         case 2:
             return Alt;
         default:
             return 0;
         }
     }
+    double *Addr(size_t index)
+    {
+        switch (index)
+        {
+        case 0:
+            return &Lng;
+        case 1:
+            return &Lat;
+        case 2:
+            return &Alt;
+        default:
+            return nullptr;
+        }
+    }
 };
 struct LLR_t
 {
-    double Lng;//
-    double Lat;//
-    double Rds;//m
+    double Lng; // rad
+    double Lat; // rad
+    double Rds; // m
     LLR_t() : Lng(0), Lat(1.3951), Rds(6357400) {}
     double operator[](size_t index)
     {
         switch (index)
         {
         case 0:
-            return Lng;
+            return RAD2DEG * Lng;
         case 1:
-            return Lat;
+            return RAD2DEG * Lat;
         case 2:
             return Rds;
         default:
             return 0;
+        }
+    }
+    double *Addr(size_t index)
+    {
+        switch (index)
+        {
+        case 0:
+            return &Lng;
+        case 1:
+            return &Lat;
+        case 2:
+            return &Rds;
+        default:
+            return nullptr;
         }
     }
 };
@@ -123,15 +170,17 @@ private:
 public:
     RV J2000Inertial;//
     RV ECEFFix;//
-    OrbitElement OrbitElements;//
     LLA_t LLA;//
-    LLR_t LLR;//
-
 
 public:
-    COrbit(): J2000Inertial(), OrbitElements(), ECEFFix(), LLA(), LLR()
-    { }
+    OrbitElement OrbitElements;//
+    LLR_t LLR;//
+public:
+    std::string StartCode;
+    int fileds;
 
+public:
+    COrbit();
     //
     // brief  : 
     //
@@ -155,9 +204,10 @@ public:
 
     void Init(int64_t Timestamp);
 
-    virtual  void Submit() override;
+    virtual void Submit() override;
 private:
     Eigen::VectorXd TwoBodAcc(const Eigen::VectorXd& RVState);
+    double *Addr(int index);
 };
 
 

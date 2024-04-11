@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-08 11:19:26
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:49:46
+ * @LastEditTime: 2024-04-11 19:58:05
  * @FilePath: /Satellite/src/Componet/Componet.hh
  * @Description: 
  */
@@ -36,4 +36,5 @@ public:
     virtual void Init(int64_t timestamp) = 0;
     virtual void StateRenew(int64_t NowTime) = 0;
     const T2 &GetData() const { return Data; }
+    std::string GetStartCode() { return StartCode; }
 };

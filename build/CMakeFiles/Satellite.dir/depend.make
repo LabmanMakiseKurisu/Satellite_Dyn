@@ -5,6 +5,7 @@ CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../deps/nlohmann_json/single_i
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/Componet/Actuators/Flywheel.hh
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/Componet/Com_Schedule.hh
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/General/GlobalSetting.hh
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/General/Subscriber.hh
@@ -293,6 +294,8 @@ CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/Componet/Sensors
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/Componet/Sensors/Sensor.hh
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/Componet/Sensors/StarSensor.hh
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/Componet/Sensors/SunSensor.hh
+CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/General/APIHandler.hh
+CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/General/GlobalSetting.hh
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -572,6 +575,7 @@ CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: /usr/local/include/eige
 
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../deps/MySofa/sofaDLL.h
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
+CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../src/General/GlobalSetting.hh
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../src/General/Subscriber.hh
@@ -851,6 +855,7 @@ CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: /usr/local/include/eigen3/E
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: /usr/local/include/eigen3/Eigen/src/plugins/ReshapedMethods.inc
 
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
+CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: ../src/General/GlobalSetting.hh
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: ../src/General/Subscriber.hh
@@ -1131,6 +1136,7 @@ CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: /usr/local/include/eigen3/Eigen/s
 
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -1416,6 +1422,7 @@ CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/Componet/Sensors
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/Componet/Sensors/Sensor.hh
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/Componet/Sensors/StarSensor.hh
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/Componet/Sensors/SunSensor.hh
+CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/General/GlobalSetting.hh
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/General/Subscriber.hh
@@ -1695,6 +1702,7 @@ CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: /usr/local/include/eige
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/Astro/Orbit.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -1970,6 +1978,7 @@ CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: /usr/local/include/eige
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -2245,6 +2254,7 @@ CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: /usr/local/include/eige
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -2520,6 +2530,7 @@ CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: /usr/local/include
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -2797,6 +2808,7 @@ CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: /usr/local/includ
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../src/Componet/Componet.hh
+CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../src/General/Subscriber.hh
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -3069,6 +3081,12 @@ CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: /usr/local/include
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: /usr/local/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.inc
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: /usr/local/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.inc
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: /usr/local/include/eigen3/Eigen/src/plugins/ReshapedMethods.inc
+
+CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: ../deps/cpp-httplib/httplib.h
+CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
+CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: ../src/General/APIHandler.cc
+CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: ../src/General/APIHandler.hh
+CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: ../src/General/Subscriber.hh
 
 CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o: ../deps/nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o: ../src/SatelliteMath/BaseMath.hh
@@ -3626,6 +3644,7 @@ CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/Astro/AttitudeCont
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/Astro/Environment.hh
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/Astro/Orbit.hh
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/Componet/Com_Schedule.hh
+CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/General/APIHandler.hh
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/General/GlobalSetting.hh
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/General/InfluxDB.hh
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/General/Subscriber.hh

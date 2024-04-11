@@ -2,12 +2,13 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-10 17:24:47
+ * @LastEditTime: 2024-04-11 19:53:21
  * @FilePath: /Satellite/src/Componet/Sensors/SunSensor.cc
  * @Description: 
  */
 #include"SunSensor.hh"
 #include"InfluxDB.hh"
+#include"APIHandler.hh"
 SunSensor::SunSensor(Eigen::Vector3d *_s,
 					 Eigen::Matrix3d &IM,
 					 int64_t timestamp,
@@ -39,6 +40,13 @@ void SunSensor::Init(int64_t timestamp)
 {
 	LastRenewTime = timestamp;
 	Data = InstallMatrix * (*source);
+	auto hd = Handler::GetInstance();
+	for (int i = 1; i <= Fields; i++)
+	{
+		int diff = i + (id - 1) * Fields;
+		std::string Code = GetCode(StartCode, diff);
+		hd->add(Code, &Data[i - 1]);
+	}
 }
 
 void SunSensor::Submit() {

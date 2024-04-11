@@ -654,7 +654,7 @@
     "name": "姿态控制模式",
     "field": "SIM1001",
     "unit": null,
-    "type": "string",
+    "type": "number",
     "default": "earth-point"
   },
   {

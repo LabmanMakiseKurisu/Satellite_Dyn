@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:59:11
+ * @LastEditTime: 2024-04-11 20:11:32
  * @FilePath: /Satellite/src/Satellite/Satellite.cc
  * @Description: 
  */
@@ -10,6 +10,7 @@
 #include"InfluxDB.hh"
 #include"sofaDLL.h"
 #include"GlobalSetting.hh"
+#include"APIHandler.hh"
 Satellite::Satellite() :Orbit(), Attitude(), AttController()
 {
 	GlobalSettings *pCfg = GlobalSettings::GetInstance();
@@ -18,6 +19,24 @@ Satellite::Satellite() :Orbit(), Attitude(), AttController()
 
 	SatelliteTime = pCfg->Get<int64_t>("/Satellite/SatelliteTime");
 
+}
+
+double *Satellite::Addr(int index)
+{
+	switch (index)
+	{
+	case 0:
+		return &m_Delta;
+		break;
+	case 1:
+		return (double *)&m_Rate;
+		break;
+	case 2:
+		return (double *)&SatelliteTime;
+		break;
+	default:
+		return nullptr;
+	}
 }
 
 void Satellite::Init() {
@@ -36,8 +55,19 @@ void Satellite::Init() {
 	pComponet = Com_Schedule::GetInstance();
 	pComponet->Init(Attitude, Orbit, Env, AttController,SatelliteTime);
 
+	GlobalSettings *pCfg = GlobalSettings::GetInstance();
+	StartCode = pCfg->Get<std::string>("/Satellite/StartCode");
+	fileds = pCfg->Get<int>("/Satellite/fields");
+
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
+
+	auto hd = Handler::GetInstance();
+	for (int i = 0; i < fileds; i++)
+	{
+		std::string Code = GetCode(StartCode, i + 1);
+		hd->add(Code, Addr(i));
+	}
 }
 
 void Satellite::StateRenew()
@@ -66,11 +96,11 @@ void Satellite::Submit()
 	if (!m_DM)
 		return;
 	int index = 1;
-	m_DM->add<double>(GetCode("SIM00",index), m_Delta);
+	m_DM->add<double>(GetCode(StartCode, index), m_Delta);
 	index++;
-	m_DM->add<int>(GetCode("SIM00",index), m_Rate);
+	m_DM->add<int>(GetCode(StartCode, index), m_Rate);
 	index++;
-	m_DM->add<int64_t>(GetCode("SIM00",index), SatelliteTime);
+	m_DM->add<int64_t>(GetCode(StartCode, index), SatelliteTime);
 	index++;
 }
 

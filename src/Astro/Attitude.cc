@@ -8,6 +8,8 @@
 #include"Quaternions.hh"
 #include "Orbit.hh"
 #include "Flywheel.hh"
+#include"APIHandler.hh"
+
 Eigen::Vector3d AttDynamics(Eigen::Vector3d Omega_b, Eigen::Matrix3d& SatInaMat, Eigen::Vector3d& Hw, Eigen::Vector3d& Tau_s)
 {
     Eigen::Vector3d tmp = Omega_b.cross(SatInaMat * Omega_b + Hw);
@@ -23,7 +25,17 @@ Quat PlstToDeltaQuat(const Eigen::Vector3d Omega_b, double OfstSec)
     return Quat(PlstVal * OfstSec, Omega_b);
 }
 
-
+double *CAttitude::Addr(int index)
+{
+    if (index >= 0 && index < 4)
+        return &Qib.QuatData[index];
+    else if (index >= 4 && index < 8)
+        return &Qob.QuatData[index - 4];
+    else if (index >= 8 && index < 11)
+        return &Omega_b[index - 8];
+    else
+        return nullptr;
+}
 
 CAttitude::CAttitude() :Qib(),Qob(),Aio()
 {
@@ -86,22 +98,30 @@ void CAttitude::StateRenew(double Ts, COrbit& Orbit, Com_Schedule* pComponet)
 void CAttitude::Init(COrbit &Obt)
 {
     GlobalSettings *pCfg = GlobalSettings::GetInstance();
-    Omega_b << pCfg->Get<double>("/Omega_b/Wx"),
-        pCfg->Get<double>("/Omega_b/Wy"),
-        pCfg->Get<double>("/Omega_b/Wz");
+    Omega_b << pCfg->Get<double>("/Attitude/Omega_b/Wx"),
+        pCfg->Get<double>("/Attitude/Omega_b/Wy"),
+        pCfg->Get<double>("/Attitude/Omega_b/Wz");
     LastOmega_b = Omega_b;
-    Qib.QuatData[0] = pCfg->Get<double>("/Qib/Q0");
-    Qib.QuatData[1] = pCfg->Get<double>("/Qib/Q1");
-    Qib.QuatData[2] = pCfg->Get<double>("/Qib/Q2");
-    Qib.QuatData[3] = pCfg->Get<double>("/Qib/Q3");
-    SatInaMat << pCfg->Get<double>("/SatInaMat/Jxx"), pCfg->Get<double>("/SatInaMat/Jxy"), pCfg->Get<double>("/SatInaMat/Jxz"),
-        pCfg->Get<double>("/SatInaMat/Jxy"), pCfg->Get<double>("/SatInaMat/Jyy"), pCfg->Get<double>("/SatInaMat/Jyz"),
-        pCfg->Get<double>("/SatInaMat/Jxz"), pCfg->Get<double>("/SatInaMat/Jyz"), pCfg->Get<double>("/SatInaMat/Jzz");
-
+    Qib.QuatData[0] = pCfg->Get<double>("/Attitude/Qib/Q0");
+    Qib.QuatData[1] = pCfg->Get<double>("/Attitude/Qib/Q1");
+    Qib.QuatData[2] = pCfg->Get<double>("/Attitude/Qib/Q2");
+    Qib.QuatData[3] = pCfg->Get<double>("/Attitude/Qib/Q3");
+    SatInaMat << pCfg->Get<double>("/Attitude/SatInaMat/Jxx"), pCfg->Get<double>("/Attitude/SatInaMat/Jxy"), pCfg->Get<double>("/Attitude/SatInaMat/Jxz"),
+        pCfg->Get<double>("/Attitude/SatInaMat/Jxy"), pCfg->Get<double>("/Attitude/SatInaMat/Jyy"), pCfg->Get<double>("/Attitude/SatInaMat/Jyz"),
+        pCfg->Get<double>("/Attitude/SatInaMat/Jxz"), pCfg->Get<double>("/Attitude/SatInaMat/Jyz"), pCfg->Get<double>("/Attitude/SatInaMat/Jzz");
+	StartCode = pCfg->Get<std::string>("/Attitude/StartCode");
+	fileds = pCfg->Get<int>("/Attitude/fields");
     RenewAio(Obt);
     Qob = Aio.ToQuat().QuatInv() * Qib;
-    m_DM = Publisher::GetInstance(); 
+    m_DM = Publisher::GetInstance();
     m_DM->Subscribe(this);
+
+    auto hd = Handler::GetInstance();
+	for (int i = 0; i < fileds; i++)
+	{
+		std::string Code = GetCode(StartCode, i + 1);
+		hd->add(Code, Addr(i));
+	}
 }
 
 void CAttitude::Submit()
@@ -111,17 +131,17 @@ void CAttitude::Submit()
     int index = 1;
     for (int i = 0; i < 4; i++)
     {
-        m_DM->add<double>(GetCode("SIM02",index), Qib.QuatData[i]);
+        m_DM->add<double>(GetCode(StartCode,index), Qib.QuatData[i]);
         index++;
     }
     for (int i = 0; i < 4; i++)
     {
-        m_DM->add<double>(GetCode("SIM02",index), Qob.QuatData[i]);
+        m_DM->add<double>(GetCode(StartCode,index), Qob.QuatData[i]);
         index++;
     }
     for (int i = 0; i < 3; i++)
     {
-        m_DM->add<double>(GetCode("SIM02",index), Omega_b[i]);
+        m_DM->add<double>(GetCode(StartCode,index), Omega_b[i]);
         index++;
     }
 }

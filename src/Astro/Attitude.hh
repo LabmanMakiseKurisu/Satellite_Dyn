@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:01
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:48:40
+ * @LastEditTime: 2024-04-11 18:56:49
  * @FilePath: /Satellite/src/Astro/Attitude.hh
  * @Description: 
  */
@@ -19,14 +19,16 @@ struct RV;
 class CAttitude : public ::ISubscriber
 {
 public:
-	Eigen::Vector3d Omega_b;//rad/s
-	CDcm Aio;//
 	Quat Qib;//
 	Quat Qob;//
+	Eigen::Vector3d Omega_b;//rad/s
+	CDcm Aio;//
 private:
 	Eigen::Matrix3d SatInaMat;//kgm2
 	Eigen::Vector3d WheelMomentum_b;//Nms
 	Eigen::Vector3d TotalTorque;//TotalTorque=TB+Tf-Tw
+	std::string StartCode;
+    int fileds;
 public:
 	//
 	// brief  : 
@@ -51,4 +53,5 @@ public:
 private:
 	Eigen::Vector3d LastOmega_b;//rad/s
 	void RenewAio(COrbit& Orbit);
+	double* Addr(int index);
 };

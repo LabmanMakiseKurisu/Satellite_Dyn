@@ -2,12 +2,14 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-10 17:24:44
+ * @LastEditTime: 2024-04-11 19:54:44
  * @FilePath: /Satellite/src/Componet/Actuators/Flywheel.cc
  * @Description: 
  */
 #include"Flywheel.hh"
 #include"InfluxDB.hh"
+#include"APIHandler.hh"
+
 Flywheel::Flywheel(double *_s,
 				   Eigen::Vector3d &InsVet, double _inertia,
 				   double _Tau, double _MaxSpeed,
@@ -21,6 +23,13 @@ Flywheel::Flywheel(double *_s,
 	m_DM->Subscribe(this);
 }
 void Flywheel::Init(int64_t timestamp) {
+	auto hd = Handler::GetInstance();
+	for (int i = 1; i <= Fields; i++)
+	{
+		int diff = i + (id - 1) * Fields;
+		std::string Code = GetCode(StartCode, diff);
+		hd->add(Code, Data.Addr(i - 1));
+	}
 }
 
 void Flywheel::StateRenew(int64_t NowTime) {

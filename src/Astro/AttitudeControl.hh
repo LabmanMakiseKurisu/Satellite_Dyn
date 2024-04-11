@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:01
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:17:34
+ * @LastEditTime: 2024-04-11 19:18:33
  * @FilePath: /Satellite/src/Astro/AttitudeControl.hh
  * @Description: 
  */
@@ -50,5 +50,9 @@ private:
 	//@brief: 
 	void ToEarthControl(const GyroScope& _Gyro, const StarSensor& _Star, const GNSS& _gnss);
 
+private:
+	std::string StartCode;
+	int fileds;
+	double *Addr(int index);
 };
 

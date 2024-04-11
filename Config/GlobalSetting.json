@@ -9,77 +9,103 @@
         "Interval":1
     },
     "Satellite": {
+        "StartCode": "SIM00",
+        "fields": 3,
         "SatelliteTime": 1640966400000,
         "Delta": 0.1,
         "Rate": 1
     },
-    "J2000Inertial": {
-        "Rx": 6678136.9999998566,
-        "Ry": 0.0002095685,
-        "Rz": -1.3800009224,
-        "Vx": 0.0007615644,
-        "Vy": 6789.5304738682,
-        "Vz": 3686.4138485846
+    "Orbit": {
+        "StartCode": "SIM01",
+        "fields": 15,
+        "J2000Inertial": {
+            "Rx": 6678136.9999998566,
+            "Ry": 0.0002095685,
+            "Rz": -1.3800009224,
+            "Vx": 0.0007615644,
+            "Vy": 6789.5304738682,
+            "Vz": 3686.4138485846
+        },
+        "OrbitElement": {
+            "a": 6678137,
+            "e": 0,
+            "i": 28.5,
+            "RAAN": 0,
+            "omega": 0,
+            "M": 0
+        }
     },
-    "OrbitElement": {
-        "a": 6678137,
-        "e": 0,
-        "i": 28.5,
-        "RAAN": 0,
-        "omega": 0,
-        "M": 0
+    "Attitude": {
+        "StartCode": "SIM02",
+        "fields": 11,
+        "Omega_b": {
+            "Wx": 0.05,
+            "Wy": -0.04,
+            "Wz": 0.01
+        },
+        "Qib": {
+            "Q0": 1,
+            "Q1": 0,
+            "Q2": 0,
+            "Q3": 0
+        },
+        "SatInaMat": {
+            "Jxx": 30,
+            "Jyy": 40,
+            "Jzz": 50,
+            "Jxy": 0,
+            "Jxz": 0,
+            "Jyz": 0
+        }
     },
-    "Omega_b": {
-        "Wx": 0.05,
-        "Wy": -0.04,
-        "Wz": 0.01
+    "Env": {
+        "StartCode": "SIM03",
+        "fields": 12,
+        "Mag": {
+            "MagOrder": 8
+        }
     },
-    "Qib": {
-        "Q0": 1,
-        "Q1": 0,
-        "Q2": 0,
-        "Q3": 0
-    },
-    "SatInaMat": {
-        "Jxx": 30,
-        "Jyy": 40,
-        "Jzz": 50,
-        "Jxy": 0,
-        "Jxz": 0,
-        "Jyz": 0
-    },
-    "Mag": {
-        "MagOrder": 8
-    },
-    "SunSensor": {
+    "Gyro": {
+        "StartCode": "SIM04",
+        "fields": 3,
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
         "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
     },
     "StarSensor": {
+        "StartCode": "SIM05",
+        "fields": 4,
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
         "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
     },
-    "Gyro": {
+    "SunSensor": {
+        "StartCode": "SIM06",
+        "fields": 3,
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
         "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
     },
     "MagSensor": {
+        "StartCode": "SIM07",
+        "fields": 3,
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
         "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
     },
     "Gnss": {
+        "StartCode": "SIM08",
+        "fields": 6,
         "Nums": 2,
         "SamplePeriod": 0.25
     },
     "Flywheel": {
+        "StartCode": "SIM09",
+        "fields": 2,
         "Nums": 3,
         "InstallVector1": "1,0,0",
         "InstallVector2": "0,1,0",
@@ -90,5 +116,9 @@
         "MaxTref": 0.5,
         "Kp": 1.0,
         "Ki": 1.0
+    },
+    "AttCtrl": {
+        "StartCode": "SIM10",
+        "fields": 10
     }
 }

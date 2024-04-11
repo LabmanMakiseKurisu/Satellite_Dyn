@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:23
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:38:33
+ * @LastEditTime: 2024-04-11 19:10:41
  * @FilePath: /Satellite/src/Satellite/Satellite.hh
  * @Description: 
  */
@@ -17,7 +17,6 @@
 class Satellite: public ::ISubscriber
 {
 public:
-	int64_t SatelliteTime;//ms
 	COrbit Orbit;//
 	CAttitude Attitude;//
 	Environment Env;//
@@ -26,12 +25,18 @@ public:
 public:
 	double m_Delta;//
 	int m_Rate;//
+	int64_t SatelliteTime;//ms
 public:
 	Satellite();
 	void Init();
 	~Satellite()=default;
 	void StateRenew();
 	virtual void Submit() override;
+
+private:
+	std::string StartCode;
+	int fileds;
+	double *Addr(int index);
 };
 
 std::ostream& operator<<(std::ostream& _cout, const Satellite& Sat);

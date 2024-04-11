@@ -12,6 +12,7 @@
 #include "GNSS.hh"
 #include "Flywheel.hh"
 #include "Subscriber.hh"
+#include"APIHandler.hh"
 
 Com_Schedule::DeleteHelper Com_Schedule::helper;
 
@@ -32,7 +33,9 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 	{
 		std::string GytoStr = "/Gyro/InstallMatrix" + std::to_string(i);
 		Eigen::Matrix3d IM = pCfg->GetMat(GytoStr);
-		Gyros[i - 1] = new GyroScope(&Att.Omega_b, IM, timestamp, pCfg->Get<double>("/Gyro/SamplePeriod"), i);
+		Gyros[i - 1] = new GyroScope(&Att.Omega_b, IM,
+									 timestamp, pCfg->Get<double>("/Gyro/SamplePeriod"),
+									 i, pCfg->Get<double>("/Gyro/fields"), pCfg->Get<std::string>("/Gyro/StartCode"));
 		Gyros[i - 1]->Init(timestamp);
 	}
 
@@ -40,7 +43,9 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 	{
 		std::string SunSensorStr = "/SunSensor/InstallMatrix" + std::to_string(i);
 		Eigen::Matrix3d IM = pCfg->GetMat(SunSensorStr);
-		SunSensors[i - 1] = new SunSensor(&Env.SunVecBody, IM, timestamp, pCfg->Get<double>("/SunSensor/SamplePeriod"), i);
+		SunSensors[i - 1] = new SunSensor(&Env.SunVecBody, IM, 
+		timestamp, pCfg->Get<double>("/SunSensor/SamplePeriod"), 
+		i, pCfg->Get<double>("/SunSensor/fields"), pCfg->Get<std::string>("/SunSensor/StartCode"));
 		SunSensors[i - 1]->Init(timestamp);
 	}
 
@@ -48,7 +53,9 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 	{
 		std::string StarSensorStr = "/StarSensor/InstallMatrix" + std::to_string(i);
 		Eigen::Matrix3d IM = pCfg->GetMat(StarSensorStr);
-		StarSensors[i - 1] = new StarSensor(&Att.Qib, IM, timestamp, pCfg->Get<double>("/StarSensor/SamplePeriod"), i);
+		StarSensors[i - 1] = new StarSensor(&Att.Qib, IM, 
+		timestamp, pCfg->Get<double>("/StarSensor/SamplePeriod"), 
+		i, pCfg->Get<double>("/StarSensor/fields"), pCfg->Get<std::string>("/StarSensor/StartCode"));
 		StarSensors[i - 1]->Init(timestamp);
 	}
 
@@ -56,14 +63,18 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 	{
 		std::string MagSensorStr = "/MagSensor/InstallMatrix" + std::to_string(i);
 		Eigen::Matrix3d IM = pCfg->GetMat(MagSensorStr);
-		MagSensors[i - 1] = new MagSensor(&Env.BodyMag, IM, timestamp, pCfg->Get<double>("/MagSensor/SamplePeriod"), i);
+		MagSensors[i - 1] = new MagSensor(&Env.BodyMag, IM, 
+		timestamp, pCfg->Get<double>("/MagSensor/SamplePeriod"), 
+		i, pCfg->Get<double>("/MagSensor/fields"), pCfg->Get<std::string>("/MagSensor/StartCode"));
 		MagSensors[i - 1]->Init(timestamp);
 	}
 
 	for (size_t i{ 1 }; i <= GnssNums; i++)
 	{
 		Eigen::Matrix3d IM = Eigen::Matrix3d::Identity();
-		GNSSs[i - 1] = new GNSS(&Obt.ECEFFix, IM, timestamp, pCfg->Get<double>("/Gnss/SamplePeriod"), i);
+		GNSSs[i - 1] = new GNSS(&Obt.ECEFFix, IM, 
+		timestamp, pCfg->Get<double>("/Gnss/SamplePeriod"), 
+		i, pCfg->Get<double>("/Gnss/fields"), pCfg->Get<std::string>("/Gnss/StartCode"));
 		GNSSs[i - 1]->Init(timestamp);
 	}
 
@@ -75,12 +86,14 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 		pCfg->Get<double>("/Flywheel/Inertia"), pCfg->Get<double>("/Flywheel/TimeCof"),
 		pCfg->Get<double>("/Flywheel/MaxSpeed"), pCfg->Get<double>("/Flywheel/MaxTref"),
 		pCfg->Get<double>("/Flywheel/Kp"), pCfg->Get<double>("/Flywheel/Ki"),
-		timestamp, i, pCfg->Get<double>("/Satellite/Delta"));
+		timestamp, i, pCfg->Get<double>("/Satellite/Delta"),
+		pCfg->Get<double>("/Flywheel/fields"), pCfg->Get<std::string>("/Flywheel/StartCode"));
 		Wheels[i-1]->Init(timestamp);
 	}
 
 	m_DM = Publisher::GetInstance(); 
 	m_DM->Subscribe(this);
+
 }
 
 void Com_Schedule::StateRenew(int64_t timestamp, CAttitudeController &ACtrl)

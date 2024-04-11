@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:11
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 18:52:02
+ * @LastEditTime: 2024-04-11 19:54:33
  * @FilePath: /Satellite/src/Componet/Actuators/Flywheel.hh
  * @Description: 
  */
@@ -50,6 +50,17 @@ struct WheelData
 			return Torque;
 		default:
 			return 0;
+		}
+	}
+	double* Addr(size_t index) {
+		switch (index)
+		{
+		case 0:
+			return &Speed;
+		case 1:
+			return &Torque;
+		default:
+			return nullptr;
 		}
 	}
 };

@@ -466,6 +466,33 @@ src/Componet/Sensors/SunSensor.cc.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s
 .PHONY : src/Componet/Sensors/SunSensor.cc.s
 
+src/General/APIHandler.o: src/General/APIHandler.cc.o
+
+.PHONY : src/General/APIHandler.o
+
+# target to build an object file
+src/General/APIHandler.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o
+.PHONY : src/General/APIHandler.cc.o
+
+src/General/APIHandler.i: src/General/APIHandler.cc.i
+
+.PHONY : src/General/APIHandler.i
+
+# target to preprocess a source file
+src/General/APIHandler.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/APIHandler.cc.i
+.PHONY : src/General/APIHandler.cc.i
+
+src/General/APIHandler.s: src/General/APIHandler.cc.s
+
+.PHONY : src/General/APIHandler.s
+
+# target to generate assembly for a file
+src/General/APIHandler.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/APIHandler.cc.s
+.PHONY : src/General/APIHandler.cc.s
+
 src/General/GlobalSetting.o: src/General/GlobalSetting.cc.o
 
 .PHONY : src/General/GlobalSetting.o
@@ -755,6 +782,9 @@ help:
 	@echo "... src/Componet/Sensors/SunSensor.o"
 	@echo "... src/Componet/Sensors/SunSensor.i"
 	@echo "... src/Componet/Sensors/SunSensor.s"
+	@echo "... src/General/APIHandler.o"
+	@echo "... src/General/APIHandler.i"
+	@echo "... src/General/APIHandler.s"
 	@echo "... src/General/GlobalSetting.o"
 	@echo "... src/General/GlobalSetting.i"
 	@echo "... src/General/GlobalSetting.s"

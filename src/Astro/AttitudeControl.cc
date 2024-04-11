@@ -11,6 +11,9 @@
 #include "MagSensor.hh"
 #include "GNSS.hh"
 #include "Flywheel.hh"
+#include"APIHandler.hh"
+#include"GlobalSetting.hh"
+
 using AttCtrl = CAttitudeController;
 CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
 {
@@ -20,9 +23,41 @@ CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
 	MaxTorque = 0.08;
 }
 
+double *CAttitudeController::Addr(int index)
+{
+	switch (index)
+	{
+	case 0:
+		return (double *)&workmode;
+	case 1:
+	case 2:
+	case 3:
+		return &TorqueRef[index - 1];
+	case 4:
+	case 5:
+	case 6:
+		return &Kp(index - 4, 0);
+	case 7:
+	case 8:
+	case 9:
+		return &Kd(index - 7, 0);
+	}
+	return nullptr;
+}
 void CAttitudeController::Init() {
+	GlobalSettings *pCfg = GlobalSettings::GetInstance();
+	StartCode = pCfg->Get<std::string>("/AttCtrl/StartCode");
+	fileds = pCfg->Get<int>("/AttCtrl/fields");
+
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
+
+	auto hd = Handler::GetInstance();
+	for (int i = 0; i < fileds; i++)
+	{
+		std::string Code = GetCode(StartCode, i + 1);
+		hd->add(Code, Addr(i));
+	}
 }
 
 Eigen::Vector3d CAttitudeController::TorqueRefRenew(Com_Schedule* pCom)
@@ -110,11 +145,11 @@ void CAttitudeController::Submit()
     if (!m_DM)
         return;
     int index = 1;
-	m_DM->add<int>(GetCode("SIM10",index), workmode);
+	m_DM->add<int>(GetCode(StartCode,index), workmode);
 	index++;
 
 	for(int i = 0; i < 3; i++) {
-		m_DM->add<double>(GetCode("SIM10",index), TorqueRef[i]);
+		m_DM->add<double>(GetCode(StartCode,index), TorqueRef[i]);
 		index++;
 	}
 }

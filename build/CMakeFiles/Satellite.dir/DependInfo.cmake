@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o"
   "/home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o"
   "/home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o"
+  "/home/amadeus/Satellite/src/General/APIHandler.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o"
   "/home/amadeus/Satellite/src/General/GlobalSetting.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o"
   "/home/amadeus/Satellite/src/General/InfluxDB.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o"
   "/home/amadeus/Satellite/src/General/SimTime.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/SimTime.cc.o"
