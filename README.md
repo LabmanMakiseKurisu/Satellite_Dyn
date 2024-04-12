@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-06 14:42:32
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-12 19:17:28
+ * @LastEditTime: 2024-04-12 19:21:20
  * @FilePath: /Satellite/README.md
  * @Description: 
 -->
@@ -23,9 +23,9 @@
 ## Development
 
 目前待开发功能:
-- 代码重构，提升可扩展性[done]
-- RESTful风格的HTTP API[done]
-- 支持容器化部署
+- 代码重构，提升可扩展性 [done]
+- RESTful风格的HTTP API [done]
+- 支持容器化部署 [done]
 - 高精度轨道动力学HPOP
 - 敏感器噪声
 - 磁力矩器单机模型
@@ -44,8 +44,7 @@ $ git submodule update --init --recursive
 $ docker build -t sate_sim .                
 ```
 # run
-```
-$ service influxdb start     
+```  
 $ bash ./run.sh
 ```
 
