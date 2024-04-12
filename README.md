@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-06 14:42:32
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-12 19:05:39
+ * @LastEditTime: 2024-04-12 19:17:28
  * @FilePath: /Satellite/README.md
  * @Description: 
 -->
@@ -35,16 +35,15 @@
 ## Getting Started
 基本依赖环境：
 - docker
-- InfluxDB 1.8.1
 # Submodule
 ```
 $ git submodule update --init --recursive                 
 ```
-## Build
+# Build
 ```
 $ docker build -t sate_sim .                
 ```
-## run
+# run
 ```
 $ service influxdb start     
 $ bash ./run.sh
