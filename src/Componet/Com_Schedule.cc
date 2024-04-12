@@ -82,7 +82,7 @@ void Com_Schedule::Init(CAttitude& Att, COrbit& Obt, Environment& Env, CAttitude
 	{
 		std::string WheelStr = "/Flywheel/InstallVector" + std::to_string(i);
 		Eigen::Vector3d Iv = pCfg->GetVec(WheelStr);
-		Wheels[i - 1] = new Flywheel(&WheelsTref[i], Iv,
+		Wheels[i - 1] = new Flywheel(&WheelsTref[i-1], Iv,
 		pCfg->Get<double>("/Flywheel/Inertia"), pCfg->Get<double>("/Flywheel/TimeCof"),
 		pCfg->Get<double>("/Flywheel/MaxSpeed"), pCfg->Get<double>("/Flywheel/MaxTref"),
 		pCfg->Get<double>("/Flywheel/Kp"), pCfg->Get<double>("/Flywheel/Ki"),

@@ -2846,14 +2846,6 @@ vector
 Subscriber.hh
 /home/amadeus/Satellite/src/General/Subscriber.hh
 
-/home/amadeus/Satellite/src/General/SimTime.cc
-SimTime.hh
-/home/amadeus/Satellite/src/General/SimTime.hh
-chrono
--
-thread
--
-
 /home/amadeus/Satellite/src/General/SimTime.hh
 iostream
 -
@@ -2957,10 +2949,6 @@ EulerAgl.hh
 /home/amadeus/Satellite/src/SatelliteMath/Quaternions.hh
 BaseMath.hh
 /home/amadeus/Satellite/src/SatelliteMath/BaseMath.hh
-
-/home/amadeus/Satellite/src/api/APIHandler.cc
-APIHandler.hh
-/home/amadeus/Satellite/src/api/APIHandler.hh
 
 /home/amadeus/Satellite/src/api/APIHandler.hh
 nlohmann/json.hpp

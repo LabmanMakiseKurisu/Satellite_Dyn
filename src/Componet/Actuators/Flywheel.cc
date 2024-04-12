@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-11 19:54:44
+ * @LastEditTime: 2024-04-12 19:41:02
  * @FilePath: /Satellite/src/Componet/Actuators/Flywheel.cc
  * @Description: 
  */
@@ -45,6 +45,8 @@ void Flywheel::StateRenew(int64_t NowTime) {
 	
 	Data.SpeedRef = SRef;
 	Data.TorqueRef = TRef;
+
+	//std::cout<<"flywheel "<<id<<" speed:"<<Data.Speed<<" speedref:"<<Data.SpeedRef<<" torque:"<<Data.Torque<<" torque ref:"<<Data.TorqueRef<<std::endl;
 }
 
 void Flywheel::Submit() {
