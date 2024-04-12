@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-06 14:42:32
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-12 15:49:29
+ * @LastEditTime: 2024-04-12 19:05:39
  * @FilePath: /Satellite/README.md
  * @Description: 
 -->
@@ -33,9 +33,20 @@
 - 轨道控制
 
 ## Getting Started
-TODO
+基本依赖环境：
+- docker
+- InfluxDB 1.8.1
 # Submodule
-  
 ```
 $ git submodule update --init --recursive                 
 ```
+## Build
+```
+$ docker build -t sate_sim .                
+```
+## run
+```
+$ service influxdb start     
+$ bash ./run.sh
+```
+

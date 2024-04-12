@@ -54,12 +54,14 @@ CMAKE_BINARY_DIR = /home/amadeus/Satellite/build
 
 # The main recursive "all" target.
 all: CMakeFiles/Satellite.dir/all
+all: deps/eigen/all
 all: deps/nlohmann_json/all
 all: deps/cpp-httplib/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: deps/eigen/preinstall
 preinstall: deps/nlohmann_json/preinstall
 preinstall: deps/cpp-httplib/preinstall
 
@@ -67,6 +69,7 @@ preinstall: deps/cpp-httplib/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Satellite.dir/clean
+clean: deps/eigen/clean
 clean: deps/nlohmann_json/clean
 clean: deps/cpp-httplib/clean
 
@@ -89,6 +92,155 @@ deps/cpp-httplib/preinstall:
 deps/cpp-httplib/clean:
 
 .PHONY : deps/cpp-httplib/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen
+
+# Recursive "all" directory target.
+deps/eigen/all: deps/eigen/unsupported/all
+
+.PHONY : deps/eigen/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/preinstall: deps/eigen/unsupported/preinstall
+
+.PHONY : deps/eigen/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/clean: deps/eigen/CMakeFiles/uninstall.dir/clean
+deps/eigen/clean: deps/eigen/blas/clean
+deps/eigen/clean: deps/eigen/lapack/clean
+deps/eigen/clean: deps/eigen/unsupported/clean
+deps/eigen/clean: deps/eigen/demos/clean
+deps/eigen/clean: deps/eigen/scripts/clean
+
+.PHONY : deps/eigen/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/blas
+
+# Recursive "all" directory target.
+deps/eigen/blas/all:
+
+.PHONY : deps/eigen/blas/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/blas/preinstall:
+
+.PHONY : deps/eigen/blas/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/blas/clean:
+
+.PHONY : deps/eigen/blas/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/demos
+
+# Recursive "all" directory target.
+deps/eigen/demos/all:
+
+.PHONY : deps/eigen/demos/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/demos/preinstall:
+
+.PHONY : deps/eigen/demos/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/demos/clean: deps/eigen/demos/CMakeFiles/demos.dir/clean
+
+.PHONY : deps/eigen/demos/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/lapack
+
+# Recursive "all" directory target.
+deps/eigen/lapack/all:
+
+.PHONY : deps/eigen/lapack/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/lapack/preinstall:
+
+.PHONY : deps/eigen/lapack/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/lapack/clean:
+
+.PHONY : deps/eigen/lapack/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/scripts
+
+# Recursive "all" directory target.
+deps/eigen/scripts/all:
+
+.PHONY : deps/eigen/scripts/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/scripts/preinstall:
+
+.PHONY : deps/eigen/scripts/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/scripts/clean:
+
+.PHONY : deps/eigen/scripts/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/unsupported
+
+# Recursive "all" directory target.
+deps/eigen/unsupported/all: deps/eigen/unsupported/Eigen/all
+
+.PHONY : deps/eigen/unsupported/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/unsupported/preinstall: deps/eigen/unsupported/Eigen/preinstall
+
+.PHONY : deps/eigen/unsupported/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/unsupported/clean: deps/eigen/unsupported/Eigen/clean
+
+.PHONY : deps/eigen/unsupported/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/unsupported/Eigen
+
+# Recursive "all" directory target.
+deps/eigen/unsupported/Eigen/all: deps/eigen/unsupported/Eigen/CXX11/all
+
+.PHONY : deps/eigen/unsupported/Eigen/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/unsupported/Eigen/preinstall: deps/eigen/unsupported/Eigen/CXX11/preinstall
+
+.PHONY : deps/eigen/unsupported/Eigen/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/unsupported/Eigen/clean: deps/eigen/unsupported/Eigen/CXX11/clean
+
+.PHONY : deps/eigen/unsupported/Eigen/clean
+
+#=============================================================================
+# Directory level rules for directory deps/eigen/unsupported/Eigen/CXX11
+
+# Recursive "all" directory target.
+deps/eigen/unsupported/Eigen/CXX11/all:
+
+.PHONY : deps/eigen/unsupported/Eigen/CXX11/all
+
+# Recursive "preinstall" directory target.
+deps/eigen/unsupported/Eigen/CXX11/preinstall:
+
+.PHONY : deps/eigen/unsupported/Eigen/CXX11/preinstall
+
+# Recursive "clean" directory target.
+deps/eigen/unsupported/Eigen/CXX11/clean:
+
+.PHONY : deps/eigen/unsupported/Eigen/CXX11/clean
 
 #=============================================================================
 # Directory level rules for directory deps/nlohmann_json
@@ -134,6 +286,60 @@ Satellite: CMakeFiles/Satellite.dir/rule
 CMakeFiles/Satellite.dir/clean:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/clean
 .PHONY : CMakeFiles/Satellite.dir/clean
+
+#=============================================================================
+# Target rules for target deps/eigen/CMakeFiles/uninstall.dir
+
+# All Build rule for target.
+deps/eigen/CMakeFiles/uninstall.dir/all:
+	$(MAKE) -f deps/eigen/CMakeFiles/uninstall.dir/build.make deps/eigen/CMakeFiles/uninstall.dir/depend
+	$(MAKE) -f deps/eigen/CMakeFiles/uninstall.dir/build.make deps/eigen/CMakeFiles/uninstall.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num= "Built target uninstall"
+.PHONY : deps/eigen/CMakeFiles/uninstall.dir/all
+
+# Build rule for subdir invocation for target.
+deps/eigen/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 deps/eigen/CMakeFiles/uninstall.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 0
+.PHONY : deps/eigen/CMakeFiles/uninstall.dir/rule
+
+# Convenience name for target.
+uninstall: deps/eigen/CMakeFiles/uninstall.dir/rule
+
+.PHONY : uninstall
+
+# clean rule for target.
+deps/eigen/CMakeFiles/uninstall.dir/clean:
+	$(MAKE) -f deps/eigen/CMakeFiles/uninstall.dir/build.make deps/eigen/CMakeFiles/uninstall.dir/clean
+.PHONY : deps/eigen/CMakeFiles/uninstall.dir/clean
+
+#=============================================================================
+# Target rules for target deps/eigen/demos/CMakeFiles/demos.dir
+
+# All Build rule for target.
+deps/eigen/demos/CMakeFiles/demos.dir/all:
+	$(MAKE) -f deps/eigen/demos/CMakeFiles/demos.dir/build.make deps/eigen/demos/CMakeFiles/demos.dir/depend
+	$(MAKE) -f deps/eigen/demos/CMakeFiles/demos.dir/build.make deps/eigen/demos/CMakeFiles/demos.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num= "Built target demos"
+.PHONY : deps/eigen/demos/CMakeFiles/demos.dir/all
+
+# Build rule for subdir invocation for target.
+deps/eigen/demos/CMakeFiles/demos.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 deps/eigen/demos/CMakeFiles/demos.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amadeus/Satellite/build/CMakeFiles 0
+.PHONY : deps/eigen/demos/CMakeFiles/demos.dir/rule
+
+# Convenience name for target.
+demos: deps/eigen/demos/CMakeFiles/demos.dir/rule
+
+.PHONY : demos
+
+# clean rule for target.
+deps/eigen/demos/CMakeFiles/demos.dir/clean:
+	$(MAKE) -f deps/eigen/demos/CMakeFiles/demos.dir/build.make deps/eigen/demos/CMakeFiles/demos.dir/clean
+.PHONY : deps/eigen/demos/CMakeFiles/demos.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

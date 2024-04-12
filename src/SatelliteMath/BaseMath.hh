@@ -150,17 +150,17 @@
 //
 // brief  : ȡ���߽ϴ���
 //
-#define MAX(v1,v2) ((v1)>(v2)?(v1):(v2))
+#define _MAX(v1,v2) ((v1)>(v2)?(v1):(v2))
 
 //
 // brief  : ȡ���ߵĽ�Сֵ
 //
-#define MIN(v1,v2) ((v1)<(v2)?(v1):(v2))
+#define _MIN(v1,v2) ((v1)<(v2)?(v1):(v2))
 
 //
 // brief  : ��ֵ�ķ�ֵ�޷�
 //
-#define LIMIT(v,min,max) MAX(MIN(v,max),min)
+#define LIMIT(v,min,max) _MAX(_MIN(v,max),min)
 
 //
 // brief  :�ԳƱ���

@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 18:01:03
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-12 14:09:16
+ * @LastEditTime: 2024-04-12 18:54:39
  * @FilePath: /Satellite/src/General/InfluxDB.cc
  * @Description: 
  */
@@ -37,6 +37,8 @@ Publisher::Publisher() {
     m_Measurement = pCfg->Get<std::string>("/InfluxDB/Measurement");
     m_interval = pCfg->Get<int>("/InfluxDB/Interval");
     m_LastSendTime = GetTimeStampMs();
+
+    CreateDB();
 }
 
 void Publisher::Subscribe(ISubscriber *subscriber)
@@ -79,7 +81,7 @@ void Publisher::SendToInfluxDB()
 
     if (res && res->status == 204)
     { // InfluxDB通常使用状态码204表示成功接收数据
-        //std::cout << "Data sent to InfluxDB successfully." << std::endl;
+        std::cout << "Data sent to InfluxDB successfully." << std::endl;
     }
     else
     {
@@ -97,4 +99,38 @@ std::string GetCode(std::string StartCode, int index) {
         Code.append("0");
     Code.append(std::to_string(index));
     return Code;
+}
+
+void Publisher ::CreateDB()
+{
+    httplib::Client cli(m_host, m_port);
+
+    // 查询数据库列表
+    auto res = cli.Get("/query?q=SHOW%20DATABASES");
+    if (res && res->status == 200)
+    {
+        // 检查数据库是否存在
+        if (res->body.find(m_dbName) == std::string::npos)
+        {
+            // 数据库不存在，创建数据库
+            std::string query = "q=CREATE DATABASE " + m_dbName;
+            auto create_res = cli.Post("/query", query, "application/x-www-form-urlencoded");
+            if (create_res && create_res->status == 200)
+            {
+                std::cout << "Database '" << m_dbName << "' created successfully." << std::endl;
+            }
+            else
+            {
+                std::cerr << "Failed to create database '" << m_dbName << "'. Status code: " << (create_res ? std::to_string(create_res->status) : "No response") << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Database '" << m_dbName << "' already exists." << std::endl;
+        }
+    }
+    else
+    {
+        std::cerr << "Failed to query databases. Status code: " << (res ? std::to_string(res->status) : "No response") << std::endl;
+    }
 }

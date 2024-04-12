@@ -7,13 +7,15 @@ project(Satellite LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# 查找Eign3
-find_package(Eigen3 REQUIRED NO_MODULE)
+# 添加 Eigen3 作为子模块
+add_subdirectory(${CMAKE_SOURCE_DIR}/deps/eigen)
+
 # 查找Sofa
 find_library(SOFA_DLL NAMES sofaDLL PATHS ${CMAKE_SOURCE_DIR}/deps/MySofa NO_DEFAULT_PATH)
 if(NOT SOFA_DLL)
     message(FATAL_ERROR "sofaDLL not found")
 endif()
+
 # 查找Threads
 find_package(Threads REQUIRED)
 
@@ -45,10 +47,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src/api
 )
 
-# 如果找到了Eigen3库，则链接到项目
-if(TARGET Eigen3::Eigen)
-    target_link_libraries(${PROJECT_NAME} PRIVATE Eigen3::Eigen)
-endif()
+# 链接到Eigen3
+target_link_libraries(${PROJECT_NAME} PRIVATE Eigen3::Eigen)
 
 # 使用完整路径链接sofaDLL
 target_link_libraries(${PROJECT_NAME} PRIVATE ${SOFA_DLL}) 
@@ -60,9 +60,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 # target_link_libraries(${PROJECT_NAME} PRIVATE cpp-httplib)
 
-
-
-
 # 设置构建后的输出目录
 set(RELEASE_DIR ${CMAKE_SOURCE_DIR}/build/release)
 
@@ -73,4 +70,3 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/Config ${RELEASE_DIR}/Config
     COMMAND ${CMAKE_COMMAND} -E copy ${SOFA_DLL} ${RELEASE_DIR}
 )
-

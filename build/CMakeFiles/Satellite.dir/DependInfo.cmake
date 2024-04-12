@@ -47,8 +47,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/SatelliteMath"
   "../src/util"
   "../src/api"
+  "../deps/eigen"
   "../deps/nlohmann_json/include"
-  "/usr/local/include/eigen3"
   )
 
 # Targets to which this target links.

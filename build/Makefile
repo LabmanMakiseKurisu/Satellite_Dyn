@@ -94,7 +94,7 @@ install/fast: preinstall/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Devel\" \"Unspecified\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -168,6 +168,32 @@ Satellite: cmake_check_build_system
 Satellite/fast:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/build
 .PHONY : Satellite/fast
+
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) -f deps/eigen/CMakeFiles/uninstall.dir/build.make deps/eigen/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named demos
+
+# Build rule for target.
+demos: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 demos
+.PHONY : demos
+
+# fast build rule for target.
+demos/fast:
+	$(MAKE) -f deps/eigen/demos/CMakeFiles/demos.dir/build.make deps/eigen/demos/CMakeFiles/demos.dir/build
+.PHONY : demos/fast
 
 src/Astro/Attitude.o: src/Astro/Attitude.cc.o
 
@@ -830,6 +856,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Satellite"
+	@echo "... uninstall"
+	@echo "... demos"
 	@echo "... src/Astro/Attitude.o"
 	@echo "... src/Astro/Attitude.i"
 	@echo "... src/Astro/Attitude.s"

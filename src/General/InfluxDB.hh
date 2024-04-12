@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 17:53:45
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-11 18:30:48
+ * @LastEditTime: 2024-04-12 18:46:45
  * @FilePath: /Satellite/src/General/InfluxDB.hh
  * @Description: 
  */
@@ -41,6 +41,7 @@ private:
     Publisher &operator=(const Publisher &) = delete;
     Publisher(Publisher &&) = delete;
     Publisher &operator=(Publisher &&) = delete;
+    void CreateDB();
     void SendToInfluxDB();
     static void ReleaseInstance();
     class DeleteHelper

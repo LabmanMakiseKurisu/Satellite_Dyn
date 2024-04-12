@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 18:01:03
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-12 12:12:15
+ * @LastEditTime: 2024-04-12 17:06:52
  * @FilePath: /Satellite/src/api/Mediator.cc
  * @Description: 
  */
@@ -58,6 +58,8 @@ Mediator::ErrorType Mediator::get(std::string &res, std::string key, std::string
     }
     else
         return ErrorType::UNSUPPORTED_TYPE;
+
+    return ErrorType::UNSUPPORTED_TYPE;
 }
 
 void Mediator::ReleaseInstance()
