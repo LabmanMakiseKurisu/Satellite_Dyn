@@ -41,6 +41,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src/General
     ${CMAKE_SOURCE_DIR}/src/Satellite
     ${CMAKE_SOURCE_DIR}/src/SatelliteMath
+    ${CMAKE_SOURCE_DIR}/src/util
+    ${CMAKE_SOURCE_DIR}/src/api
 )
 
 # 如果找到了Eigen3库，则链接到项目

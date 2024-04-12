@@ -49,6 +49,7 @@ struct RV
             return nullptr;
         }
     }
+    int size() { return 6; }
 };
 struct LLA_t
 {
@@ -84,6 +85,7 @@ struct LLA_t
             return nullptr;
         }
     }
+    int size() { return 3; }
 };
 struct LLR_t
 {
@@ -119,6 +121,7 @@ struct LLR_t
             return nullptr;
         }
     }
+    int size() { return 3; }
 };
 
 struct OrbitElement
@@ -152,6 +155,7 @@ struct OrbitElement
         w = sqrt(EARTH_GRAVITATIONAL / (pow(a, 3)));
         T = TWOPI / w;
     }
+    int size() { return 11; }
 };
 
 class COrbit: public ::ISubscriber

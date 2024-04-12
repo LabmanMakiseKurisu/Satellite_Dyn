@@ -4,7 +4,7 @@
 #include"Attitude.hh"
 #include"InfluxDB.hh"
 #include"GlobalSetting.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 Environment::Environment()
 {
 	BodyMag << 0, 0, 0;
@@ -35,7 +35,7 @@ void Environment::Init()
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 0; i < fileds; i++)
 	{
 		std::string Code = GetCode(StartCode, i + 1);

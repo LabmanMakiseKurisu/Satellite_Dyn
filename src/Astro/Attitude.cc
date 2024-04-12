@@ -8,7 +8,7 @@
 #include"Quaternions.hh"
 #include "Orbit.hh"
 #include "Flywheel.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 
 Eigen::Vector3d AttDynamics(Eigen::Vector3d Omega_b, Eigen::Matrix3d& SatInaMat, Eigen::Vector3d& Hw, Eigen::Vector3d& Tau_s)
 {
@@ -116,7 +116,7 @@ void CAttitude::Init(COrbit &Obt)
     m_DM = Publisher::GetInstance();
     m_DM->Subscribe(this);
 
-    auto hd = Handler::GetInstance();
+    auto hd = Mediator::GetInstance();
 	for (int i = 0; i < fileds; i++)
 	{
 		std::string Code = GetCode(StartCode, i + 1);

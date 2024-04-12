@@ -8,6 +8,10 @@
         "Measurement": "SIM",
         "Interval":1
     },
+    "APIServer": {
+        "Host": "0.0.0.0",
+        "Port": 9088
+    },
     "Satellite": {
         "StartCode": "SIM00",
         "fields": 3,

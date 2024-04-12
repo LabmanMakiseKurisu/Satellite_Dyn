@@ -466,33 +466,6 @@ src/Componet/Sensors/SunSensor.cc.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s
 .PHONY : src/Componet/Sensors/SunSensor.cc.s
 
-src/General/APIHandler.o: src/General/APIHandler.cc.o
-
-.PHONY : src/General/APIHandler.o
-
-# target to build an object file
-src/General/APIHandler.cc.o:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o
-.PHONY : src/General/APIHandler.cc.o
-
-src/General/APIHandler.i: src/General/APIHandler.cc.i
-
-.PHONY : src/General/APIHandler.i
-
-# target to preprocess a source file
-src/General/APIHandler.cc.i:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/APIHandler.cc.i
-.PHONY : src/General/APIHandler.cc.i
-
-src/General/APIHandler.s: src/General/APIHandler.cc.s
-
-.PHONY : src/General/APIHandler.s
-
-# target to generate assembly for a file
-src/General/APIHandler.cc.s:
-	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/General/APIHandler.cc.s
-.PHONY : src/General/APIHandler.cc.s
-
 src/General/GlobalSetting.o: src/General/GlobalSetting.cc.o
 
 .PHONY : src/General/GlobalSetting.o
@@ -736,6 +709,114 @@ src/SatelliteMath/Quaternions.cc.s:
 	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.s
 .PHONY : src/SatelliteMath/Quaternions.cc.s
 
+src/api/APIHandler.o: src/api/APIHandler.cc.o
+
+.PHONY : src/api/APIHandler.o
+
+# target to build an object file
+src/api/APIHandler.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o
+.PHONY : src/api/APIHandler.cc.o
+
+src/api/APIHandler.i: src/api/APIHandler.cc.i
+
+.PHONY : src/api/APIHandler.i
+
+# target to preprocess a source file
+src/api/APIHandler.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/APIHandler.cc.i
+.PHONY : src/api/APIHandler.cc.i
+
+src/api/APIHandler.s: src/api/APIHandler.cc.s
+
+.PHONY : src/api/APIHandler.s
+
+# target to generate assembly for a file
+src/api/APIHandler.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/APIHandler.cc.s
+.PHONY : src/api/APIHandler.cc.s
+
+src/api/APIServer.o: src/api/APIServer.cc.o
+
+.PHONY : src/api/APIServer.o
+
+# target to build an object file
+src/api/APIServer.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/APIServer.cc.o
+.PHONY : src/api/APIServer.cc.o
+
+src/api/APIServer.i: src/api/APIServer.cc.i
+
+.PHONY : src/api/APIServer.i
+
+# target to preprocess a source file
+src/api/APIServer.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/APIServer.cc.i
+.PHONY : src/api/APIServer.cc.i
+
+src/api/APIServer.s: src/api/APIServer.cc.s
+
+.PHONY : src/api/APIServer.s
+
+# target to generate assembly for a file
+src/api/APIServer.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/APIServer.cc.s
+.PHONY : src/api/APIServer.cc.s
+
+src/api/Mediator.o: src/api/Mediator.cc.o
+
+.PHONY : src/api/Mediator.o
+
+# target to build an object file
+src/api/Mediator.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/Mediator.cc.o
+.PHONY : src/api/Mediator.cc.o
+
+src/api/Mediator.i: src/api/Mediator.cc.i
+
+.PHONY : src/api/Mediator.i
+
+# target to preprocess a source file
+src/api/Mediator.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/Mediator.cc.i
+.PHONY : src/api/Mediator.cc.i
+
+src/api/Mediator.s: src/api/Mediator.cc.s
+
+.PHONY : src/api/Mediator.s
+
+# target to generate assembly for a file
+src/api/Mediator.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/api/Mediator.cc.s
+.PHONY : src/api/Mediator.cc.s
+
+src/util/util.o: src/util/util.cc.o
+
+.PHONY : src/util/util.o
+
+# target to build an object file
+src/util/util.cc.o:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/util/util.cc.o
+.PHONY : src/util/util.cc.o
+
+src/util/util.i: src/util/util.cc.i
+
+.PHONY : src/util/util.i
+
+# target to preprocess a source file
+src/util/util.cc.i:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/util/util.cc.i
+.PHONY : src/util/util.cc.i
+
+src/util/util.s: src/util/util.cc.s
+
+.PHONY : src/util/util.s
+
+# target to generate assembly for a file
+src/util/util.cc.s:
+	$(MAKE) -f CMakeFiles/Satellite.dir/build.make CMakeFiles/Satellite.dir/src/util/util.cc.s
+.PHONY : src/util/util.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -782,9 +863,6 @@ help:
 	@echo "... src/Componet/Sensors/SunSensor.o"
 	@echo "... src/Componet/Sensors/SunSensor.i"
 	@echo "... src/Componet/Sensors/SunSensor.s"
-	@echo "... src/General/APIHandler.o"
-	@echo "... src/General/APIHandler.i"
-	@echo "... src/General/APIHandler.s"
 	@echo "... src/General/GlobalSetting.o"
 	@echo "... src/General/GlobalSetting.i"
 	@echo "... src/General/GlobalSetting.s"
@@ -812,6 +890,18 @@ help:
 	@echo "... src/SatelliteMath/Quaternions.o"
 	@echo "... src/SatelliteMath/Quaternions.i"
 	@echo "... src/SatelliteMath/Quaternions.s"
+	@echo "... src/api/APIHandler.o"
+	@echo "... src/api/APIHandler.i"
+	@echo "... src/api/APIHandler.s"
+	@echo "... src/api/APIServer.o"
+	@echo "... src/api/APIServer.i"
+	@echo "... src/api/APIServer.s"
+	@echo "... src/api/Mediator.o"
+	@echo "... src/api/Mediator.i"
+	@echo "... src/api/Mediator.s"
+	@echo "... src/util/util.o"
+	@echo "... src/util/util.i"
+	@echo "... src/util/util.s"
 .PHONY : help
 
 

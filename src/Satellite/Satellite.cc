@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-11 20:11:32
+ * @LastEditTime: 2024-04-12 14:44:55
  * @FilePath: /Satellite/src/Satellite/Satellite.cc
  * @Description: 
  */
@@ -10,7 +10,7 @@
 #include"InfluxDB.hh"
 #include"sofaDLL.h"
 #include"GlobalSetting.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 Satellite::Satellite() :Orbit(), Attitude(), AttController()
 {
 	GlobalSettings *pCfg = GlobalSettings::GetInstance();
@@ -29,10 +29,10 @@ double *Satellite::Addr(int index)
 		return &m_Delta;
 		break;
 	case 1:
-		return (double *)&m_Rate;
+		return &m_Rate;
 		break;
 	case 2:
-		return (double *)&SatelliteTime;
+		return &SatelliteTime;
 		break;
 	default:
 		return nullptr;
@@ -62,7 +62,7 @@ void Satellite::Init() {
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 0; i < fileds; i++)
 	{
 		std::string Code = GetCode(StartCode, i + 1);
@@ -98,9 +98,9 @@ void Satellite::Submit()
 	int index = 1;
 	m_DM->add<double>(GetCode(StartCode, index), m_Delta);
 	index++;
-	m_DM->add<int>(GetCode(StartCode, index), m_Rate);
+	m_DM->add<double>(GetCode(StartCode, index), m_Rate);
 	index++;
-	m_DM->add<int64_t>(GetCode(StartCode, index), SatelliteTime);
+	m_DM->add<double>(GetCode(StartCode, index), SatelliteTime);
 	index++;
 }
 

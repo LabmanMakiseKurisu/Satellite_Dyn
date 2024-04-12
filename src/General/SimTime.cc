@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-02-26 08:52:34
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 15:58:05
+ * @LastEditTime: 2024-04-12 14:45:39
  * @FilePath: /Satellite/src/General/SimTime.cc
  * @Description: 
  */
@@ -46,7 +46,7 @@ CSimTime* CSimTime::GetInstance()
 
 
 
-void CSimTime::Init(double* Delta, int* Rate)
+void CSimTime::Init(double* Delta, double* Rate)
 {
 	CSimTime* instance = CSimTime::GetInstance();
 	instance->m_Delta = Delta;

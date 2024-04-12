@@ -8,7 +8,7 @@
  */
 #include"SunSensor.hh"
 #include"InfluxDB.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 SunSensor::SunSensor(Eigen::Vector3d *_s,
 					 Eigen::Matrix3d &IM,
 					 int64_t timestamp,
@@ -40,7 +40,7 @@ void SunSensor::Init(int64_t timestamp)
 {
 	LastRenewTime = timestamp;
 	Data = InstallMatrix * (*source);
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;

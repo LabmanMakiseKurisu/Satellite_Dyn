@@ -8,7 +8,7 @@
  */
 #include"MagSensor.hh"
 #include"InfluxDB.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 MagSensor::MagSensor(Eigen::Vector3d *_s,
 					 Eigen::Matrix3d &IM,
 					 int64_t timestamp,
@@ -41,7 +41,7 @@ void MagSensor::Init(int64_t timestamp)
 	LastRenewTime = timestamp;
 	Data = T2GAUSS(InstallMatrix * (*source));
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;

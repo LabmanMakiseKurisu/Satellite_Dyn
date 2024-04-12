@@ -60,275 +60,314 @@ include CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o: ../src/Astro/Attitude.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o -c /home/amadeus/Satellite/src/Astro/Attitude.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.o -c /home/amadeus/Satellite/src/Astro/Attitude.cc
 
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/Attitude.cc > CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/Attitude.cc > CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.i
 
 CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/Attitude.cc -o CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/Attitude.cc -o CMakeFiles/Satellite.dir/src/Astro/Attitude.cc.s
 
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o: ../src/Astro/AttitudeControl.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o -c /home/amadeus/Satellite/src/Astro/AttitudeControl.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.o -c /home/amadeus/Satellite/src/Astro/AttitudeControl.cc
 
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/AttitudeControl.cc > CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/AttitudeControl.cc > CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.i
 
 CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/AttitudeControl.cc -o CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/AttitudeControl.cc -o CMakeFiles/Satellite.dir/src/Astro/AttitudeControl.cc.s
 
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o: ../src/Astro/Environment.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o -c /home/amadeus/Satellite/src/Astro/Environment.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/Environment.cc.o -c /home/amadeus/Satellite/src/Astro/Environment.cc
 
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Astro/Environment.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/Environment.cc > CMakeFiles/Satellite.dir/src/Astro/Environment.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/Environment.cc > CMakeFiles/Satellite.dir/src/Astro/Environment.cc.i
 
 CMakeFiles/Satellite.dir/src/Astro/Environment.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Astro/Environment.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/Environment.cc -o CMakeFiles/Satellite.dir/src/Astro/Environment.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/Environment.cc -o CMakeFiles/Satellite.dir/src/Astro/Environment.cc.s
 
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o: ../src/Astro/Orbit.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o -c /home/amadeus/Satellite/src/Astro/Orbit.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.o -c /home/amadeus/Satellite/src/Astro/Orbit.cc
 
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/Orbit.cc > CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Astro/Orbit.cc > CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.i
 
 CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/Orbit.cc -o CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Astro/Orbit.cc -o CMakeFiles/Satellite.dir/src/Astro/Orbit.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o: ../src/Componet/Actuators/Flywheel.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o -c /home/amadeus/Satellite/src/Componet/Actuators/Flywheel.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.o -c /home/amadeus/Satellite/src/Componet/Actuators/Flywheel.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Actuators/Flywheel.cc > CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Actuators/Flywheel.cc > CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Actuators/Flywheel.cc -o CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Actuators/Flywheel.cc -o CMakeFiles/Satellite.dir/src/Componet/Actuators/Flywheel.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o: ../src/Componet/Com_Schedule.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o -c /home/amadeus/Satellite/src/Componet/Com_Schedule.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.o -c /home/amadeus/Satellite/src/Componet/Com_Schedule.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Com_Schedule.cc > CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Com_Schedule.cc > CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Com_Schedule.cc -o CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Com_Schedule.cc -o CMakeFiles/Satellite.dir/src/Componet/Com_Schedule.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o: ../src/Componet/Sensors/GNSS.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/GNSS.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/GNSS.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/GNSS.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/GNSS.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/GNSS.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/GNSS.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/GNSS.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o: ../src/Componet/Sensors/Gyro.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/Gyro.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/Gyro.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/Gyro.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/Gyro.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/Gyro.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/Gyro.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o: ../src/Componet/Sensors/MagSensor.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o: ../src/Componet/Sensors/StarSensor.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.s
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o: ../src/Componet/Sensors/SunSensor.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o -c /home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc > CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.i
 
 CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s
-
-CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: CMakeFiles/Satellite.dir/flags.make
-CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o: ../src/General/APIHandler.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o -c /home/amadeus/Satellite/src/General/APIHandler.cc
-
-CMakeFiles/Satellite.dir/src/General/APIHandler.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/General/APIHandler.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/APIHandler.cc > CMakeFiles/Satellite.dir/src/General/APIHandler.cc.i
-
-CMakeFiles/Satellite.dir/src/General/APIHandler.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/General/APIHandler.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/APIHandler.cc -o CMakeFiles/Satellite.dir/src/General/APIHandler.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc -o CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.s
 
 CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o: ../src/General/GlobalSetting.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o -c /home/amadeus/Satellite/src/General/GlobalSetting.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o -c /home/amadeus/Satellite/src/General/GlobalSetting.cc
 
 CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/GlobalSetting.cc > CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/GlobalSetting.cc > CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.i
 
 CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/GlobalSetting.cc -o CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/GlobalSetting.cc -o CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.s
 
 CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o: ../src/General/InfluxDB.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o -c /home/amadeus/Satellite/src/General/InfluxDB.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o -c /home/amadeus/Satellite/src/General/InfluxDB.cc
 
 CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/InfluxDB.cc > CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/InfluxDB.cc > CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.i
 
 CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/InfluxDB.cc -o CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/InfluxDB.cc -o CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.s
 
 CMakeFiles/Satellite.dir/src/General/SimTime.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/General/SimTime.cc.o: ../src/General/SimTime.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Satellite.dir/src/General/SimTime.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/SimTime.cc.o -c /home/amadeus/Satellite/src/General/SimTime.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Satellite.dir/src/General/SimTime.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/General/SimTime.cc.o -c /home/amadeus/Satellite/src/General/SimTime.cc
 
 CMakeFiles/Satellite.dir/src/General/SimTime.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/General/SimTime.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/SimTime.cc > CMakeFiles/Satellite.dir/src/General/SimTime.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/General/SimTime.cc > CMakeFiles/Satellite.dir/src/General/SimTime.cc.i
 
 CMakeFiles/Satellite.dir/src/General/SimTime.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/General/SimTime.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/SimTime.cc -o CMakeFiles/Satellite.dir/src/General/SimTime.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/General/SimTime.cc -o CMakeFiles/Satellite.dir/src/General/SimTime.cc.s
 
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o: ../src/Satellite/Satellite.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o -c /home/amadeus/Satellite/src/Satellite/Satellite.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.o -c /home/amadeus/Satellite/src/Satellite/Satellite.cc
 
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Satellite/Satellite.cc > CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Satellite/Satellite.cc > CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.i
 
 CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Satellite/Satellite.cc -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Satellite/Satellite.cc -o CMakeFiles/Satellite.dir/src/Satellite/Satellite.cc.s
 
 CMakeFiles/Satellite.dir/src/Satellite/main.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/Satellite/main.cc.o: ../src/Satellite/main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Satellite.dir/src/Satellite/main.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Satellite/main.cc.o -c /home/amadeus/Satellite/src/Satellite/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Satellite.dir/src/Satellite/main.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/Satellite/main.cc.o -c /home/amadeus/Satellite/src/Satellite/main.cc
 
 CMakeFiles/Satellite.dir/src/Satellite/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/Satellite/main.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Satellite/main.cc > CMakeFiles/Satellite.dir/src/Satellite/main.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/Satellite/main.cc > CMakeFiles/Satellite.dir/src/Satellite/main.cc.i
 
 CMakeFiles/Satellite.dir/src/Satellite/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/Satellite/main.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Satellite/main.cc -o CMakeFiles/Satellite.dir/src/Satellite/main.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/Satellite/main.cc -o CMakeFiles/Satellite.dir/src/Satellite/main.cc.s
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o: ../src/SatelliteMath/BaseMath.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.i
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/BaseMath.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.s
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o: ../src/SatelliteMath/Dcm.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.i
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/Dcm.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.s
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o: ../src/SatelliteMath/EulerAgl.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.i
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.s
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o: CMakeFiles/Satellite.dir/flags.make
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o: ../src/SatelliteMath/Quaternions.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o -c /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc > CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.i
 
 CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc -o CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.s
+
+CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o: CMakeFiles/Satellite.dir/flags.make
+CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o: ../src/api/APIHandler.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o -c /home/amadeus/Satellite/src/api/APIHandler.cc
+
+CMakeFiles/Satellite.dir/src/api/APIHandler.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/api/APIHandler.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/api/APIHandler.cc > CMakeFiles/Satellite.dir/src/api/APIHandler.cc.i
+
+CMakeFiles/Satellite.dir/src/api/APIHandler.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/api/APIHandler.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/api/APIHandler.cc -o CMakeFiles/Satellite.dir/src/api/APIHandler.cc.s
+
+CMakeFiles/Satellite.dir/src/api/APIServer.cc.o: CMakeFiles/Satellite.dir/flags.make
+CMakeFiles/Satellite.dir/src/api/APIServer.cc.o: ../src/api/APIServer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Satellite.dir/src/api/APIServer.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/api/APIServer.cc.o -c /home/amadeus/Satellite/src/api/APIServer.cc
+
+CMakeFiles/Satellite.dir/src/api/APIServer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/api/APIServer.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/api/APIServer.cc > CMakeFiles/Satellite.dir/src/api/APIServer.cc.i
+
+CMakeFiles/Satellite.dir/src/api/APIServer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/api/APIServer.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/api/APIServer.cc -o CMakeFiles/Satellite.dir/src/api/APIServer.cc.s
+
+CMakeFiles/Satellite.dir/src/api/Mediator.cc.o: CMakeFiles/Satellite.dir/flags.make
+CMakeFiles/Satellite.dir/src/api/Mediator.cc.o: ../src/api/Mediator.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Satellite.dir/src/api/Mediator.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/api/Mediator.cc.o -c /home/amadeus/Satellite/src/api/Mediator.cc
+
+CMakeFiles/Satellite.dir/src/api/Mediator.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/api/Mediator.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/api/Mediator.cc > CMakeFiles/Satellite.dir/src/api/Mediator.cc.i
+
+CMakeFiles/Satellite.dir/src/api/Mediator.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/api/Mediator.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/api/Mediator.cc -o CMakeFiles/Satellite.dir/src/api/Mediator.cc.s
+
+CMakeFiles/Satellite.dir/src/util/util.cc.o: CMakeFiles/Satellite.dir/flags.make
+CMakeFiles/Satellite.dir/src/util/util.cc.o: ../src/util/util.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Satellite.dir/src/util/util.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Satellite.dir/src/util/util.cc.o -c /home/amadeus/Satellite/src/util/util.cc
+
+CMakeFiles/Satellite.dir/src/util/util.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Satellite.dir/src/util/util.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amadeus/Satellite/src/util/util.cc > CMakeFiles/Satellite.dir/src/util/util.cc.i
+
+CMakeFiles/Satellite.dir/src/util/util.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Satellite.dir/src/util/util.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amadeus/Satellite/src/util/util.cc -o CMakeFiles/Satellite.dir/src/util/util.cc.s
 
 # Object files for target Satellite
 Satellite_OBJECTS = \
@@ -343,7 +382,6 @@ Satellite_OBJECTS = \
 "CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o" \
 "CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o" \
 "CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o" \
-"CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o" \
 "CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o" \
 "CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o" \
 "CMakeFiles/Satellite.dir/src/General/SimTime.cc.o" \
@@ -352,7 +390,11 @@ Satellite_OBJECTS = \
 "CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o" \
 "CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o" \
 "CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o" \
-"CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o"
+"CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o" \
+"CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o" \
+"CMakeFiles/Satellite.dir/src/api/APIServer.cc.o" \
+"CMakeFiles/Satellite.dir/src/api/Mediator.cc.o" \
+"CMakeFiles/Satellite.dir/src/util/util.cc.o"
 
 # External object files for target Satellite
 Satellite_EXTERNAL_OBJECTS =
@@ -368,7 +410,6 @@ Satellite: CMakeFiles/Satellite.dir/src/Componet/Sensors/Gyro.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o
-Satellite: CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/General/SimTime.cc.o
@@ -378,10 +419,14 @@ Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/BaseMath.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o
 Satellite: CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o
+Satellite: CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o
+Satellite: CMakeFiles/Satellite.dir/src/api/APIServer.cc.o
+Satellite: CMakeFiles/Satellite.dir/src/api/Mediator.cc.o
+Satellite: CMakeFiles/Satellite.dir/src/util/util.cc.o
 Satellite: CMakeFiles/Satellite.dir/build.make
 Satellite: ../deps/MySofa/libsofaDLL.so
 Satellite: CMakeFiles/Satellite.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable Satellite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/amadeus/Satellite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable Satellite"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Satellite.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E make_directory /home/amadeus/Satellite/build/release
 	/usr/bin/cmake -E copy /home/amadeus/Satellite/build/Satellite /home/amadeus/Satellite/build/release

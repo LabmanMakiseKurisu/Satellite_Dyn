@@ -10,7 +10,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o"
   "CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o"
   "CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o"
-  "CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o"
   "CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o"
   "CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o"
   "CMakeFiles/Satellite.dir/src/General/SimTime.cc.o"
@@ -20,6 +19,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o"
   "CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o"
   "CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o"
+  "CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o"
+  "CMakeFiles/Satellite.dir/src/api/APIServer.cc.o"
+  "CMakeFiles/Satellite.dir/src/api/Mediator.cc.o"
+  "CMakeFiles/Satellite.dir/src/util/util.cc.o"
   "Satellite"
   "Satellite.pdb"
 )

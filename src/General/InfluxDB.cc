@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 18:01:03
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-08 19:24:20
+ * @LastEditTime: 2024-04-12 14:09:16
  * @FilePath: /Satellite/src/General/InfluxDB.cc
  * @Description: 
  */
@@ -58,7 +58,7 @@ void Publisher::write()
 
 void Publisher::SendToInfluxDB()
 {
-    std::cout << "json:" << std::endl;
+    //std::cout << "json:" << std::endl;
     // 创建一个客户端实例，连接到 InfluxDB
     httplib::Client cli(m_host.c_str(), m_port);
 
@@ -79,7 +79,7 @@ void Publisher::SendToInfluxDB()
 
     if (res && res->status == 204)
     { // InfluxDB通常使用状态码204表示成功接收数据
-        std::cout << "Data sent to InfluxDB successfully." << std::endl;
+        //std::cout << "Data sent to InfluxDB successfully." << std::endl;
     }
     else
     {

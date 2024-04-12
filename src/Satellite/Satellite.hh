@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-07 11:20:23
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-11 19:10:41
+ * @LastEditTime: 2024-04-12 14:44:44
  * @FilePath: /Satellite/src/Satellite/Satellite.hh
  * @Description: 
  */
@@ -24,8 +24,8 @@ public:
 	CAttitudeController AttController;//
 public:
 	double m_Delta;//
-	int m_Rate;//
-	int64_t SatelliteTime;//ms
+	double m_Rate;//
+	double SatelliteTime;//ms
 public:
 	Satellite();
 	void Init();

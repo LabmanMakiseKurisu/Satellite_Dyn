@@ -8,7 +8,7 @@
  */
 #include"StarSensor.hh"
 #include"InfluxDB.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 StarSensor::StarSensor(Quat *_s,
 					   Eigen::Matrix3d &IM,
 					   int64_t timestamp, double Ts,
@@ -47,7 +47,7 @@ void StarSensor::Init(int64_t timestamp)
 	Data = (*source) * installq;
 	LastRenewTime = timestamp;
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;

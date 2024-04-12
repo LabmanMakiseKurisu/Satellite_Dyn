@@ -8,7 +8,7 @@
  */
 #include"Flywheel.hh"
 #include"InfluxDB.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 
 Flywheel::Flywheel(double *_s,
 				   Eigen::Vector3d &InsVet, double _inertia,
@@ -23,7 +23,7 @@ Flywheel::Flywheel(double *_s,
 	m_DM->Subscribe(this);
 }
 void Flywheel::Init(int64_t timestamp) {
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;

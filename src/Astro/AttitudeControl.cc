@@ -11,7 +11,7 @@
 #include "MagSensor.hh"
 #include "GNSS.hh"
 #include "Flywheel.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 #include"GlobalSetting.hh"
 
 using AttCtrl = CAttitudeController;
@@ -21,6 +21,7 @@ CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
 	Kp << 0.5 * Eigen::Matrix3d::Identity();
 	Kd << 3 * Eigen::Matrix3d::Identity();
 	MaxTorque = 0.08;
+	m_mode = workmode;
 }
 
 double *CAttitudeController::Addr(int index)
@@ -28,7 +29,7 @@ double *CAttitudeController::Addr(int index)
 	switch (index)
 	{
 	case 0:
-		return (double *)&workmode;
+		return &m_mode;
 	case 1:
 	case 2:
 	case 3:
@@ -52,7 +53,7 @@ void CAttitudeController::Init() {
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 0; i < fileds; i++)
 	{
 		std::string Code = GetCode(StartCode, i + 1);
@@ -62,7 +63,7 @@ void CAttitudeController::Init() {
 
 Eigen::Vector3d CAttitudeController::TorqueRefRenew(Com_Schedule* pCom)
 {
-	switch (workmode)
+	switch ((int)m_mode)
 	{
 	case RATEDAMP:
 	{
@@ -145,7 +146,7 @@ void CAttitudeController::Submit()
     if (!m_DM)
         return;
     int index = 1;
-	m_DM->add<int>(GetCode(StartCode,index), workmode);
+	m_DM->add<int>(GetCode(StartCode,index), (int)m_mode);
 	index++;
 
 	for(int i = 0; i < 3; i++) {

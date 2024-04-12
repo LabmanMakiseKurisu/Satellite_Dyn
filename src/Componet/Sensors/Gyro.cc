@@ -8,7 +8,7 @@
  */
 #include "Gyro.hh"
 #include"InfluxDB.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 GyroScope::GyroScope(Eigen::Vector3d *_s,
 					 Eigen::Matrix3d &IM,
 					 int64_t timestamp,
@@ -42,7 +42,7 @@ void GyroScope::Init(int64_t timestamp)
 	Data = InstallMatrix * (*source);
 	Data = DEG(Data);
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;

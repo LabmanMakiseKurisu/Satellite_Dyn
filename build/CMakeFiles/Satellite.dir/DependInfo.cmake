@@ -15,7 +15,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/amadeus/Satellite/src/Componet/Sensors/MagSensor.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Componet/Sensors/MagSensor.cc.o"
   "/home/amadeus/Satellite/src/Componet/Sensors/StarSensor.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Componet/Sensors/StarSensor.cc.o"
   "/home/amadeus/Satellite/src/Componet/Sensors/SunSensor.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/Componet/Sensors/SunSensor.cc.o"
-  "/home/amadeus/Satellite/src/General/APIHandler.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/APIHandler.cc.o"
   "/home/amadeus/Satellite/src/General/GlobalSetting.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/GlobalSetting.cc.o"
   "/home/amadeus/Satellite/src/General/InfluxDB.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/InfluxDB.cc.o"
   "/home/amadeus/Satellite/src/General/SimTime.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/General/SimTime.cc.o"
@@ -25,6 +24,10 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/amadeus/Satellite/src/SatelliteMath/Dcm.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/Dcm.cc.o"
   "/home/amadeus/Satellite/src/SatelliteMath/EulerAgl.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/EulerAgl.cc.o"
   "/home/amadeus/Satellite/src/SatelliteMath/Quaternions.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/SatelliteMath/Quaternions.cc.o"
+  "/home/amadeus/Satellite/src/api/APIHandler.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/api/APIHandler.cc.o"
+  "/home/amadeus/Satellite/src/api/APIServer.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/api/APIServer.cc.o"
+  "/home/amadeus/Satellite/src/api/Mediator.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/api/Mediator.cc.o"
+  "/home/amadeus/Satellite/src/util/util.cc" "/home/amadeus/Satellite/build/CMakeFiles/Satellite.dir/src/util/util.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -42,6 +45,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/General"
   "../src/Satellite"
   "../src/SatelliteMath"
+  "../src/util"
+  "../src/api"
   "../deps/nlohmann_json/include"
   "/usr/local/include/eigen3"
   )

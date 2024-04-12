@@ -8,7 +8,7 @@
  */
 #include "GNSS.hh"
 #include"InfluxDB.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 GNSS::GNSS(RV *_s,
 		   Eigen::Matrix3d &IM,
 		   int64_t timestamp,
@@ -41,7 +41,7 @@ void GNSS::Init(int64_t timestamp)
 	Data = (*source);;
 	LastRenewTime = timestamp;
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 1; i <= Fields; i++)
 	{
 		int diff = i + (id - 1) * Fields;

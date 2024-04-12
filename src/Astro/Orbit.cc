@@ -4,7 +4,7 @@
 #include"Quaternions.hh"
 #include"InfluxDB.hh"
 #include"GlobalSetting.hh"
-#include"APIHandler.hh"
+#include"Mediator.hh"
 COrbit::COrbit() : StartCode("SIM01"), fileds(15)
 {
 }
@@ -116,7 +116,7 @@ void COrbit::Init(int64_t Timestamp)
 	m_DM = Publisher::GetInstance();
 	m_DM->Subscribe(this);
 
-	auto hd = Handler::GetInstance();
+	auto hd = Mediator::GetInstance();
 	for (int i = 0; i < fileds; i++)
 	{
 		std::string Code = GetCode(StartCode, i + 1);

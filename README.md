@@ -2,7 +2,7 @@
  * @Author: Amadeus
  * @Date: 2024-04-06 14:42:32
  * @LastEditors: Amadeus
- * @LastEditTime: 2024-04-06 14:58:12
+ * @LastEditTime: 2024-04-12 15:49:29
  * @FilePath: /Satellite/README.md
  * @Description: 
 -->
@@ -18,17 +18,19 @@
 - **太阳矢量、地磁场等飞行环境**
 - **常用敏感器、执行器单机模型**
 - **基于InfluxDB和Grafana的数据监视**
-  
+- **基于HTTP1.1的RESTful API** 
 
 ## Development
 
 目前待开发功能:
 - 代码重构，提升可扩展性[done]
-- RESTful风格的HTTP API
+- RESTful风格的HTTP API[done]
+- 支持容器化部署
 - 高精度轨道动力学HPOP
 - 敏感器噪声
 - 磁力矩器单机模型
 - 太阳敏感器单机模型
+- 轨道控制
 
 ## Getting Started
 TODO

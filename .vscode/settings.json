@@ -78,6 +78,7 @@
         "qr": "cpp",
         "svd": "cpp",
         "threadpool": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "*.def": "cpp"
     }
 }
