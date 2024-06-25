@@ -48,10 +48,10 @@
             "Wz": 0.01
         },
         "Qib": {
-            "Q0": 1,
-            "Q1": 0,
-            "Q2": 0,
-            "Q3": 0
+            "Q0": 0.6806,
+            "Q1": 0.5066,
+            "Q2": -0.0423,
+            "Q3": -0.5275
         },
         "SatInaMat": {
             "Jxx": 30,
@@ -75,7 +75,7 @@
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
-        "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
+        "InstallMatrix2": "1,0,0;0,1,0;0,0,-1"
     },
     "StarSensor": {
         "StartCode": "SIM05",
@@ -83,7 +83,7 @@
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
-        "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
+        "InstallMatrix2": "-1,0,0;0,1,0;0,0,1"
     },
     "SunSensor": {
         "StartCode": "SIM06",
@@ -91,7 +91,7 @@
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
-        "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
+        "InstallMatrix2": "0,0,1;0,1,0;1,0,0"
     },
     "MagSensor": {
         "StartCode": "SIM07",
@@ -99,7 +99,7 @@
         "Nums": 2,
         "SamplePeriod": 0.25,
         "InstallMatrix1": "1,0,0;0,1,0;0,0,1",
-        "InstallMatrix2": "1,0,0;0,1,0;0,0,1"
+        "InstallMatrix2": "1,0,0;0,-1,0;0,0,1"
     },
     "Gnss": {
         "StartCode": "SIM08",

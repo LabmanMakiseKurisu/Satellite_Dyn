@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 		if (pSimTime->check())
 		{
 			Amadeus.StateRenew();
-			//std::cout << Amadeus;
+			std::cout << Amadeus;
 		}
 		Publisher::GetInstance()->write();
 		SleepMs(1);

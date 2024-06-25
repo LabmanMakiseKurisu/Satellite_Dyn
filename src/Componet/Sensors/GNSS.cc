@@ -38,7 +38,7 @@ void GNSS::StateRenew(int64_t NowTime)
 
 void GNSS::Init(int64_t timestamp)
 {
-	Data = (*source);;
+	Data = (*source);
 	LastRenewTime = timestamp;
 
 	auto hd = Mediator::GetInstance();

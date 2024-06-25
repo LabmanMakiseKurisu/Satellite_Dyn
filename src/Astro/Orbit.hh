@@ -195,6 +195,7 @@ public:
     //@return : none
     void Inl2Fix(const int64_t timestamp);
 
+    static RV Fix2Inl(const int64_t timestamp, const RV &fix);
 
     void FixPos2LLA();
 

@@ -81,7 +81,7 @@ void Publisher::SendToInfluxDB()
 
     if (res && res->status == 204)
     { // InfluxDB通常使用状态码204表示成功接收数据
-        std::cout << "Data sent to InfluxDB successfully." << std::endl;
+        //std::cout << "Data sent to InfluxDB successfully." << std::endl;
     }
     else
     {

@@ -1,9 +1,9 @@
 #include "AttitudeControl.hh"
-#include"Dcm.hh"
-#include"Quaternions.hh"
-#include"Attitude.hh"
+#include "Dcm.hh"
+#include "Quaternions.hh"
+#include "Attitude.hh"
 #include "Environment.hh"
-#include"InfluxDB.hh"
+#include "InfluxDB.hh"
 #include "Com_Schedule.hh"
 #include "Gyro.hh"
 #include "SunSensor.hh"
@@ -11,11 +11,11 @@
 #include "MagSensor.hh"
 #include "GNSS.hh"
 #include "Flywheel.hh"
-#include"Mediator.hh"
-#include"GlobalSetting.hh"
+#include "Mediator.hh"
+#include "GlobalSetting.hh"
 
 using AttCtrl = CAttitudeController;
-CAttitudeController::CAttitudeController() :workmode(EARTHPOINT)
+CAttitudeController::CAttitudeController() : workmode(RATEDAMP)
 {
 	TorqueRef << 0, 0, 0;
 	Kp << 0.5 * Eigen::Matrix3d::Identity();
@@ -45,7 +45,8 @@ double *CAttitudeController::Addr(int index)
 	}
 	return nullptr;
 }
-void CAttitudeController::Init() {
+void CAttitudeController::Init()
+{
 	GlobalSettings *pCfg = GlobalSettings::GetInstance();
 	StartCode = pCfg->Get<std::string>("/AttCtrl/StartCode");
 	fileds = pCfg->Get<int>("/AttCtrl/fields");
@@ -61,7 +62,7 @@ void CAttitudeController::Init() {
 	}
 }
 
-Eigen::Vector3d CAttitudeController::TorqueRefRenew(Com_Schedule* pCom)
+Eigen::Vector3d CAttitudeController::TorqueRefRenew(Com_Schedule *pCom)
 {
 	switch ((int)m_mode)
 	{
@@ -88,7 +89,7 @@ Eigen::Vector3d CAttitudeController::TorqueRefRenew(Com_Schedule* pCom)
 	return TorqueRef;
 }
 
-void CAttitudeController::RateDamping(const GyroScope& _Gyro)
+void CAttitudeController::RateDamping(const GyroScope &_Gyro)
 {
 
 	Eigen::Vector3d Tcontrol = -Kp * _Gyro.GetInstallMatrix().inverse() * DEG2RAD * _Gyro.GetData();
@@ -99,11 +100,9 @@ void CAttitudeController::RateDamping(const GyroScope& _Gyro)
 	TorqueRef = Tcontrol;
 }
 
-
-void CAttitudeController::ToSunControl(const GyroScope& _Gyro, const SunSensor& _Sun)
+void CAttitudeController::ToSunControl(const GyroScope &_Gyro, const SunSensor &_Sun)
 {
 	Eigen::Vector3d Wbi = _Gyro.GetInstallMatrix().inverse() * DEG2RAD * _Gyro.GetData();
-
 
 	Eigen::Vector3d Wref(0, 0, 0.1 * DEG2RAD);
 	Eigen::Vector3d Rb(0, 0, 1);
@@ -119,13 +118,14 @@ void CAttitudeController::ToSunControl(const GyroScope& _Gyro, const SunSensor& 
 }
 
 //
-void CAttitudeController::ToEarthControl(const GyroScope& _Gyro, const StarSensor& _Star, const GNSS& _gnss)
+void CAttitudeController::ToEarthControl(const GyroScope &_Gyro, const StarSensor &_Star, const GNSS &_gnss)
 {
 	Eigen::Vector3d Wbi = _Gyro.GetInstallMatrix().inverse() * DEG2RAD * _Gyro.GetData();
 	Quat Qib = _Star.GetData() * _Star.InstallMatrix.ToQuat();
 
-	//Aio
-	CDcm Aio = CAttitude::GetAio(_gnss.GetData());
+	RV r_eci = COrbit::Fix2Inl(_gnss.GetLastRenewTime(),_gnss.GetData());
+
+	CDcm Aio = CAttitude::GetAio(r_eci);
 
 	Quat Qoi = Aio.ToQuat().QuatInv();
 	Quat Qob = Qoi * Qib;
@@ -143,14 +143,15 @@ void CAttitudeController::ToEarthControl(const GyroScope& _Gyro, const StarSenso
 }
 void CAttitudeController::Submit()
 {
-    if (!m_DM)
-        return;
-    int index = 1;
-	m_DM->add<int>(GetCode(StartCode,index), (int)m_mode);
+	if (!m_DM)
+		return;
+	int index = 1;
+	m_DM->add<int>(GetCode(StartCode, index), (int)m_mode);
 	index++;
 
-	for(int i = 0; i < 3; i++) {
-		m_DM->add<double>(GetCode(StartCode,index), TorqueRef[i]);
+	for (int i = 0; i < 3; i++)
+	{
+		m_DM->add<double>(GetCode(StartCode, index), TorqueRef[i]);
 		index++;
 	}
 }

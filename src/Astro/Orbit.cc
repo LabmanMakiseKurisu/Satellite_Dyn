@@ -43,6 +43,17 @@ void COrbit::Inl2Fix(const int64_t timestamp)
 	ECEFFix.Vel = Aif * J2000Inertial.Vel - EarthAngularVelocityFixed.cross(ECEFFix.Pos);
 }
 
+RV COrbit::Fix2Inl(const int64_t timestamp, const RV &fix)
+{
+	RV InlRV;
+	auto Afi = Environment::ECI2ECEF(timestamp).transpose();
+	InlRV.Pos = Afi * fix.Pos;
+	Eigen::Vector3d EarthAngularVelocityFixed;
+	EarthAngularVelocityFixed << 0, 0, EARTH_RATE;
+	InlRV.Vel = Afi * (fix.Vel + EarthAngularVelocityFixed.cross(fix.Pos));
+	return InlRV;
+}
+
 void COrbit::FixPos2LLA()
 {
 

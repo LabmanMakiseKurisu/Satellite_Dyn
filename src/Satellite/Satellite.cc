@@ -110,11 +110,11 @@ std::ostream& operator<<(std::ostream& _cout, const Satellite& Sat)
 	std::cout << std::fixed;
 	//_cout << "SatelliteTime(ms) " << Sat.SatelliteTime << std::endl;
 	_cout << "Time " << ymd.year << " " << ymd.month << " " << ymd.day << " " << ymd.hour << ":" << ymd.minute << ":" << ymd.second << std::endl;
-	_cout << Sat.Orbit.J2000Inertial << std::endl;
+	_cout << Sat.Orbit.J2000Inertial;
 	//_cout << "FIXRV" << Sat.Orbit.ECEFFix << std::endl;
 	//_cout << "Omega_b(rad/s) " << Sat.Attitude.Omega_b(0) << " " << Sat.Attitude.Omega_b(1) << " " << Sat.Attitude.Omega_b(2) << std::endl;//??????????????
-	//_cout << "Qib " << Sat.Attitude.Qib;
-	//_cout << "Qob " << Sat.Attitude.Qob;
+	_cout << "Qib " << Sat.Attitude.Qib;
+	_cout << "Qob " << Sat.Attitude.Qob << std::endl;;
 	//_cout << "TotalTorque(N.m) " << Sat.Attitude.TotalTorque(0) << " " << Sat.Attitude.TotalTorque(1) << " " << Sat.Attitude.TotalTorque(2) << std::endl;
 	//_cout<<"VSunBody"<< Sat.Env.SunVecBody(0)<<" "<< Sat.Env.SunVecBody(1) <<" "<< Sat.Env.SunVecBody(2) << std::endl;
 	//_cout << "VSunInl" << Sat.Env.SunVecInl(0) << " " << Sat.Env.SunVecInl(1) << " " << Sat.Env.SunVecInl(2) << std::endl;

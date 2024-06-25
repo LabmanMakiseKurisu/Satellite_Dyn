@@ -4,23 +4,23 @@
  * @LastEditors: Amadeus
  * @LastEditTime: 2024-04-11 19:58:05
  * @FilePath: /Satellite/src/Componet/Componet.hh
- * @Description: 
+ * @Description:
  */
 #pragma once
-#include<iostream>
-#include"Subscriber.hh"
-#include"InfluxDB.hh"
+#include <iostream>
+#include "Subscriber.hh"
+#include "InfluxDB.hh"
 
-template <typename T1 ,typename T2>
+template <typename T1, typename T2>
 class Componet : public ::ISubscriber
 {
 protected:
-    T1 *source;//数据源
-    T2 Data; // ֵ数据
-    int64_t LastRenewTime;//上次更新时间
-    int id;//设备ID
-    int Fields;//字段数
-    std::string StartCode;//起始码
+    T1 *source;            // 数据源
+    T2 Data;               // ֵ数据
+    int64_t LastRenewTime; // 上次更新时间
+    int id;                // 设备ID
+    int Fields;            // 字段数
+    std::string StartCode; // 起始码
 
 public:
     Componet(T1 *_s, int64_t timestamp, int _id, int _size, std::string _StartCode)
@@ -36,5 +36,7 @@ public:
     virtual void Init(int64_t timestamp) = 0;
     virtual void StateRenew(int64_t NowTime) = 0;
     const T2 &GetData() const { return Data; }
-    std::string GetStartCode() { return StartCode; }
+    std::string GetStartCode() const { return StartCode; }
+
+    int64_t GetLastRenewTime() const { return LastRenewTime; }
 };
