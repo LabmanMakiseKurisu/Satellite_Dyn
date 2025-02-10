@@ -54,7 +54,6 @@ GlobalSettings::GlobalSettings(const std::string &configFilePath)
     gauss_gdot.setZero();
     gauss_hdot.setZero();
 
-    //
     std::ifstream file("Config/wmm_2020_data.cfg");
     if (file.is_open())
     {
@@ -77,6 +76,37 @@ GlobalSettings::GlobalSettings(const std::string &configFilePath)
         std::cerr << "Unable to open file wmm_2020_data" << std::endl;
         exit(0);
     }
+
+    int GravityOrder = this->Get<int>("/Env/Gravity/GravityOrder");
+    if ((GravityOrder < 1) || (GravityOrder > 99))
+    {
+        GravityOrder = 2;
+    }
+    rows = (GravityOrder + 1) * (GravityOrder + 2) / 2 - 1;
+    stokes_c.resize(GravityOrder + 2, GravityOrder + 2);
+    stokes_s.resize(GravityOrder + 2, GravityOrder + 2);
+    stokes_c.setZero();
+    stokes_s.setZero();
+
+    file.open("Config/EGM2008.cfg");
+    if (file.is_open())
+    {
+        int row, col;
+        for (int i = 0; i < rows; i++)
+        {
+            file >> row;
+            file >> col;
+            file >> stokes_c(row, col);
+            file >> stokes_s(row, col);
+        }
+        file.close();
+    }
+    else
+    {
+        std::cerr << "Unable to open file EGM2008" << std::endl;
+        exit(0);
+    }
+    return;
 }
 
 Eigen::MatrixXd GlobalSettings::ParseMatrix(const std::string &matrixString) const

@@ -73,6 +73,45 @@ void Environment::SunPos(const int64_t timestamp)
 	SunVecInl = Rx * sunpos / rs;
 }
 
+void Environment::MoonPos(const int64_t timestamp)
+{
+	// 计算儒略世纪
+	double TJD = TS2CEN(timestamp / 1000);
+
+	// 月亮的基本角度
+	double L0 = 218.31617 + 481267.88088 * TJD - 1.3972 * TJD;
+	double L = 134.96292 + 477198.86753 * TJD;
+	double L1 = 357.52543 + 35999.04944 * TJD;
+	double F = 93.27283 + 483202.01873 * TJD;
+	double D = 297.85027 + 445267.11135 * TJD;
+
+	// 月亮的长半轴
+	double lamM = L0 + 22640.0 / 3600.0 * SIND(L) + 729.0 / 3600.0 * SIND(2 * L) - 4586.0 / 3600.0 * SIND(L - 2 * D) + 2370.0 / 3600.0 * SIND(2 * D) - 668.0 / 3600.0 * SIND(L1) - 412.0 / 3600.0 * SIND(2 * F) - 212.0 / 3600.0 * SIND(2 * L - 2 * D) - 206.0 / 3600.0 * SIND(L + L1 - 2 * D) + 192.0 / 3600.0 * SIND(L + 2 * D) - 165.0 / 3600.0 * SIND(L1 - 2 * D) + 148.0 / 3600.0 * SIND(L - L1) - 125.0 / 3600.0 * SIND(D) - 110.0 / 3600.0 * SIND(L + L1) - 55.0 / 3600.0 * SIND(2 * F - 2 * D);
+
+	// 月亮的纬度修正
+	double bM = 18520.0 / 3600.0 * SIND(F + lamM - L0) + 412.0 / 3600.0 * SIND(2 * F) + 541.0 / 3600.0 * SIND(L1) - 526.0 / 3600.0 * SIND(F - 2 * D) + 44.0 / 3600.0 * SIND(L + F - 2 * D) - 31.0 / 3600.0 * SIND(F - L - 2 * D) - 25.0 / 3600.0 * SIND(F - 2 * L) - 23.0 / 3600.0 * SIND(L1 + F - 2 * D) + 21.0 / 3600.0 * SIND(F - L) + 11.0 / 3600.0 * SIND(F - L1 - 2 * D);
+
+	// 月亮的距离修正
+	double rM = (385000.0 - 20905.0 * COSD(L)) - 3699.0 * COSD(2 * D - L) - 2956.0 * COSD(2 * D) - 570.0 * COSD(2 * L) + 246.0 * COSD(2 * L - 2 * D) - 205.0 * COSD(L1 - 2 * D) - 171.0 * COSD(L + 2 * D) - 152.0 * COSD(L + L1 - 2 * D);
+
+	rM *= 1e3; // 转换为米
+
+	// 计算地球黄道平面到赤道的变换矩阵
+	Eigen::Matrix3d Rx;
+	Rx << 1, 0, 0,
+		0, COSD(-23.43929111), SIND(-23.43929111),
+		0, -SIND(-23.43929111), COSD(-23.43929111);
+
+	// 根据计算得到的参数，得到月球位置向量
+	Eigen::Vector3d moonpos;
+	moonpos << rM * COSD(lamM) * COSD(bM),
+		rM * SIND(lamM) * COSD(bM),
+		rM * SIND(bM);
+
+	// 将月球位置向量转换为地心地固坐标系
+	MoonVecInl = Rx * moonpos;
+}
+
 void Environment::GetNEDMag(const COrbit& Orbit, const int64_t timestamp)
 {
 
@@ -182,6 +221,115 @@ void Environment::GetNEDMag(const COrbit& Orbit, const int64_t timestamp)
 	NEDMag = NT2T(NEDMag);
 }
 
+Eigen::Vector3d Environment::GetInlGravityAcc(const COrbit &Orbit, const int64_t timestamp)
+{
+	Eigen::Vector3d pos(Orbit.ECEFFix.Pos);
+
+	double R_dot = SQRT(pos.x() * pos.x() + pos.y() * pos.y());
+	double R = pos.norm();
+	double sin_pha = pos.z() / R;
+	double lamda_G = ATAN2(pos.y(), pos.x());
+	double sin_lamda_G = sin(lamda_G);
+	double cos_lamda_G = cos(lamda_G);
+	double sin_pha2 = sin_pha * sin_pha;
+
+	GlobalSettings *pCfg = GlobalSettings::GetInstance();
+	size_t Order = pCfg->Get<int>("/Env/Gravity/GravityOrder");
+
+	Eigen::ArrayXXd P(Order + 2, Order + 2);
+	Eigen::ArrayXXd P_dot(Order + 2, Order + 2);
+	P.setZero();
+	P_dot.setZero();
+
+	// 计算P矩阵
+	double DM, DL;
+	for (size_t M = 0; M <= Order; M++)
+	{
+		for (size_t L = 0; L <= Order; L++)
+		{
+			DM = static_cast<double>(M);
+			DL = static_cast<double>(L);
+
+			if (L == 0 && M == 0)
+				P(L, M) = 1.0;
+			else if (L == 1 && M == 0)
+				P(L, M) = SQRT3 * sin_pha;
+			else if (L >= 2 && M == 0)
+				P(L, M) = SQRT((2.0 * DL + 1.0) / (2.0 * DL - 1.0)) *
+						  ((2.0 - 1.0 / DL) * sin_pha * P(L - 1, 0) -
+						   SQRT((2.0 * DL - 1.0) / (2.0 * DL - 3.0)) * (1.0 - 1.0 / DL) * P(L - 2, 0));
+			else if (M == 1 && L == 1)
+				P(L, M) = SQRT3 * SQRT(1.0 - sin_pha2);
+			else if (L >= 2 && L == M)
+				P(L, M) = SQRT((2.0 * DL + 1.0) / (2.0 * DL)) * SQRT(1.0 - sin_pha2) * P(L - 1, L - 1);
+			else if (L >= 2 && M >= 1 && M < L)
+				P(L, M) = SQRT((2.0 * DL + 1.0) * (2.0 * DL - 1.0) / ((DL + DM) * (DL - DM))) * sin_pha * P(L - 1, M) -
+						  SQRT((2.0 * DL + 1.0) * (DL - 1.0 + DM) * (DL - 1.0 - DM) /
+							   ((2.0 * DL - 3.0) * (DL + DM) * (DL - DM))) *
+							  P(L - 2, M);
+			else if (L < M)
+				P(L, M) = 0;
+		}
+	}
+
+	// 计算P_dot矩阵
+	double pow1 = POW(1.0 - sin_pha2, -1.0);
+	double pow5 = POW(1.0 - sin_pha2, -0.5);
+	double sinpha_pow5 = sin_pha * pow5;
+
+	for (size_t M = 0; M <= Order; M++)
+	{
+		for (size_t L = M; L <= Order; L++)
+		{
+			DM = static_cast<double>(M);
+			DL = static_cast<double>(L);
+
+			if (M == 0 && L == 1)
+				P_dot(L, M) = SQRT3;
+			else if (M == 0 && L > 1)
+				P_dot(L, M) = DL * pow1 * (SQRT((2.0 * DL + 1.0) / (2.0 * DL - 1.0)) * P(L - 1, 0) - sin_pha * P(L, 0));
+			else if (M == 0)
+				P_dot(L, M) = 0;
+			else
+				P_dot(L, M) = pow5 * (SQRT((DL + DM + 1.0) * (DL - DM)) * P(L, M + 1) -
+									  DM * sinpha_pow5 * P(L, M));
+		}
+	}
+
+	Eigen::Vector3d Acc;
+	Acc.setZero();
+	for (size_t M = 0; M <= Order; M++)
+	{
+		double k5 = sin(M * lamda_G);
+		double k6 = cos(M * lamda_G);
+		for (size_t L = M; L <= Order; L++)
+		{
+			if (L < 2)
+				continue;
+			double C = pCfg->Getstokes_c()(L, M);
+			double S = pCfg->Getstokes_s()(L, M);
+
+			// 计算所需的中间变量
+			double k1 = pow(1.0 / R, L + 3.0);
+			double k2 = P(L, M);
+			double k3 = P_dot(L, M);
+			double k4 = ((L + 1.0) * k2 + sin_pha * k3);
+			double k7 = C * k6 + S * k5;
+			double k8 = (M / R_dot) * pow(1.0 / R, L + 1.0) * k2;
+			double k9 = C * k5 - S * k6;
+
+			// 累加到 Acc
+			Acc.x() += k1 * k4 * pos.x() * k7 - k8 * k9 * sin_lamda_G;
+			Acc.y() += k1 * k4 * pos.y() * k7 + k8 * k9 * cos_lamda_G;
+			Acc.z() += k1 * (k4 * pos.z() - R * k3) * k7;
+		}
+	}
+
+	auto Afi = Environment::ECI2ECEF(timestamp).transpose();
+
+	return Afi * Acc * (-1);
+}
+
 void Environment::StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t timestamp)
 {
 	GetNEDMag(Orbit, timestamp);
@@ -193,6 +341,7 @@ void Environment::StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t t
 	//
 	BodyMag = Attitude.Qib.ToDcm() * ECIMag;
 	SunPos(timestamp);
+	MoonPos(timestamp);
 	SunVecBody = Attitude.Qib.ToDcm() * SunVecInl;
 }
 

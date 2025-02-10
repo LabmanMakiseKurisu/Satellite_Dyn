@@ -32,6 +32,9 @@ public:
         std::string str = settings[pointer].get<std::string>();
         return ParseVector(str);
     }
+
+    auto& Getstokes_c() const { return stokes_c; };
+    auto& Getstokes_s() const { return stokes_s; };
     auto& Getgauss_g() const { return gauss_g; };
     auto& Getgauss_h() const { return gauss_h; };
     auto& Getgauss_gdot() const { return gauss_gdot; };
@@ -39,6 +42,10 @@ public:
 private:
     static inline GlobalSettings* m_instance{ NULL };
     nlohmann::json settings;
+
+    Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> stokes_c;
+	Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> stokes_s;
+
     Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> gauss_g;
 	Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> gauss_h;
 	Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> gauss_gdot;

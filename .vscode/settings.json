@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.c": "c",
+        "*.hh": "cpp",
         "thread": "cpp",
         "any": "cpp",
         "array": "cpp",
@@ -79,6 +80,8 @@
         "svd": "cpp",
         "threadpool": "cpp",
         "*.inc": "cpp",
-        "*.def": "cpp"
+        "*.def": "cpp",
+        "hash_map": "cpp",
+        "cinttypes": "cpp"
     }
 }

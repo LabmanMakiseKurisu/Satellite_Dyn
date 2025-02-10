@@ -67,6 +67,9 @@
         "fields": 12,
         "Mag": {
             "MagOrder": 8
+        },
+        "Gravity": {
+            "GravityOrder": 8
         }
     },
     "Gyro": {
