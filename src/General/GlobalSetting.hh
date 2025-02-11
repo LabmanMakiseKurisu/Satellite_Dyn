@@ -39,6 +39,8 @@ public:
     auto& Getgauss_h() const { return gauss_h; };
     auto& Getgauss_gdot() const { return gauss_gdot; };
     auto& Getgauss_hdot() const { return gauss_hdot; };
+
+    auto& GetF107() { return F107; };
 private:
     static inline GlobalSettings* m_instance{ NULL };
     nlohmann::json settings;
@@ -51,11 +53,24 @@ private:
 	Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> gauss_gdot;
 	Eigen::Array<double, Eigen::Dynamic, Eigen::Dynamic> gauss_hdot;
 
+    /*
+        key: F107 cof 
+        value: vector<{
+        altitude(km);
+        min_density(kg/m^3);
+        max_density(kg/m^3);
+        }> 
+    */
+    std::unordered_map<int, std::vector<Eigen::Vector3d>> F107; 
+
 private:
     GlobalSettings(const std::string &configFilePath);
     ~GlobalSettings() = default;
     GlobalSettings(const GlobalSettings &_Config) = delete;
     static void ReleaseInstance();
+    void ParseGaussCof();
+    void ParseStokesCof();
+    void ParseF107Cof();        
     class DeleteHelper
     {
     public:

@@ -70,7 +70,8 @@ void Environment::SunPos(const int64_t timestamp)
 		0, COSD(-bs), SIND(-bs),
 		0, -SIND(-bs), COSD(-bs);
 
-	SunVecInl = Rx * sunpos / rs;
+	//SunVecInl = Rx * sunpos / rs;
+	SunVecInl = Rx * sunpos;
 }
 
 void Environment::MoonPos(const int64_t timestamp)
@@ -330,7 +331,78 @@ Eigen::Vector3d Environment::GetInlGravityAcc(const COrbit &Orbit, const int64_t
 	return Afi * Acc * (-1);
 }
 
-void Environment::StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t timestamp)
+void CalcPolarAngles(Eigen::Vector3d& m_Vec, double& m_phi, double& m_theta, double& m_r) {
+    double rhoSqr = m_Vec[0] * m_Vec[0] + m_Vec[1] * m_Vec[1];
+    m_r = SQRT(rhoSqr + m_Vec[2] * m_Vec[2]); 
+
+    // 计算方位角 m_phi
+    if (m_Vec[0] == 0 && m_Vec[1] == 0)
+        m_phi = 0;
+    else
+        m_phi = ATAN2(m_Vec[1], m_Vec[0]);
+    
+    if (m_phi < 0)
+        m_phi += 2 * M_PI;
+
+    double rho = SQRT(rhoSqr);
+    if (m_Vec[2] == 0 && rho == 0)
+        m_theta = 0;
+    else
+        m_theta = ATAN2(m_Vec[2], rho);
+}
+
+double Environment::GetDensity(const COrbit &Orbit)
+{
+	GlobalSettings *pCfg = GlobalSettings::GetInstance();
+	int cof = pCfg->Get<int>("/Env/Density/F107");
+	auto &param_vec = pCfg->GetF107()[cof];
+
+	// 获取卫星的地理坐标
+	auto &r_TOD = Orbit.ECEFFix.Pos;
+	double lon = Orbit.LLA.Lng;
+	double lat = Orbit.LLA.Lat;
+	double height = Orbit.LLA.Alt / 1000.0;
+
+	double ra_lag = 0.523599; // 右升交点延迟 [rad]
+	int n_prm = 4;			  // Harris-Priester模型参数
+
+	// 计算太阳的右升交点和赤纬角
+	double ra_Sun, dec_Sun, r_Sun_mag;
+	CalcPolarAngles(SunVecInl, ra_Sun, dec_Sun, r_Sun_mag);
+
+	// 计算单位向量 u，指向日膨胀极点
+	double c_dec = cos(dec_Sun);
+	std::vector<double> u = {c_dec * cos(ra_Sun + ra_lag), c_dec * sin(ra_Sun + ra_lag), sin(dec_Sun)};
+
+	// 计算卫星位置与日膨胀极点的夹角余弦
+	double dot_product = r_TOD[0] * u[0] + r_TOD[1] * u[1] + r_TOD[2] * u[2];
+	double norm_r_TOD = SQRT(r_TOD[0] * r_TOD[0] + r_TOD[1] * r_TOD[1] + r_TOD[2] * r_TOD[2]);
+	double c_psi2 = 0.5 + 0.5 * (dot_product / norm_r_TOD);
+
+	// 寻找高度区间
+	int ih = 0;
+	for (size_t i = 0; i < param_vec.size() - 1; ++i)
+	{
+		if (height >= param_vec[i][0] && height < param_vec[i + 1][0])
+		{
+			ih = i;
+			break;
+		}
+	}
+
+	// 计算指数插值的密度
+	double h_min = (param_vec[ih][0] - param_vec[ih + 1][0]) / LOG(param_vec[ih + 1][1] / param_vec[ih][1]);
+	double h_max = (param_vec[ih][0] - param_vec[ih + 1][0]) / LOG(param_vec[ih + 1][2] / param_vec[ih][2]);
+
+	double d_min = param_vec[ih][1] * exp((param_vec[ih][0] - height) / h_min);
+	double d_max = param_vec[ih][2] * exp((param_vec[ih][0] - height) / h_max);
+
+	// 计算最终密度
+	double density = d_min + (d_max - d_min) * pow(c_psi2, n_prm);
+	return density * 1e-9; // 转换为 kg/m^3
+}
+
+void Environment::StateRenew(CAttitude &Attitude, COrbit &Orbit, const int64_t timestamp)
 {
 	GetNEDMag(Orbit, timestamp);
 	Eigen::Matrix3d Ane = Orbit.NED2ECEF();

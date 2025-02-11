@@ -70,6 +70,9 @@
         },
         "Gravity": {
             "GravityOrder": 8
+        },
+        "Density": {
+            "F107": 65
         }
     },
     "Gyro": {

@@ -25,20 +25,8 @@ void GlobalSettings::ReleaseInstance()
 	delete tmp;
 }
 
-
-GlobalSettings::GlobalSettings(const std::string &configFilePath) 
+void GlobalSettings::ParseGaussCof()
 {
-    std::ifstream configFile(configFilePath);
-    if (configFile.is_open())
-    {
-        configFile >> settings;
-        //std::cout << settings.dump(4) << std::endl;
-    }
-    else
-    {
-        std::cerr << "Unable to open config file: " << configFilePath << std::endl;
-        exit(0);
-    }
     int MagOrder = this->Get<int>("/Env/Mag/MagOrder");
     if ((MagOrder < 1) || (MagOrder > 12))
     {
@@ -76,19 +64,22 @@ GlobalSettings::GlobalSettings(const std::string &configFilePath)
         std::cerr << "Unable to open file wmm_2020_data" << std::endl;
         exit(0);
     }
+}
 
+void GlobalSettings::ParseStokesCof()
+{
     int GravityOrder = this->Get<int>("/Env/Gravity/GravityOrder");
     if ((GravityOrder < 1) || (GravityOrder > 99))
     {
         GravityOrder = 2;
     }
-    rows = (GravityOrder + 1) * (GravityOrder + 2) / 2 - 1;
+    int rows = (GravityOrder + 1) * (GravityOrder + 2) / 2 - 1;
     stokes_c.resize(GravityOrder + 2, GravityOrder + 2);
     stokes_s.resize(GravityOrder + 2, GravityOrder + 2);
     stokes_c.setZero();
     stokes_s.setZero();
 
-    file.open("Config/EGM2008.cfg");
+    std::ifstream file("Config/EGM2008.cfg");
     if (file.is_open())
     {
         int row, col;
@@ -106,6 +97,43 @@ GlobalSettings::GlobalSettings(const std::string &configFilePath)
         std::cerr << "Unable to open file EGM2008" << std::endl;
         exit(0);
     }
+}
+
+void GlobalSettings::ParseF107Cof()
+{
+    std::ifstream file("Config/F107.json");
+    if(!file.is_open()) {
+        std::cerr << "Unable to open file F107.json" << std::endl;
+        exit(0);
+    }
+    nlohmann::json j;
+    file >> j;
+
+    for (const auto& entry : j["hpcoef"]) {
+        int f107_value = entry["F107"];
+        for (const auto& d : entry["data"]) {
+            Eigen::Vector3d density_data(d[0], d[1], d[2]);
+            F107[f107_value].push_back(density_data);
+        }
+    }
+    return;
+}
+
+GlobalSettings::GlobalSettings(const std::string &configFilePath) 
+{
+    std::ifstream configFile(configFilePath);
+    if (configFile.is_open())
+    {
+        configFile >> settings;
+    }
+    else
+    {
+        std::cerr << "Unable to open config file: " << configFilePath << std::endl;
+        exit(0);
+    }
+    ParseGaussCof();
+    ParseStokesCof();
+    ParseF107Cof();
     return;
 }
 
