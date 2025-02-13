@@ -15,9 +15,14 @@
     "Satellite": {
         "StartCode": "SIM00",
         "fields": 3,
-        "SatelliteTime": 1640966400000,
         "Delta": 0.1,
-        "Rate": 1
+        "Rate": 1,
+        "SatelliteTime": 1640966400000,
+        "Mass": 1000,
+        "DragCd": 2.2,
+        "DragArea": 0.001,
+        "SunPressureCr": 1.36,
+        "SunPressureArea": 0.001
     },
     "Orbit": {
         "StartCode": "SIM01",

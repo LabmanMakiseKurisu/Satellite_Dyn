@@ -251,3 +251,22 @@ double DecYear(int year, double month, double day)
     return (double)year + partialYear;
 
 }
+
+uint32_t IsLighting(const Eigen::Vector3d &Target, const Eigen::Vector3d &Obstruction, double ObstructionRadius, const Eigen::Vector3d &LightSource, double LightSourceRadius)
+{
+    Eigen::Vector3d ObstructionSun = Eigen::Vector3d::Zero();
+    Eigen::Vector3d ObstructionSat = Eigen::Vector3d::Zero();
+    ObstructionSun = LightSource - Obstruction;
+    ObstructionSat = Target - Obstruction;
+    double ObstructionSunNorm = ObstructionSun.norm();
+    double ObstructionSatNorm = ObstructionSat.norm();
+    double Theta = ASIN((LightSourceRadius - ObstructionRadius) / PROTECT(ObstructionSunNorm));
+    double Theta2 = ASIN((LightSourceRadius + ObstructionRadius) / PROTECT(ObstructionSunNorm));
+    double MaxAng = ACOS(ObstructionRadius / PROTECT(ObstructionSatNorm));
+    double Umbra = (HALFPI + Theta + MaxAng);
+    double Penumbra = (HALFPI - Theta2 + MaxAng);
+    double Angle = std::acos(ObstructionSun.dot(ObstructionSat) / (ObstructionSun.norm() * ObstructionSat.norm()));
+    if (Angle > Umbra) { return UMBRA; }
+    if (Angle > Penumbra) { return PENUMBRA; }
+    return LIGHTING;
+}

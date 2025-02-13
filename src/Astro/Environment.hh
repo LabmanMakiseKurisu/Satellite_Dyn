@@ -34,13 +34,10 @@ public:
 
 	void GetNEDMag(const COrbit& Orbit, const int64_t timestamp);
 
-	//计算惯性系引力场干扰
-	Eigen::Vector3d GetInlGravityAcc(const COrbit &Orbit, const int64_t timestamp);
+	// 计算HP模型大气密度
+	static double GetDensity(const Eigen::Vector3d &ecefpos, const Eigen::Vector3d SunVecInl);
 
-	//计算HP模型大气密度
-	double GetDensity(const COrbit& Orbit);
-
-	void StateRenew(CAttitude& Attitude, COrbit& Orbit, const int64_t timestamp);
+	void StateRenew(CAttitude &Attitude, COrbit &Orbit, const int64_t timestamp);
 
 	virtual void Submit() override;
 private:

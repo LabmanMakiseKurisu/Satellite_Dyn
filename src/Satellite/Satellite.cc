@@ -79,7 +79,7 @@ void Satellite::StateRenew()
 	AttController.TorqueRefRenew(pComponet);
 
 	//
-	Orbit.StateRenew(m_Delta, SatelliteTime);
+	Orbit.StateRenew(m_Delta, SatelliteTime, Env);
 
 	//
 	Attitude.StateRenew(m_Delta, Orbit, pComponet);
